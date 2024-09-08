@@ -77,44 +77,38 @@ The School ERP (Enterprise Resource Planning) system is designed to streamline a
    git clone https://github.com/yourusername/school-erp-system.git
    ```
 2. **Navigate to Project Directory**
-   bash
+   ```bash
+   cd school-erp-system
+   ```
+3. **Install Dependencies Make sure you have Node.js and npm installed.**
+   Run
+   ```bash
+   npm install
 
-cd school-erp-system
+4. **Setup Database Configure the database settings in config/database.js.**
+   Run migrations:
+   ```bash
+   npm run migrate
+5. **Start the Server
+   ```bash
+   npm start
 
-Install Dependencies Make sure you have Node.js and npm installed. Run:
+Access the Application Open your web browser and navigate to http://localhost:3000.
 
-bash
-
-npm install
-
-Setup Database Configure the database settings in config/database.js. Run migrations:
-
-bash
-
-npm run migrate
-
-Start the Server
-
-bash
-
-    npm start
-
-    Access the Application Open your web browser and navigate to http://localhost:3000.
-
-Usage
+**Usage**
 
     Login: Access the system via the login page.
     Modules: Navigate through various modules such as Student Management, Attendance, Finance, etc., from the dashboard.
     Admin Access: Ensure you have admin privileges to manage system settings and user roles.
 
-Contributing
+**Contributing**
 
-We welcome contributions to enhance the system. Please refer to our CONTRIBUTING.md for guidelines on how to contribute.
-License
+We welcome contributions to enhance the system. 
 
-This project is licensed under the MIT License.
-Contact
+This project is licensed under the GNU License.
 
-For any inquiries or support, please contact us at support@example.com.
+**Contact**
+
+For any inquiries or support, please contact us at theartsytechnologies@gmail.com.
 
 Thank you for using the School ERP System!
