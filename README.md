@@ -89,7 +89,7 @@ The School ERP (Enterprise Resource Planning) system is designed to streamline a
    Run migrations:
    ```bash
    npm run migrate
-5. **Start the Server
+5. **Start the Server**
    ```bash
    npm start
 
