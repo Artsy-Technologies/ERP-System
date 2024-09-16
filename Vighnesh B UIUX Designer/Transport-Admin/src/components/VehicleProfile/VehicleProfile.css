@@ -1,0 +1,148 @@
+.vehicleProfileContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .backBtn {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profileSection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .vehicleInfo {
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vehicleCard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px; /* Space between vehicle details and statistics */
+  }
+  
+  .vehicleImg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .vehicleStatistics {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .routePlanning {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 40%; /* Same width as the vehicleInfo to align them side by side */
+    
+  }
+  
+  .routeInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .routeInputs input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .saveRouteBtn {
+    padding: 10px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.saveBusBtn {
+  padding: 10px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button to add new bus */
+.addBusBtn {
+  padding: 10px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}

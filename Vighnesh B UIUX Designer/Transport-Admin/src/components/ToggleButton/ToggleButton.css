@@ -1,0 +1,11 @@
+/* src/components/ToggleButton/ToggleButton.css */
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.toggle-btn:focus {
+    outline: none;
+}
