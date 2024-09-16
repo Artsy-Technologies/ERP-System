@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#s {
+  height: 1000px;
+  width: 830px;
+  background-color: #ace5bd;
+  padding: 20px;
+  margin: 0 auto;
+  position: absolute;
+  right: 350px;
+  top: 200px;
+}
+
+.button {
+  padding: 8px 12px;
+  background-color: #006400; /* Dark green color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+.timetable-container {
+  margin-top: 30px;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.timetable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.timetable, .timetable th, .timetable td {
+  border: 1px solid #141313;
+}
+
+.timetable th, .timetable td {
+  padding: 10px;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
