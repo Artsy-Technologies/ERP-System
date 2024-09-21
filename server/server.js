@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const timetableRoutes = require('./routes/timetable');
+const timetableRoutes = require('./routes/timetableRoutes');
 const cors = require('cors');
 
 const app = express();
