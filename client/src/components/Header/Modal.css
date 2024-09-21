@@ -1,0 +1,104 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal styling */
+.modal {
+  display: flex; /* Will be toggled dynamically with React state */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+p {
+  font-size: 16px;
+  color: #7F8C8D;
+  margin-bottom: 20px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #F8F9FA;
+  border-radius: 5px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-rect {
+  height: 90px;
+  width: 10px;
+  background-color: #007BFF;
+  margin-right: 15px;
+}
+
+.event-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2C3E50;
+}
+
+.event-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #7F8C8D;
+}
+
+.event-time {
+  font-size: 13px;
+  color: #7F8C8D;
+}
+.modal-content h2 {
+  max-width: 100%;
+  font-size: 20px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
