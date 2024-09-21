@@ -14,7 +14,7 @@ app.use(express.static('public')); //Serve static files from the public director
 
 //Database Connection
 mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,//I have no idea what these are
+    useNewUrlParser: true,
     useUnifiedTopology: true
 })
 .then(() => console.log('Connected to MongoDB'))
