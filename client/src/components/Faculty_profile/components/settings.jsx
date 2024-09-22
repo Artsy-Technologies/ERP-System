@@ -1,4 +1,4 @@
-import '../styles/settings.css';
+import './settings.css';
 
 const SettingsSidebar = () => {
   return (

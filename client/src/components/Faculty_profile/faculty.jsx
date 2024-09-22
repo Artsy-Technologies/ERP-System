@@ -1,6 +1,6 @@
 import SettingsSidebar from './components/settings';
 import ProfileForm from './components/profileform';
-import Sidebar from '../../components/sidebar'
+import Sidebar from '../Sidebar/Sidebar.js';
 
 const FacultyPage = () => {
   return (
