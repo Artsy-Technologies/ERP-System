@@ -18,6 +18,11 @@ function App() {
       <Route path='/carousel' element={<Carousel/>} />
       <Route path='/intro' element={<Intro/>} />
       <Route path='/navbar' element={<Navbar/>} />
+
+      
+
+      
+
     </Routes>
     </BrowserRouter>
     </ErrorBoundary>

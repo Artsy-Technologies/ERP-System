@@ -1,0 +1,64 @@
+/* src/components/Sidebar/Sidebar.css */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.logo {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 250px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.h {
+    list-style-type: none;
+}
+
+.h li {
+    padding-bottom: 15px;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+}
