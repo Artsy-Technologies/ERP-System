@@ -1,0 +1,14 @@
+.chart-container {
+    position: relative;
+    margin-left: -10px;
+    gap: 20px;
+    width: 50%;
+    height: 380px;
+  }
+  
+  #myChart {
+    gap: 20px;
+    width: 50%;
+    height: 50%;
+  }
+  
