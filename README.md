@@ -1,114 +1,70 @@
-# School ERP System
+# Getting Started with Create React App
 
-Welcome to the School ERP System project repository! This document provides an overview of the project, key features, installation instructions, and usage guidelines.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project Overview
+## Available Scripts
 
-The School ERP (Enterprise Resource Planning) system is designed to streamline and manage all school-related administrative and academic activities efficiently. It offers a comprehensive platform to integrate various modules such as student information, attendance, examinations, finance, human resources, and more. The aim is to enhance operational efficiency, improve communication, and support better management of school activities.
+In the project directory, you can run:
 
-## Key Features
+### `npm start`
 
-### 1. Student Information Management
-- **Student Profiles**: Detailed records including personal details, academic history, and health records.
-- **Enrollment Management**: Handle admissions, registrations, and transfers.
-- **Parent Portal**: Access to child's academic progress, attendance, and teacher communication.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 2. Attendance Management
-- **Automated Attendance**: Track attendance via biometric, RFID, or manual entry.
-- **Attendance Reports**: Generate daily, weekly, and monthly reports.
-- **Alerts and Notifications**: Notify parents/guardians about absenteeism.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### 3. Timetable and Scheduling
-- **Timetable Creation**: Automated generation for classes, exams, and extracurriculars.
-- **Schedule Management**: Manage and notify changes in schedules.
-- **Room Allocation**: Optimize classroom and facility usage.
+### `npm test`
 
-### 4. Examination and Grade Management
-- **Exam Scheduling**: Plan and schedule exams with seating arrangements.
-- **Gradebook**: Record and manage grades and assessments.
-- **Report Cards**: Generate digital and printable report cards.
-- **Performance Analytics**: Analyze and generate insights on student performance.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 5. Finance and Accounting
-- **Fee Management**: Automate fee collection, invoicing, and receipt generation.
-- **Expense Tracking**: Monitor expenses and manage budgets.
-- **Financial Reports**: Generate financial statements and custom reports.
+### `npm run build`
 
-### 6. Human Resources Management
-- **Staff Profiles**: Maintain detailed staff records.
-- **Payroll Management**: Automate payroll processing and salary disbursement.
-- **Leave Management**: Track leave requests and approvals.
-- **Performance Appraisals**: Manage staff evaluations.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 7. Library Management
-- **Catalog Management**: Digital catalog of library resources.
-- **Issuing and Returning**: Track book issuance and returns.
-- **Inventory Management**: Manage library stock levels.
-- **Fines and Penalties**: Automate fines for overdue books.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 8. Transport Management
-- **Route Planning**: Optimize school bus routes and schedules.
-- **Vehicle Tracking**: Track real-time location of buses.
-- **Transport Fee Management**: Manage transport fees and payments.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 9. Communication and Collaboration
-- **Messaging System**: Facilitate communication between stakeholders.
-- **Announcements**: Broadcast important updates.
-- **Event Management**: Plan and manage school events.
+### `npm run eject`
 
-### 10. Inventory and Asset Management
-- **Asset Tracking**: Track school assets and equipment.
-- **Inventory Control**: Manage supply levels.
-- **Maintenance Records**: Record asset maintenance and repairs.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 11. Security and Compliance
-- **Data Protection**: Ensure security of sensitive data.
-- **Access Control**: Manage user roles and permissions.
-- **Compliance Management**: Adhere to educational regulations.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 12. Mobile Access
-- **Responsive Design**: Seamless operation across devices.
-- **Mobile App**: Access system features on the go via mobile application.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Installation
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/school-erp-system.git
-   ```
-2. **Navigate to Project Directory**
-   ```bash
-   cd school-erp-system
-   ```
-3. **Install Dependencies Make sure you have Node.js and npm installed.**
-   Run
-   ```bash
-   npm install
+## Learn More
 
-4. **Setup Database Configure the database settings in config/database.js.**
-   Run migrations:
-   ```bash
-   npm run migrate
-5. **Start the Server**
-   ```bash
-   npm start
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Access the Application Open your web browser and navigate to http://localhost:3000.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-**Usage**
+### Code Splitting
 
-    Login: Access the system via the login page.
-    Modules: Navigate through various modules such as Student Management, Attendance, Finance, etc., from the dashboard.
-    Admin Access: Ensure you have admin privileges to manage system settings and user roles.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-**Contributing**
+### Analyzing the Bundle Size
 
-We welcome contributions to enhance the system. 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-This project is licensed under the GNU License.
+### Making a Progressive Web App
 
-**Contact**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-For any inquiries or support, please contact us at theartsytechnologies@gmail.com.
+### Advanced Configuration
 
-Thank you for using the School ERP System!
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
