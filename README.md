@@ -126,10 +126,10 @@ The School ERP (Enterprise Resource Planning) system is designed to streamline a
       ```
 3. Set up environment variables: Create a `.env` file in the `server` directory and add the following:
   
-      ```
+     ```
      MANGODB_URL=mongodb+srv://akdattingal:Aaadi4321@schoolerp.r4y1m.mongodb.net/
      PORT=3000
-      ```
+     ```
   
 4. Run the backend application:
   
