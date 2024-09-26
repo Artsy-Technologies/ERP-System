@@ -1,28 +1,36 @@
 import { useState } from 'react';
 import ErrorBoundary from './errorBoundary';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import MainPage from '../src/components/Homepage/mainPage';
 import Carousel from '../src/components/Homepage/Carousel/carousel';
 import Intro from '../src/components/Homepage/Hero/introBox.jsx';
 import Navbar from '../src/components/Homepage/Navbar/navbar.jsx';
+import PagesRoutes from './Routes/PageRoutes.jsx';
+import ErrorRoutes from './Routes/ErrorRoutes.jsx';
 
 function App() {
-  
+
 
   return (
-    <>
+    // <>
+    //   <ErrorBoundary>
+    //     <BrowserRouter>
+    //       <Routes>
+
+    //       </Routes>
+    //     </BrowserRouter>
+    //   </ErrorBoundary>
+
+    // </>
     <ErrorBoundary>
-    <BrowserRouter>
-    <Routes>
-      <Route index path='/' element={<MainPage/>} />
-      <Route path='/carousel' element={<Carousel/>} />
-      <Route path='/intro' element={<Intro/>} />
-      <Route path='/navbar' element={<Navbar/>} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<PagesRoutes />} />
+            <Route path="*" element={<ErrorRoutes />} />
+          </Routes>
+      </BrowserRouter>
     </ErrorBoundary>
-        
-    </>
+
   )
 }
 
