@@ -9,19 +9,7 @@ import PagesRoutes from './Routes/PageRoutes.jsx';
 import ErrorRoutes from './Routes/ErrorRoutes.jsx';
 
 function App() {
-
-
   return (
-    // <>
-    //   <ErrorBoundary>
-    //     <BrowserRouter>
-    //       <Routes>
-
-    //       </Routes>
-    //     </BrowserRouter>
-    //   </ErrorBoundary>
-
-    // </>
     <ErrorBoundary>
       <BrowserRouter>
           <Routes>
@@ -30,7 +18,6 @@ function App() {
           </Routes>
       </BrowserRouter>
     </ErrorBoundary>
-
   )
 }
 
