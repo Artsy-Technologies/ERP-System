@@ -161,7 +161,7 @@ This project is licensed under the GNU License.
 4. Update your branch in github and also your code in local:
   
       ```
-      git checkout Main
+      git checkout main
       git pull
       ```
   
@@ -180,7 +180,7 @@ This project is licensed under the GNU License.
       git switch YourBranchName
       ```
 
-8. Check your branch:
+8. Check your changes:
   
       ```
       git status
