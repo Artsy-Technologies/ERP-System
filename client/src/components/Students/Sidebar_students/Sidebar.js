@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = ({ toggleSidebar }) => (
@@ -6,10 +7,11 @@ const Sidebar = ({ toggleSidebar }) => (
     <div className="logo">
       <img src="/images/logo.png" alt="Logo" />
     </div>
+
     <span>
-      <a href="#">
+      <Link to="/">
         <i className="fa-solid fa-house"></i> Home Page
-      </a>
+      </Link>
     </span>
 
     <br />
@@ -17,27 +19,27 @@ const Sidebar = ({ toggleSidebar }) => (
     <br />
     <p>ACADEMICS</p>
     <ul className="h">
-      <li><a href="#">Student Profile</a></li>
-      <li><a href="#">Attendance Management</a></li>
-      <li><a href="#">Timetable And Schedule</a></li>
-      <li><a href="#">Grade And Report Card</a></li>
-      <li><a href="#">Digital Library</a></li>
-      <li><a href="#">Exam Alerts</a></li>
-      <li><a href="#">Virtual Classes</a></li>
-      <li><a href="#">Doubt Clearance</a></li>
-      <li><a href="#">Assignments</a></li>
+      <li><Link to="/student-profile">Student Profile</Link></li>
+      <li><Link to="/attendance-management">Attendance Management</Link></li>
+      <li><Link to="/timetable-schedule">Timetable And Schedule</Link></li>
+      <li><Link to="/grade-report">Grade And Report Card</Link></li>
+      <li><Link to="/digital-library">Digital Library</Link></li>
+      <li><Link to="/exam-alerts">Exam Alerts</Link></li>
+      <li><Link to="/virtual-classes">Virtual Classes</Link></li>
+      <li><Link to="/doubt-clearance">Doubt Clearance</Link></li>
+      <li><Link to="/assignments">Assignments</Link></li>
     </ul>
 
     <p>SERVICES</p>
     <ul className="h">
-      <li><a href="#">Payment Management</a></li>
-      <li><a href="#">Faculty Feedback</a></li>
+      <li><Link to="/payment-management">Payment Management</Link></li>
+      <li><Link to="/faculty-feedback">Faculty Feedback</Link></li>
     </ul>
 
     <span>
-      <a href="#">
+      <Link to="/logout">
         <i className="fas fa-arrow-left"></i> Log out
-      </a>
+      </Link>
     </span>
   </div>
 );

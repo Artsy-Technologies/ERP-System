@@ -30,7 +30,7 @@ export default function MainPage() {
     // }
 
     axios
-      .post("http://localhost:3002/contactDetails", { Name, myemail, Message })
+      .post("/contactDetails", { Name, myemail, Message })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
     alert(
@@ -252,7 +252,7 @@ export default function MainPage() {
             </div>
             <div>
               <input type="checkbox" id="terms" name="terms" value="yes" /> I
-              accept the <a href="#">Terms & Conditions</a>
+              accept the <Link to="#">Terms & Conditions</Link>
               <div id="termserror" className="text-danger"></div>
               <div className="invalid-feedback">
                 You must agree before submitting
@@ -283,27 +283,27 @@ export default function MainPage() {
             <div>
               <b>Courses</b>
             </div>
-            <a href="#">Primary years programme</a>
-            <a href="#">Middle years programme</a>
-            <a href="#">Diploma programme</a>
+            <Link to="#">Primary years programme</Link>
+            <Link to="#">Middle years programme</Link>
+            <Link to="#">Diploma programme</Link>
           </div>
           <div className="d-flex flex-column">
             <div>
               <b>Resources</b>
             </div>
-            <a href="#">Smart classes</a>
-            <a href="#">Library</a>
-            <a href="#">Sports</a>
-            <a href="#">Auditorium & halls</a>
+            <Link to="#">Smart classes</Link>
+            <Link to="#">Library</Link>
+            <Link to="#">Sports</Link>
+            <Link to="#">Auditorium & halls</Link>
           </div>
           <div className="d-flex flex-column">
             <div>
               <b>About us</b>
             </div>
-            <a href="#">Contact</a>
-            <a href="#">Help/Support</a>
-            <a href="#">FAQs</a>
-            <a href="#">Terms & Conditions</a>
+            <Link to="#">Contact</Link>
+            <Link to="#">Help/Support</Link>
+            <Link to="#">FAQs</Link>
+            <Link to="#">Terms & Conditions</Link>
           </div>
         </div>
         <br />
@@ -319,26 +319,26 @@ export default function MainPage() {
             style={{ gap: "10px" }}
           >
             <p>2024 Vancover.All rights reserved</p>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of service</a>
-            <a href="#">Cookies settings</a>
+            <Link to="#">Privacy Policy</Link>
+            <Link to="#">Terms of service</Link>
+            <Link to="#">Cookies settings</Link>
           </div>
           <div
             className="d-flex flex-row justify-content-around"
             style={{ gap: "10px" }}
           >
-            <a href="#">
+            <Link to="#">
               <i className="bi bi-facebook"></i>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="bi bi-instagram"></i>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="bi bi-twitter-x"></i>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <i className="bi bi-linkedin"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
