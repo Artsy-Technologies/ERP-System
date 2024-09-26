@@ -44,7 +44,7 @@ const Timetable = () => {
   useEffect(() => {
     const fetchTimetables = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/timetables');
+        const response = await axios.get('/api/timetables');
         setTimetables(response.data);
         setError(null); // Reset error if fetching is successful
       } catch (error) {
