@@ -1,12 +1,10 @@
-// src/components/FacultyMembers/FacultyMembers.js
 import React from 'react';
-import './FacultyMembers.css'; // Import the CSS file
-
+import './FacultyMembers.css';
 const FacultyMembers = () => {
   const facultyList = [
-    { name: 'Francis Tran', imgSrc: 'images/img1.png' },
-    { name: 'Elliana Palacios', imgSrc: 'images/img2.png' },
-    { name: 'Katherine Webster', imgSrc: 'images/img3.png' },
+    { name: 'Francis Tran', imgSrc: '../assets/Images/img1.png' },
+    { name: 'Elliana Palacios', imgSrc: '../assets/Images/img2.png' },
+    { name: 'Katherine Webster', imgSrc: '../assets/Images/img3.png' },
   ];
 
   return (

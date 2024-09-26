@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 
-import DriversList from "../DriversList-transport/DriversList";
-import VehiclesList from "../VehiclesList-transport/VechiclesList";
-import TransactionHistory from "../TransactionHistory-transport/TransactionHistory";
-import ExpensesChart from "../ExpensesChart-transport/ExpensesChart";
-import Card from "../Card-transport/Card";
+import DriversList from "../../../components/Transport/DriversList-transport/DriversList"
+import VehiclesList from "../../../components/Transport/VehiclesList-transport/VechiclesList";
+import TransactionHistory from "../../../components/Transport/TransactionHistory-transport/TransactionHistory";
+import ExpensesChart from "../../../components/Transport/ExpensesChart-transport/ExpensesChart";
+import Card from "../../../components/Transport/Card-transport/Card";
 import "./Dashboard.css";
+import Sidebar from "../../../components/Sidebar/Sidebar"
 
 const Dashboard = () => {
   const [isDrivers, setIsDrivers] = useState(true);
 
   return (
     <div className="dashboard-container">
-    <div className="cards-section">
-        <Card 
-          iconPath="/images/road.png" 
-          
-          number="99,002" 
-          label="KM" 
-        />
+      <Sidebar/>
+      <div className="cards-section">
+        <Card iconPath="/images/road.png" number="99,002" label="KM" />
         <br></br>
-        <Card 
-          iconPath="/images/dollar.png" 
-          number="10.8K" 
-          label="Total Expense" 
+        <Card
+          iconPath="/images/dollar.png"
+          number="10.8K"
+          label="Total Expense"
         />
       </div>
       <div className="expenses-section">
@@ -41,22 +38,19 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="transaction-history-section">
-      
-      
-      
         <TransactionHistory />
       </div>
 
       <div className="drivers-vehicles-section">
         <div className="tabs">
-          <button 
-            className={isDrivers ? "active" : ""} 
+          <button
+            className={isDrivers ? "active" : ""}
             onClick={() => setIsDrivers(true)}
           >
             Drivers
           </button>
-          <button 
-            className={!isDrivers ? "active" : ""} 
+          <button
+            className={!isDrivers ? "active" : ""}
             onClick={() => setIsDrivers(false)}
           >
             Vehicles
@@ -64,8 +58,6 @@ const Dashboard = () => {
         </div>
         {isDrivers ? <DriversList /> : <VehiclesList />}
       </div>
-
-      
     </div>
   );
 };
