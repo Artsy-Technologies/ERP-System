@@ -30,7 +30,7 @@ export default function MainPage() {
     // }
 
     axios
-      .post("/contactDetails", { Name, myemail, Message })
+      .post("http://localhost:3003/contactDetails", { Name, myemail, Message })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
     alert(
@@ -192,7 +192,7 @@ export default function MainPage() {
       >
         <div className="container flex-column">
           <h2>Contact Us</h2>
-          <h4>Register for daily updates</h4>
+          <h4 className="registerContact">Register for daily updates</h4>
           <p>
             <i className="bi bi-envelope-check-fill"></i> Hello@relume.io
           </p>
