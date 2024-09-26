@@ -1,29 +1,23 @@
-import ErrorBoundary from "./errorBoundary";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from "./pages/LandingPage/LandingPage.jsx";
-import Carousel from "../src/components/Homepage/Carousel/carousel";
-import Intro from "../src/components/Homepage/Hero/introBox.jsx";
-import Navbar from "../src/components/Homepage/Navbar/navbar.jsx";
-import Dashboard from "./pages/AdminDashboard/Transport/Transport.jsx";
+import ErrorBoundary from './errorBoundary';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import PagesRoutes from './Routes/PageRoutes.jsx';
+import ErrorRoutes from './Routes/ErrorRoutes.jsx';
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:8000"
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <>
-      <ErrorBoundary>
-        <BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
           <Routes>
-            <Route index path="/" element={<MainPage />} />
-            <Route path="/carousel" element={<Carousel />} />
-            <Route path="/intro" element={<Intro />} />
-            <Route path="/navbar" element={<Navbar />} />
-
-
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/*" element={<PagesRoutes />} />
+            <Route path="*" element={<ErrorRoutes />} />
           </Routes>
-        </BrowserRouter>
-      </ErrorBoundary>
-    </>
-  );
+      </BrowserRouter>
+    </ErrorBoundary>
+  )
 }
 
-export default App;
+export default App

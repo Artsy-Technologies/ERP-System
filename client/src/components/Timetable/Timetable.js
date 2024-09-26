@@ -75,7 +75,7 @@ const TimetableManager = () => {
   };
 
   const saveTimetable = () => {
-    axios.post('http://localhost:3000/api/timetables', timetableData)
+    axios.post('/api/timetables', timetableData)
       .then((response) => {
         alert(response.data.message || 'Timetable saved successfully!');
         viewTimetable(); // Refresh the list after saving
@@ -87,7 +87,7 @@ const TimetableManager = () => {
   };
 
   const viewTimetable = () => {
-    axios.get('http://localhost:3000/api/timetables')
+    axios.get('/api/timetables')
       .then((response) => {
         if (response.data && Array.isArray(response.data.timetables)) {
           setSavedTimetables(response.data.timetables);
@@ -102,7 +102,7 @@ const TimetableManager = () => {
   };
 
   const deleteTimetable = () => {
-    axios.delete('http://localhost:3000/api/timetables')
+    axios.delete('/api/timetables')
       .then((response) => {
         alert(response.data.message || 'Timetable deleted successfully!');
         setSavedTimetables([]); // Clear the list after deletion
