@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
-import DriversList from "../../../components/Transport/DriversList-transport/DriversList"
-import VehiclesList from "../../../components/Transport/VehiclesList-transport/VechiclesList";
-import TransactionHistory from "../../../components/Transport/TransactionHistory-transport/TransactionHistory";
-import ExpensesChart from "../../../components/Transport/ExpensesChart-transport/ExpensesChart";
-import Card from "../../../components/Transport/Card-transport/Card";
+import DriversList from "../../../components/Admin/Transport/DriversList-transport/DriversList"
+import VehiclesList from "../../../components/Admin/Transport/VehiclesList-transport/VechiclesList";
+import TransactionHistory from "../../../components/Admin/Transport/TransactionHistory-transport/TransactionHistory";
+import ExpensesChart from "../../../components/Admin/Transport/ExpensesChart-transport/ExpensesChart";
+import Card from "../../../components/Admin/Transport/Card-transport/Card";
 import "./Dashboard.css";
-import Sidebar from "../../../components/Sidebar/Sidebar"
 
-const Dashboard = () => {
+const TransportDashboard = () => {
   const [isDrivers, setIsDrivers] = useState(true);
 
   return (
     <div className="dashboard-container">
-      <Sidebar/>
       <div className="cards-section">
         <Card iconPath="/images/road.png" number="99,002" label="KM" />
         <br></br>
@@ -62,4 +60,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default TransportDashboard ;
