@@ -49,7 +49,7 @@ function Navbar() {
 
     if (validateForm()) {
       try {
-        const response = await axios.post("/login", {
+        const response = await axios.post("http://localhost:3003/login", {
           email,
           password,
           accountType,
