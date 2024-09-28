@@ -1,14 +1,13 @@
-import './style.css';
-import banner from '../../assets/Images/students.png';
-import Calendar from '../../components/Calendar/calendar.js';
+import "./style.css";
+import banner from "../../assets/Images/students.png";
+import Calendar from "../../components/Calendar/calendar.js";
 import "../../components/Calendar/calendar.css";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export function Body() {
- 
   useEffect(() => {
-    Calendar(); 
-  }, []); 
+    Calendar();
+  }, []);
 
   return (
     <>
@@ -50,7 +49,7 @@ export function Body() {
             <div className="substring">
               <i className="fa-solid fa-book-open-reader"></i>
               <div className="cols">
-                <h5 >Digital library</h5>
+                <h5>Digital library</h5>
                 <p className="grey">Online library</p>
               </div>
             </div>
@@ -66,7 +65,7 @@ export function Body() {
             <div className="substring">
               <i className="fa-solid fa-question"></i>
               <div className="cols">
-                <h5 >Doubt Clearance</h5>
+                <h5>Doubt Clearance</h5>
                 <p className="grey">Student doubt clearing</p>
               </div>
             </div>
@@ -89,7 +88,9 @@ export function Body() {
             <div className="substring">
               <i className="fa-solid fa-dollar-sign"></i>
               <div className="cols">
-                <h5>Payment <br/> Management</h5>
+                <h5>
+                  Payment <br /> Management
+                </h5>
                 <p className="grey">Manage payments</p>
               </div>
             </div>
@@ -129,20 +130,25 @@ export function Body() {
               <ul className="calendar-dates"></ul>
             </div>
           </div>
-       
+
           <div className="faculty-container">
             <div className="faculty-members">
               <h4>Faculty Members</h4>
               <ul>
                 <li>
-                  <img src="images/img1.png" alt="Francis Tran" className="image_circle"/>{' '}<h4>Francis Tran</h4>
+                  <img
+                    src="images/img1.png"
+                    alt="Francis Tran"
+                    className="image_circle"
+                  />{" "}
+                  <h4>Francis Tran</h4>
                 </li>
                 <li>
                   <img
                     src="images/img2.png"
                     alt="Elliana Palacios"
                     className="image_circle"
-                  />{' '}
+                  />{" "}
                   <h4>Elliana Palacios</h4>
                 </li>
                 <li>
@@ -150,12 +156,14 @@ export function Body() {
                     src="images/img3.png"
                     alt="Katherine Webster"
                     className="image_circle"
-                  />{' '}
+                  />{" "}
                   <h4>Katherine Webster</h4>
                 </li>
               </ul>
             </div>
-            <button type="button" className="showmore">Show more</button> 
+            <button type="button" className="showmore">
+              Show more
+            </button>
           </div>
         </div>
       </div>
