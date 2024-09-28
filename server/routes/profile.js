@@ -3,7 +3,7 @@ const User = require('../models/User');
 const router = express.Router();
 
 // POST route to save profile data
-router.post('/profile', async (req, res) => {
+router.post('/faculty', async (req, res) => {
   const {
     firstName,
     middleName,
