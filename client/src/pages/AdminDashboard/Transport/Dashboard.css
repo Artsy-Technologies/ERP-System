@@ -1,0 +1,88 @@
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 30px;
+  }
+  .cards-section {
+    display:grid;
+    
+    gap: 10px;
+    margin-bottom: -400px;
+    margin-left: 1100px;
+
+  }
+ 
+  
+  .expenses-section {
+    grid-column: span 2;
+    margin-left: 300px;
+  }
+  .expense-options {
+    margin-top: 50px;
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .expense-options button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #96427E;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .expense-options button:hover {
+    background-color: #96427E;
+  }
+  
+  .expense-options select {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .expense-options select:focus {
+    outline: none;
+    border-color: #96427E;
+  }
+  
+  .drivers-vehicles-section {
+    
+    position: relative;
+    margin-top: -550px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    
+
+    
+  }
+  
+  .tabs {
+    display: flex;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .tabs button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    background-color: #fde8f1;
+    color: #694960;
+    border-radius: 8px;
+  }
+  
+  .tabs button.active {
+    background-color: #96427E;
+    color: white;
+  }
+  

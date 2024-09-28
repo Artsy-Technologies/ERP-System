@@ -1,6 +1,8 @@
-# School ERP System
+# 🏫 School ERP System
 
-Welcome to the School ERP System project repository! This document provides an overview of the project, key features, installation instructions, and usage guidelines.
+<div align="center">  <img src="https://readme-typing-svg.herokuapp.com?color=45ffaa&size=40&width=900&height=80&lines=Welcome+to+the+School+ERP+System!"/></div>
+
+<p align="center">  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/stars/Artsy-Technologies/school-website" alt="GitHub stars"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/forks/Artsy-Technologies/school-website" alt="GitHub forks"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/issues/Artsy-Technologies/school-website" alt="GitHub issues"></a>  <a href="https://github.com/Artsy-Technologies/school-website"><img src="https://img.shields.io/github/license/Artsy-Technologies/school-website" alt="GitHub license"></a></p>
 
 ## Project Overview
 
@@ -70,44 +72,146 @@ The School ERP (Enterprise Resource Planning) system is designed to streamline a
 - **Responsive Design**: Seamless operation across devices.
 - **Mobile App**: Access system features on the go via mobile application.
 
-## Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/school-erp-system.git
-   ```
-2. **Navigate to Project Directory**
-   ```bash
-   cd school-erp-system
-   ```
-3. **Install Dependencies Make sure you have Node.js and npm installed.**
-   Run
-   ```bash
-   npm install
-
-4. **Setup Database Configure the database settings in config/database.js.**
-   Run migrations:
-   ```bash
-   npm run migrate
-5. **Start the Server**
-   ```bash
-   npm start
-
-Access the Application Open your web browser and navigate to http://localhost:3000.
-
-**Usage**
+## Usage
 
     Login: Access the system via the login page.
     Modules: Navigate through various modules such as Student Management, Attendance, Finance, etc., from the dashboard.
     Admin Access: Ensure you have admin privileges to manage system settings and user roles.
 
-**Contributing**
+## Frontend Installation
+
+1. Clone the repository:
+```bash
+      git clone https://github.com/<your-github-username>/ERP-System.git
+```
+  
+2. Navigate to the `client` directory:
+  
+     ```
+      cd ERP-System/client
+     ```
+  
+4. Install dependencies:
+  
+     ```
+      npm install
+     ```
+
+5. Set up environment variables: Create a `.env` file in the `client` directory and add the following:
+  
+      ```
+     REACT_APP_API_BASE_URL=http://localhost:3000
+     REACT_APP_AXIOS_WITH_CREDENTIALS=true
+      ```
+6. Run the frontend application: 
+  
+      ```
+      npm start
+      ```
+  
+7. You can view the website in localhost: `http://localhost:3000`
+
+### Backend Installation
+
+1. Navigate to the `server` directory:
+  
+      ```
+      cd school-website/server
+      ```
+  
+2. Install dependencies:
+  
+      ```
+      npm install
+      ```
+3. Set up environment variables: Create a `.env` file in the `server` directory and add the following:
+  
+     ```
+     MANGODB_URL=mongodb+srv://akdattingal:Aaadi4321@schoolerp.r4y1m.mongodb.net/
+     PORT=3000
+     ```
+  
+4. Run the backend application:
+  
+      ```
+      npm start
+      ```
+
+## Contributing
 
 We welcome contributions to enhance the system. 
 
 This project is licensed under the GNU License.
 
-**Contact**
+## 🔄 Making a Pull Request
+
+1. Fork the repository by clicking on the fork symbol at the top right corner.
+  
+2. Clone your forked repository:
+  
+     ```
+     git clone https://github.com/<your-github-username>/ERP-System.git
+     ```
+  
+3. Navigate to the project directory:
+  
+      ```
+      cd ERP-System
+      ```
+4. Update your branch in github and also your code in local:
+  
+      ```
+      git checkout main
+      git pull
+      ```
+  
+5. Make your changes, Add your files.
+   
+6. Create a new branch:
+  
+      ```
+      git checkout -b YourBranchName
+      ```
+  
+      or
+   
+      ```
+      git branch YourBranchName
+      git switch YourBranchName
+      ```
+
+8. Check your changes:
+  
+      ```
+      git status
+      ```
+  
+9. Stage your changes and commit:
+
+      ```
+      git add file/folder
+      git commit -m "<your_commit_message>"
+      ```
+  
+      or
+
+      ```
+      git add .
+      git commit -m "<your_commit_message>"
+      ```
+     
+10. Push your changes to your forked repository:
+  
+      ```
+      git push origin YourBranchName
+      ```
+  
+11. Create a pull request on GitHub.
+  
+
+**Congratulations on your contribution! 🙌🏼**
+
+## Contact
 
 For any inquiries or support, please contact us at theartsytechnologies@gmail.com.
 
