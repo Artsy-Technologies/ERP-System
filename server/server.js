@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const timetableRoutes = require('./routes/timetableRoutes');
 const cors = require('cors');
+const path = require('path');
+const profileRoutes = require('./routes/profile');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,6 +24,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 //Routes
 app.use('/api', timetableRoutes); //Use the route with a prefix
+app.use('/api', profileRoutes); //Faculty leave
 
 //Start Server
 app.listen(PORT, () => {
