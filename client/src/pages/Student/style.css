@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    padding:0;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+    overflow-y:auto;
+    max-height:100%;
+    margin:0;
+}
+
+.logo {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: -55px;
+  
+}
+
+.logo img {
+    max-width: 300px;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.h{
+    list-style-type: none;
+
+}
+.h li {
+    padding-bottom: 15px;
+   
+}
+
+
+.toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(223, 223, 223);
+    padding: 10px 20px;
+    color: rgb(21, 21, 21);
+}
+
+.search-bar {
+    flex: 1;
+    margin-left: 280px;
+}
+
+.search-bar input[type="text"] {
+    width: 20%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.icons {
+    display: flex;
+    font-size: 30px;
+   
+}
+
+.icons .icon {
+    margin-left: 30px;
+    cursor: pointer;
+}
+.studentcontent{
+    height:900px;
+    width:auto;
+    background-color: rgb(226, 223, 223);
+    margin-left:250px;
+    display: flex;
+    flex-direction: row;
+}
+.leftbox{
+    width: 70%;
+    display:flex;
+    background-color: #f0e8e8;
+    flex-direction: column;
+    gap:15px;
+    padding:10px;
+    margin:0;
+    
+}
+h3{
+    color:black;
+}
+h4{
+    color:black;
+}
+.right{
+    background-color:white;width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.a1{
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+
+}
+.substring{
+    display:flex;
+    background-color: white;
+    display:inline-block;
+    flex-direction: row;
+    padding:10px;
+    width:240px;
+    gap: 5px;
+}
+.substring:hover{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.cols{
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    padding: 0;
+    
+}
+.grey{
+    color:grey;
+    font-size: 10px;
+    margin:0;
+}
+p{
+    margin:0;
+}
+
+.showmore{
+    background-color:black;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+}
+
+
+
+
+.faculty-container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.faculty-members {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.faculty-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faculty-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.faculty-list img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.faculty-members {
+    margin-top: 20px;
+}
+
+.faculty-members  {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.faculty-members ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faculty-members li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.faculty-members li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.image_circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.calendar-dates li:not(.active):hover::before {
+    background: #e4e1e1;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+}
