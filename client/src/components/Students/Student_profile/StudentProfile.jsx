@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import StudentList from "./StudentList";
 import StudentForm from "./StudentForm";
 import StudentNav from "./student_nav";
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import '../Style.css'; 
+import './Style.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faBars, faBell, faCircleUser, faHouse, faSearch } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/logo.png'
+import logo from '../../../../public/logo.png';
 import TeacherProfile from './TeacherForm';
 import TeacherForm from './TeacherForm';
 

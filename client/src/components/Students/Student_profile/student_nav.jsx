@@ -1,6 +1,6 @@
 import React from 'react';
-import './Sudent_nav.css';
-import logo from '../assets/logo.png'
+import './Style.css';
+import logo from '../../../../public/logo.png'
 
 const Sidebar = ({ toggleSidebar }) => (
   <div className="sidebar" id="sidebar">

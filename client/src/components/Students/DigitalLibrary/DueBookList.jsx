@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DueBookCard from "./Duebook";
-import "../App.css";
+import "./libraryApp.css";
 import { useEffect } from "react";
 import {
   faArrowLeft,

@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "./libraryApp.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faShareAlt } from "@fortawesome/free-solid-svg-icons";

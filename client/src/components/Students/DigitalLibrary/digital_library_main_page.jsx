@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "./libraryApp.css";
 import { faArrowLeft, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StudentNav from "../components/student_nav";
+import StudentNav from "../Student_profile/student_nav.jsx";
 import BookCard from "./BookCard";
 import HistoryBookList from "./Historybooklist";
 import BookPopup from "./Openbookpopup";
 import DueBookList from "./DueBookList";
 import { useNavigate } from "react-router-dom";
-import { getRecommendedBooks, getRecentReadings } from "../Api/bookapi.js";
+import { getRecommendedBooks, getRecentReadings } from "../../../Api/bookapi.js";
 
 const DigitalLibraryMainPage = () => {
   const navigate = useNavigate();

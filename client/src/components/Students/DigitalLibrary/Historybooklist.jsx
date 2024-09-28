@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "./libraryApp.css";
 import HistoryBookCard from "./Historybookcard";
 import DueBookList from "./DueBookList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
