@@ -1,0 +1,48 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Categories from './components/Categories';
+import Inventory from './components/Inventory';
+import Complaints from './components/Complaints';
+import Contacts from './components/Contacts';
+import LabEquipment from './components/LabEquipment';
+import Furniture from './components/Furniture';
+import Electricals from './components/Electricals';
+import Plumbing from './components/Plumbing';
+import SportsEquipment from './components/SportsEquipment';
+import Maintenance from './components/Maintenance';
+import './inventory.css'; // Import the CSS
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Main Page with Categories, Inventory, and Maintenance */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Categories />
+              <main className="main-content">
+                <Inventory /> {/* Display Inventory and Asset History */}
+                <aside className="right-section">
+                  <Complaints /> {/* Display Complaints */}
+                  <Contacts />   {/* Display Maintenance Contacts */}
+                </aside>
+              </main>
+            </>
+          }
+        />
+        
+        {/* Routes for each category-specific page */}
+        <Route path="/lab-equipment" element={<LabEquipment />} />
+        <Route path="/furniture" element={<Furniture />} />
+        <Route path="/electricals" element={<Electricals />} />
+        <Route path="/plumbing" element={<Plumbing />} />
+        <Route path="/sports-equipment" element={<SportsEquipment />} />
+        <Route path="/maintenance" element={<Maintenance />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

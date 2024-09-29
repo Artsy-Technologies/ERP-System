@@ -1,0 +1,222 @@
+/* General Styling */
+:root {
+    --main-color: #33a35f;
+    --secondary-color: #6c63ff;
+    --hover-color: #5348d7;
+    --bg-color: #f9f9f9;
+    --white: #ffffff;
+    --light-gray: #e0e0e0;
+    --dark-gray: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: var(--main-color);
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Center Page Layout */
+.categories, .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Category Icons Section */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Reduced gap */
+    margin-bottom: 30px; /* Reduced margin */
+}
+
+.category-box {
+    display: block; /* Make the anchor tag block-level */
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.category-box img {
+    width: 40px; /* Reduced icon size */
+    height: 40px; /* Reduced icon size */
+}
+
+.category-box p {
+    font-weight: bold;
+    margin: 8px 0 4px 0; /* Reduced margins */
+    color: var(--dark-gray);
+}
+
+.category-box span {
+    font-size: 0.8em; /* Reduced font size */
+    color: #777;
+}
+
+/* Main Section */
+.main-content {
+    display: flex;
+    gap: 15px; /* Reduced gap */
+}
+
+.left-section {
+    flex: 2; /* Takes up more space */
+}
+
+.right-section {
+    flex: 1; /* Takes up less space */
+}
+
+/* Inventory Section */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    overflow: hidden;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 12px; /* Reduced padding */
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.inventory-table th {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.inventory-table td {
+    background-color: var(--white);
+}
+
+.status {
+    text-align: center;
+    font-weight: bold;
+    padding: 6px 10px; /* Reduced padding */
+    border-radius: 20px;
+}
+
+.status.done {
+    background-color: #28a745;
+    color: var(--white);
+}
+
+/* Complaints and Contacts Section */
+.complaints {
+    background-color: var(--white);
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+}
+
+.complaints h3 {
+    color: var(--secondary-color);
+}
+
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    overflow: hidden;
+}
+
+.complaints-table th, .complaints-table td {
+    padding: 12px; /* Reduced padding */
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.complaints-table th {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.complaints-table td {
+    background-color: var(--white);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 6px 12px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Maintenance Contacts */
+.contacts {
+    background-color: var(--white);
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    text-align: center;
+    margin-top: 5px;
+}
+
+.contacts h3 {
+    color: var(--dark-gray);
+}
+.contacts {
+    text-align: left; /* Aligns text to the left */
+}
+
+.contacts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacts ul li {
+    font-weight: bold;
+    margin: 8px 0; /* Reduced margin */
+}
+
+.contact-main-btn {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 8px 15px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-main-btn:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid layout */
+    }
+}
