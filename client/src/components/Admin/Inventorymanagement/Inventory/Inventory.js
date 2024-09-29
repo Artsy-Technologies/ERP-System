@@ -5,7 +5,7 @@ import '../inventory.css';
 const Inventory = () => {
   return (
     <section className="left-section">
-      <h2>Inventory and Asset History</h2>
+      <h2 className='inventory-h2'>Inventory and Asset History</h2>
       <table className="inventory-table">
         <thead>
           <tr>

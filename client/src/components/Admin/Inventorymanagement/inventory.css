@@ -1,12 +1,4 @@
-/* General Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9; /* Background color */
-    margin: 0;
-    padding: 20px;
-}
-
-h2, h3 {
+.inventory-h2, .inventory-h3 {
     color: #33a35f; /* Main color */
     margin-bottom: 15px; /* Reduced margin */
 }
@@ -142,7 +134,7 @@ h2, h3 {
     background-color: #ffffff; /* White */
 }
 
-.btn {
+.inventory-btn {
     background-color: #6c63ff; /* Secondary color */
     color: #ffffff; /* White */
     padding: 6px 12px; /* Reduced padding */
@@ -151,7 +143,7 @@ h2, h3 {
     cursor: pointer;
 }
 
-.btn:hover {
+.inventory-btn:hover {
     background-color: #5348d7; /* Hover color */
 }
 

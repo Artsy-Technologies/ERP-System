@@ -86,7 +86,7 @@ export default function MainPage() {
             <br />
             <br />
             <Link to="/form">
-              <button className="btn btn-secondary">Admission</button>
+              <button className="btn btn-secondary w-75">Admission</button>
             </Link>
           </p>
           <img

@@ -12,33 +12,34 @@ function Navbar() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [accountType, setaccountType] = useState("Student");
+
   const validateForm = () => {
     let valid = true;
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
 
     document.getElementById("emailerror").innerText = "";
     document.getElementById("passerror").innerText = "";
-    email.classList.remove("error", "success");
-    password.classList.remove("error", "success");
+    emailInput.classList.remove("error", "success");
+    passwordInput.classList.remove("error", "success");
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
+    if (!emailPattern.test(emailInput.value)) {
       document.getElementById("emailerror").innerText =
         "Please enter a valid email address.";
-      email.classList.add("error");
+      emailInput.classList.add("error");
       valid = false;
     } else {
-      email.classList.add("success");
+      emailInput.classList.add("success");
     }
 
-    if (password.value.length < 6) {
+    if (passwordInput.value.length < 6) {
       document.getElementById("passerror").innerText =
         "Password must be at least 6 characters long.";
-      password.classList.add("error");
+      passwordInput.classList.add("error");
       valid = false;
     } else {
-      password.classList.add("success");
+      passwordInput.classList.add("success");
     }
 
     return valid;
@@ -49,7 +50,7 @@ function Navbar() {
 
     if (validateForm()) {
       try {
-        const response = await axios.post("http://localhost:3003/login", {
+        const response = await axios.post("/login", {
           email,
           password,
           accountType,
@@ -69,35 +70,48 @@ function Navbar() {
 
   return (
     <>
-      <nav>
-        <div id="parentdiv">
-          <img src={logo} alt="logo" className="img-fluid" width="350px" />
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand">
+            <img src={logo} alt="logo" width="350px" />
+          </Link>
 
-          <div id="childdiv">
-            <Link aria-current="page" to="/">
-              Home
-            </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-            <Link to="#academics">Academics</Link>
-
-            <Link to="#about">About Us</Link>
-
-            <Link to="#activities">Activities</Link>
-
-            <Link to="#contact">Contact</Link>
-            <Link to="/signup">
-              <button className="btn btn-light">Sign up</button>
-            </Link>
-            <button
-              className="btn btn-light"
-              type="button"
-              onClick={() => setShowModal(true)}
-            >
-              Login
-            </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="d-flex me-auto" id="childdiv">
+              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="#academics">Academics</Link>
+              <Link className="nav-link" to="#about">About Us</Link>
+              <Link className="nav-link" to="#activities">Activities</Link>
+              <Link className="nav-link" to="#contact">Contact</Link>
+            </div>
+            <div className="d-flex gap-3">
+              <Link to="/signup">
+                <button className="btn btn-light">Sign up</button>
+              </Link>
+              <button
+                className="btn btn-light"
+                type="button"
+                onClick={() => setShowModal(true)}
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </nav>
+
       <div
         className={`modal fade ${showModal ? "show" : ""}`}
         id="loginModal"
@@ -109,9 +123,7 @@ function Navbar() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="loginModalLabel">
-                Login
-              </h5>
+              <h5 className="modal-title" id="loginModalLabel">Login</h5>
               <button
                 type="button"
                 className="btn-close"
@@ -121,9 +133,7 @@ function Navbar() {
             </div>
             <div className="modal-body">
               <form id="myform" onSubmit={handleSubmit}>
-                <label className="form-label" htmlFor="email">
-                  Email
-                </label>
+                <label className="form-label" htmlFor="email">Email</label>
                 <input
                   className="form-control"
                   id="email"
@@ -134,22 +144,19 @@ function Navbar() {
                 />
                 <div id="emailerror" className="text-danger"></div>
                 <br />
-                <label className="form-label" htmlFor="accountType">
-                  Type of account
-                </label>
+                <label className="form-label" htmlFor="accountType">Type of account</label>
                 <select
                   name="accountType"
                   value={accountType}
                   onChange={(e) => setaccountType(e.target.value)}
+                  className="form-select"
                 >
                   <option value="Student">Student</option>
                   <option value="Teacher">Teacher</option>
                   <option value="Admin">Admin</option>
                 </select>
                 <br />
-                <label className="form-label" htmlFor="password">
-                  Password
-                </label>
+                <label className="form-label" htmlFor="password">Password</label>
                 <input
                   className="form-control"
                   id="password"
@@ -159,9 +166,7 @@ function Navbar() {
                   onChange={(e) => setpassword(e.target.value)}
                 />
                 <div id="passerror" className="text-danger"></div>
-                <Link className="d-flex float-end" href="#">
-                  Forgot password
-                </Link>
+                <Link className="d-flex float-end" href="#">Forgot password</Link>
               </form>
             </div>
             <div className="modal-footer">
@@ -182,4 +187,5 @@ function Navbar() {
     </>
   );
 }
+
 export default Navbar;

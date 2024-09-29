@@ -15,19 +15,8 @@
     background-color: #a54c75; /* Darker shade on hover */
 }
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Main container styling */
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
 /* Header styling */
-h1 {
+.lab-h1 {
     text-align: center;
     background-color: #f08fb4;
     padding: 10px;

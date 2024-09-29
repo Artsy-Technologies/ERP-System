@@ -4,7 +4,7 @@ import './inventory.css';
 const Complaints = () => {
   return (
     <div className="complaints">
-      <h3>Complaints</h3>
+      <h3 className='inventory-h3'>Complaints</h3>
       <table className="complaints-table">
         <thead>
           <tr>
@@ -19,13 +19,13 @@ const Complaints = () => {
             <td>Chair</td>
             <td>Furniture</td>
             <td>Damaged</td>
-            <td><button className="btn" onClick={() => window.location.href = 'mailto:contact@example.com'}>Email</button></td>
+            <td><button className="inventory-btn" onClick={() => window.location.href = 'mailto:contact@example.com'}>Email</button></td>
           </tr>
           <tr>
             <td>Pipeline</td>
             <td>Plumbing</td>
             <td>Damaged</td>
-            <td><button className="btn" onClick={() => window.location.href = 'mailto:contact@example.com'}>Email</button></td>
+            <td><button className="inventory-btn" onClick={() => window.location.href = 'mailto:contact@example.com'}>Email</button></td>
           </tr>
         </tbody>
       </table>

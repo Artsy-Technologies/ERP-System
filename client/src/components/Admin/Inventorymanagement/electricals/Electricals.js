@@ -1,20 +1,22 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
-import './electricals.css';  // Import the CSS file
+import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import "./electricals.css"; // Import the CSS file
 
 const ElectricalsInventory = () => {
-  const navigate = useNavigate();  // Initialize the useNavigate hook
+  const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const goBack = () => {
-    navigate(-1);  // Navigate to the previous page in history
+    navigate(-1); // Navigate to the previous page in history
   };
 
   return (
     <div className="container">
       <h1 className="heading">Electricals</h1>
-      
+
       {/* Back button */}
-      <button className="back-link" onClick={goBack}>Back</button>
+      <button className="back-link" onClick={goBack}>
+        Back
+      </button>
 
       {/* Inventory Table */}
       <table className="inventory-table">

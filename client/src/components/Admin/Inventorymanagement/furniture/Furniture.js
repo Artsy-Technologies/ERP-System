@@ -11,7 +11,7 @@ const FurnitureInventory = () => {
 
   return (
     <div className="container">
-      <h1 className="heading">Furniture</h1>
+      <h1 className="lab-h1">Furniture</h1>
       
       {/* Back button */}
       <button className="back-link" onClick={goBack}>Back</button>

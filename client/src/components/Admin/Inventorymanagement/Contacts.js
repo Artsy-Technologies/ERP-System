@@ -10,7 +10,7 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <center><h3>Maintenance Contacts</h3></center>
+      <center><h3 className='inventory-h3'>Maintenance Contacts</h3></center>
       <ul>
         <li>
           <span onClick={() => toggleContact('electrician-contact')}>Electrician</span>
