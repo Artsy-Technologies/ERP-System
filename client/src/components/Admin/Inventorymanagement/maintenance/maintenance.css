@@ -1,0 +1,39 @@
+/* General styling for the container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.heading {
+    text-align: center;
+    padding: 15px;
+    color: #333;
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #c15e91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #a54c75; /* Darker shade on hover */
+}
+
+/* Maintenance info styling */
+.maintenance-info {
+    margin-top: 20px;
+    text-align: left;
+}
