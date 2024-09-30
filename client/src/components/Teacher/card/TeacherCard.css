@@ -1,28 +1,58 @@
-/* TeacherCard.css */
-.avatar {
-    width: 80px;
-    height: 80px;
-    background-color: #d8d0ed;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-  
-  /* Add some padding for the pagination */
-  .pagination {
-    margin-top: 20px;
-  }
-  .card {
-    border: none; /* Remove the border */
-    box-shadow: none; /* Optional: Remove any box shadow */
+.teacher-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+}
 
-    text-decoration: none;
-  }
+.card {
+  border: none;
+  text-decoration: none;
+}
+
+.card-body {
+  padding: 20px 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a5ca7; /* Name color */
+}
+
+.card-text {
+  color: #9d8eaa; /* Subject text color */
+  font-size: 0.9rem;
+}
+
+.contact-icons {
+  margin-top: 10px;
+}
+
+.contact-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #66c6d3; /* Button background */
+  color: white;
+  font-size: 18px;
+  border: none;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-btn:hover {
+  background-color: #55b2c2; /* Hover background */
+}
+
+.contact-btn svg {
+  font-size: 20px; /* Icon size */
+  color: white; /* Icon color */
+}
+.contact-btn svg {
+  font-size: 20px; /* Icon size */
+  color: black;    /* Icon color */
   
-  .teacher-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes the image round */
-    object-fit: cover;  /* Ensures the image is properly contained */
-    border: 2px solid #ccc; /* Optional: Add a border to the image */
-  }
-  
+}

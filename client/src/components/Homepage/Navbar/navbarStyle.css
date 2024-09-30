@@ -9,10 +9,16 @@
   flex-grow: 1;
   justify-content: space-around;
 }
-nav {
-  background-color: rgba(0, 0, 0, 0.2);
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   z-index: 2;
   width: 100%;
+}
+
+.nav-link{
+  font-size:larger;
+  color: white;
+  font-weight: 600;
 }
