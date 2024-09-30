@@ -12,16 +12,6 @@ function App() {
 
 
   return (
-    // <>
-    //   <ErrorBoundary>
-    //     <BrowserRouter>
-    //       <Routes>
-
-    //       </Routes>
-    //     </BrowserRouter>
-    //   </ErrorBoundary>
-
-    // </>
     <ErrorBoundary>
       <BrowserRouter>
           <Routes>
