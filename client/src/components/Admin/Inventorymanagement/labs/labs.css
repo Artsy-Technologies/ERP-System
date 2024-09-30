@@ -1,0 +1,80 @@
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #c15e91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #a54c75; /* Darker shade on hover */
+}
+
+/* Header styling */
+.lab-h1 {
+    text-align: center;
+    background-color: #f08fb4;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Active tab styling */
+.tab.active {
+    background-color: #c15e91;
+    color: white;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header and cell styling */
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Status labels */
+.status-done {
+    background-color: #32cd32;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-not-done {
+    background-color: #ff6347;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+

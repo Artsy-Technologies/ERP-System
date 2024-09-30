@@ -60,7 +60,7 @@ const ExamHallAllocation = () => {
       <button className="toggle-btn" id="toggle-btn" onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <div className="container">
+      <div className="exam-container">
         <span id="fa">
           <img
             src={FacultyImg}
@@ -79,7 +79,7 @@ const ExamHallAllocation = () => {
         />
         <h2 id="a1">EXAM HALL ALLOCATION</h2>
         <div className="form-history-container">
-          <form id="examForm" onSubmit={handleSubmit}>
+          <form className="exam-form" id="examForm" onSubmit={handleSubmit}>
             <center>
               <h3>FILL THE FORM TO ALLOCATE STUDENTS</h3>
             </center>
