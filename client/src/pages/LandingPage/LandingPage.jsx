@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Intro from "../../components/Homepage/Hero/introBox.jsx";
 import Navbar from "../../components/Homepage/Navbar/navbar.jsx";
+import TeacherList from "../../components/Teacher/card/TeacherList.js";
 
 export default function MainPage() {
   const navigate = useNavigate();
@@ -307,6 +308,7 @@ export default function MainPage() {
           </div>
         </div>
         <br />
+        {/* <TeacherList /> */}
         <div
           className="container"
           style={{ backgroundColor: "white", height: "2px" }}

@@ -1,0 +1,123 @@
+
+.teacher-list-container {
+  padding: 20px; /* Padding around the container */
+  border: 1px solid #ccc; /* Border around the main container */
+  border-radius: 8px; /* Rounded corners for the main container */
+  background-color: #fff; /* Background color for the container */
+}
+
+/* Search Container */
+.search-container {
+  display: flex; /* Use flexbox for alignment */
+  margin-bottom: 20px; /* Space between search bar and cards */
+}
+
+/* Aligning Search Box to the Left */
+.search-box {
+  position: relative;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Set a max width for the search box */
+  margin-right: 20px; /* Space between search box and teacher cards */
+}
+
+.search-input {
+  text-align: center;
+  width: 100%; /* Full width of the search box */
+  padding: 12px 40px 12px 20px; /* Padding for input */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  font-size: 16px; /* Font size for the input */
+  transition: box-shadow 0.3s; /* Transition for shadow on focus */
+}
+
+.search-input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; /* Positioning the icon */
+  top: 50%; /* Center the icon vertically */
+  transform: translateY(-50%); /* Align icon in the middle */
+  color: green; /* Icon color */
+  font-size: 20px; /* Icon size */
+}
+
+/* Teacher Card List */
+.teacher-card-list {
+  display: flex; /* Use flexbox for teacher cards */
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  justify-content: flex-start; /* Align cards to the start */
+}
+
+/* Individual Card */
+.card {
+  width: 100%; /* Full width by default */
+  max-width: 300px; /* Set a maximum width for each card */
+  margin: 10px; /* Space between cards */
+  border-radius: 8px; /* Rounded corners for cards */
+  transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.card-body {
+  padding: 15px; /* Padding inside card */
+}
+
+/* Text Styles */
+.card-title {
+  font-weight: bold; /* Bold title */
+}
+
+.card-text {
+  font-size: 14px; /* Font size for text */
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 12px; /* Button padding */
+}
+
+/* Pagination Styles */
+.ant-pagination {
+  display: flex;
+  justify-content: center; /* Center pagination controls */
+  margin-top: 20px; /* Space above pagination */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column; /* Stack search components on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .search-box {
+    width: 100%; /* Full width on small screens */
+    max-width: none; /* Remove max-width for flexibility */
+    margin-bottom: 10px; /* Space below the search box */
+  }
+
+  .teacher-card-list {
+    justify-content: flex-start; /* Align cards to the start on smaller screens */
+  }
+
+  .card {
+    max-width: 90%; /* Increase card width on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .search-input {
+    font-size: 14px; /* Smaller font size on extra small screens */
+  }
+
+  .search-icon {
+    font-size: 18px; /* Smaller icon size */
+  }
+}

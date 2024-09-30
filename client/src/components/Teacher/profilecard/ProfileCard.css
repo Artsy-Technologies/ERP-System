@@ -1,0 +1,113 @@
+/* ProfileCard.css */
+
+/* General Card Styling */
+.profile-card {
+    max-width: 400px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Header Styles */
+  .card-header {
+    padding: 30px;
+    background: linear-gradient(135deg, #4aa3df, #34c6f7);
+    position: relative;
+  }
+  
+  .profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+  }
+  
+  .role {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #e1f1f8;
+  }
+  
+  /* Body Section Styles */
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-body h3 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card-body p, .card-body li {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  /* Icon Styling */
+  .icon {
+    margin-right: 10px;
+    color: #34c6f7;
+  }
+  
+  /* Section Margin */
+  .details-section,
+  .education-section,
+  .expertise-section,
+  .contact-section {
+    margin-bottom: 20px;
+  }
+  
+  /* Contact List Styling */
+  .contact-section p {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Mobile Responsive Adjustments */
+  @media (max-width: 576px) {
+    .profile-card {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  
+    .profile-img {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .name {
+      font-size: 1.3rem;
+    }
+  
+    .role {
+      font-size: 0.9rem;
+    }
+  
+    .card-body h3 {
+      font-size: 1.1rem;
+    }
+  
+    .card-body p, .card-body li {
+      font-size: 0.85rem;
+    }
+  }
+  
+  
