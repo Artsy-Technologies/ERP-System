@@ -1,10 +1,9 @@
+// ProfileList.js
 import React from "react";
-import { useParams } from "react-router-dom";
-import ProfileCard from './ProfileCard.js'; // Adjust path if necessary
-import "./ProfileCard.css";
+import ProfileCard from "./ProfileCard"; // Import the ProfileCard component
+import "./ProfileCard.css"; // Add your styles here
 
 const ProfileList = () => {
-  const { name } = useParams(); // Get the name from the URL parameter
   const teachers = [
     {
       name: "Samantha S",
@@ -22,22 +21,17 @@ const ProfileList = () => {
       phone: "+12 345 6789 0",
       image: "https://via.placeholder.com/150"
     },
-    // Add other teacher profiles here
+    // Add more teachers if needed
   ];
-
-  // Find the teacher by name
-  const teacher = teachers.find(t => t.name === name);
 
   return (
     <div className="container">
       <div className="row">
-        {teacher ? (
-          <div className="col-md-6 mb-4">
+        {teachers.map((teacher, index) => (
+          <div key={index} className="col-md-6 mb-4">
             <ProfileCard teacher={teacher} />
           </div>
-        ) : (
-          <div>Teacher not found.</div>
-        )}
+        ))}
       </div>
     </div>
   );

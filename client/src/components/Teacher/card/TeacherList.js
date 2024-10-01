@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import TeacherCard from './TeacherCard';
 import { Pagination } from 'antd';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './TeacherList.css';
-
+import LeaveRequests from '../leaveTable/LeaveRequests';
 const teachers = [
   { name: 'Samantha S', subject: 'Mathematics', image: 'https://via.placeholder.com/150' },
   { name: 'Tom Housenburg', subject: 'Science', image: 'https://via.placeholder.com/150' },
@@ -17,8 +18,8 @@ const teachers = [
   { name: 'Nella Vita', subject: 'English', image: 'https://via.placeholder.com/150' },
   { name: 'Indiana Barker', subject: 'Biology', image: 'https://via.placeholder.com/150' }
 ];
-const TeacherList = () => {
 
+const TeacherList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const pageSize = 6;
@@ -33,49 +34,52 @@ const TeacherList = () => {
   const paginatedTeachers = filteredTeachers.slice(startIndex, endIndex);
 
   return (
-    <div className="teacher-list-container">
-    <div className="search-container">
-      <div className="search-box">
-        <FaSearch className="search-icon" />
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search here..."
-          value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-            setCurrentPage(1); // Reset to first page on search
-          }}
-        />
-      </div>
-    </div>
-  
-    <div className="teacher-card-list">
-      {paginatedTeachers.length > 0 ? (
-        paginatedTeachers.map((teacher, index) => (
-          <TeacherCard
-            key={index}
-            name={teacher.name}
-            subject={teacher.subject}
-            image={teacher.image}
-          />
-        ))
-      ) : (
-        <div>No teachers found.</div>
-      )}
-    </div>
-  
-    <Pagination
-      current={currentPage}
-      pageSize={pageSize}
-      total={filteredTeachers.length}
-      onChange={(page) => setCurrentPage(page)}
-      className="d-flex justify-content-center mt-4"
-      hideOnSinglePage
-    />
-  </div>
-  
-
+   <> <div className="teacher-list-container">
+   <div className="search-container">
+     <div className="search-box">
+       <FaSearch className="search-icon" />
+       <input
+         type="text"
+         className="search-input"
+         placeholder="Search here..."
+         value={searchQuery}
+         onChange={(e) => {
+           setSearchQuery(e.target.value);
+           setCurrentPage(1); // Reset to first page on search
+         }}
+       />
+     </div>
+   </div>
+   <Link to={`/teachers/regform`}>
+     <div className="text-center2">
+       <button type="submit" className="sendbutton2">+ New Teacher</button>
+     </div>
+   </Link>
+   <div className="teacher-card-list">
+     {paginatedTeachers.length > 0 ? (
+       paginatedTeachers.map((teacher, index) => (
+         <TeacherCard
+           key={index}
+           name={teacher.name}
+           subject={teacher.subject}
+           image={teacher.image}
+         />
+       ))
+     ) : (
+       <div>No teachers found.</div>
+     )}
+   </div>
+   <Pagination
+     current={currentPage}
+     pageSize={pageSize}
+     total={filteredTeachers.length}
+     onChange={(page) => setCurrentPage(page)}
+     className="d-flex justify-content-center mt-4"
+     hideOnSinglePage
+   />
+ </div>
+ <LeaveRequests/>
+ </>
   );
 };
 

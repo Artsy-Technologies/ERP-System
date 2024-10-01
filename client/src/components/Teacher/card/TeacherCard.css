@@ -1,28 +1,115 @@
-/* TeacherCard.css */
-.avatar {
-    width: 80px;
-    height: 80px;
-    background-color: #d8d0ed;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-  
-  /* Add some padding for the pagination */
-  .pagination {
-    margin-top: 20px;
-  }
-  .card {
-    border: none; /* Remove the border */
-    box-shadow: none; /* Optional: Remove any box shadow */
+.teacher-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+}
 
-    text-decoration: none;
+.card {
+  width: 200px; 
+  height: 300px; 
+  border: none;
+  text-decoration: none;
+  background-color: #f9f9f9; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  box-sizing: border-box; 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; 
+  width: 100%;
+}
+.card-body h5{
+  color: rgb(33, 33, 176);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a5ca7;
+  text-align: center;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  width: 100%;
+}
+
+.card-text {
+  color: #9d8eaa;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.contact-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #66c6d3;
+  color: white;
+  font-size: 18px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.contact-btn:hover {
+  background-color: #55b2c2;
+}
+
+.contact-btn svg {
+  font-size: 20px;
+  color: teal;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 150px;  /* Adjusted width for mobile */
+    height: 250px; /* Adjusted height for mobile */
   }
-  
-  .teacher-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes the image round */
-    object-fit: cover;  /* Ensures the image is properly contained */
-    border: 2px solid #ccc; /* Optional: Add a border to the image */
+
+  .card-title {
+    font-size: 1rem;
   }
-  
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  .contact-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .contact-btn svg {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;  /* Full width on very small screens */
+    height: auto; /* Allow auto height */
+  }
+}

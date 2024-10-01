@@ -1,0 +1,31 @@
+.leave-history-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+  }
+  
+  .leave-history-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .leave-history-table {
+    width: 100%;
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    overflow: hidden; 
+  }
+  
+  .approve-text {
+    color: green; 
+    font-weight: bold; 
+  }
+  
+  .cancel-text {
+    color: red;
+    font-weight: bold; 
+  }
+  
