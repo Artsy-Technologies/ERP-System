@@ -97,14 +97,12 @@ a {
     height:900px;
     width:auto;
     background-color: rgb(226, 223, 223);
-    margin-left:250px;
     display: flex;
     flex-direction: row;
 }
 .leftbox{
     width: 70%;
     display:flex;
-    background-color: #f0e8e8;
     flex-direction: column;
     gap:15px;
     padding:10px;
@@ -129,18 +127,14 @@ h4{
     gap:10px;
 
 }
-.substring{
-    display:flex;
-    background-color: white;
-    display:inline-block;
-    flex-direction: row;
-    padding:10px;
-    width:240px;
-    gap: 5px;
-}
-.substring:hover{
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-}
+.substring {
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box-shadow */
+  }
+  
+  .substring:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+  }
+  
 .cols{
     display: inline-flex;
     flex-direction: column;

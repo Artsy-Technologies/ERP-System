@@ -4,8 +4,9 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorRoutes from './ErrorRoutes';
 import LandingPage from '../pages/LandingPage/LandingPage'
-import Student from  '../pages/Student/student.jsx'
+import Student from '../pages/Student/student.jsx'
 import Teacher from '../pages/Teacher/teacher.jsx';
+import Dashboardpage from '../components/Layouts/Dashboardpage.jsx';
 
 // import TransportDashboard from '../pages/AdminDashboard/Transport/Transport'
 // import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
@@ -22,10 +23,15 @@ import Teacher from '../pages/Teacher/teacher.jsx';
 const PagesRoutes = () => {
     return (
         <Routes>
+
             <Route path='/' element={<LandingPage />} />
             <Route path='/home' element={<LandingPage />} />
-            <Route path="/student-dashboard" element={<Student/>} />
-            <Route path="/teacher-dashboard" element={<Teacher/>} />
+
+
+            <Route path='/' element={<Dashboardpage />} >
+                <Route path="student-dashboard" element={<Student />} />
+                <Route path="teacher-dashboard" element={<Teacher />} />
+            </Route>
 
             {/* Just Added here for testing, need to link in sidebar */}
             {/* <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />

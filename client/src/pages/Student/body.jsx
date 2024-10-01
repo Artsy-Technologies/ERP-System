@@ -1,4 +1,3 @@
-import "./style.css";
 import banner from "../../assets/Images/students.png";
 import Calendar from "../../components/Calendar/calendar.js";
 import "../../components/Calendar/calendar.css";
@@ -11,7 +10,7 @@ export function Body() {
 
   return (
     <>
-      <div className="studentcontent">
+      <div style={{display:"flex" , background:"white"}}  className="studentcontent">
         <div className="leftbox">
           <img src={banner} alt="banner" width="98%" />
           <br />
