@@ -1,123 +1,153 @@
-
 .teacher-list-container {
-  padding: 20px; /* Padding around the container */
-  border: 1px solid #ccc; /* Border around the main container */
-  border-radius: 8px; /* Rounded corners for the main container */
-  background-color: #fff; /* Background color for the container */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
-/* Search Container */
 .search-container {
-  display: flex; /* Use flexbox for alignment */
-  margin-bottom: 20px; /* Space between search bar and cards */
+  display: flex;
+  margin-bottom: 20px;
 }
 
-/* Aligning Search Box to the Left */
 .search-box {
   position: relative;
-  width: 100%; /* Full width for responsiveness */
-  max-width: 300px; /* Set a max width for the search box */
-  margin-right: 20px; /* Space between search box and teacher cards */
+  width: 100%;
+  max-width: 300px;
+  margin-right: 20px;
+  padding-top: 30px;
+ 
 }
 
 .search-input {
   text-align: center;
-  width: 100%; /* Full width of the search box */
-  padding: 12px 40px 12px 20px; /* Padding for input */
-  border-radius: 5px; /* Rounded corners */
-  border: none; /* Remove border */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  font-size: 16px; /* Font size for the input */
-  transition: box-shadow 0.3s; /* Transition for shadow on focus */
+  width: 100%;
+  padding: 12px 40px 12px 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.3s;
 }
 
 .search-input:focus {
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow on focus */
-  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 .search-icon {
   position: absolute;
-  left: 10px; /* Positioning the icon */
-  top: 50%; /* Center the icon vertically */
-  transform: translateY(-50%); /* Align icon in the middle */
-  color: green; /* Icon color */
-  font-size: 20px; /* Icon size */
+  left: 10px;
+  top: 50px;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 30px;
 }
 
-/* Teacher Card List */
 .teacher-card-list {
-  display: flex; /* Use flexbox for teacher cards */
-  flex-wrap: wrap; /* Allow wrapping of cards */
-  justify-content: flex-start; /* Align cards to the start */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-/* Individual Card */
 .card {
-  width: 100%; /* Full width by default */
-  max-width: 300px; /* Set a maximum width for each card */
-  margin: 10px; /* Space between cards */
-  border-radius: 8px; /* Rounded corners for cards */
-  transition: transform 0.2s; /* Animation for hover effect */
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
 
 .card-body {
-  padding: 15px; /* Padding inside card */
+  padding: 15px;
 }
 
-/* Text Styles */
 .card-title {
-  font-weight: bold; /* Bold title */
+  font-weight: bold;
 }
 
 .card-text {
-  font-size: 14px; /* Font size for text */
+  font-size: 14px;
 }
 
-/* Button Styles */
 .btn {
-  padding: 8px 12px; /* Button padding */
+  padding: 8px 12px;
 }
 
-/* Pagination Styles */
 .ant-pagination {
   display: flex;
-  justify-content: center; /* Center pagination controls */
-  margin-top: 20px; /* Space above pagination */
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Media Queries for Responsiveness */
+.btn-teal {
+  background-color: teal;
+  color: white;
+  border: none;
+}
+
+.text-center2 {
+  display: flex;
+  justify-content: right; /* Center the button horizontally */
+  text-decoration: none;
+  padding-bottom: 30px;
+  margin-top: 10px; /* Add space above the button */
+  
+}
+
+.sendbutton2 {
+  background-color: teal;
+  color: white; 
+  border: none;
+  border-radius: 25px; 
+  padding: 10px 20px; 
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; 
+  cursor: pointer;
+  width: 15%;
+  text-decoration: none;
+
+}
+
+.sendbutton2:hover {
+  background-color: #006666; /* Darker shade on hover */
+}
+
 @media (max-width: 768px) {
   .search-container {
-    flex-direction: column; /* Stack search components on smaller screens */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .search-box {
-    width: 100%; /* Full width on small screens */
-    max-width: none; /* Remove max-width for flexibility */
-    margin-bottom: 10px; /* Space below the search box */
+    width: 100%;
+    max-width: none;
+    margin-bottom: 10px;
+  }
+
+  .sendbutton2 {
+    width: 50%;
   }
 
   .teacher-card-list {
-    justify-content: flex-start; /* Align cards to the start on smaller screens */
+    justify-content: flex-start;
   }
 
   .card {
-    max-width: 90%; /* Increase card width on small screens */
+    max-width: 90%;
   }
 }
 
 @media (max-width: 576px) {
   .search-input {
-    font-size: 14px; /* Smaller font size on extra small screens */
+    font-size: 14px;
   }
 
   .search-icon {
-    font-size: 18px; /* Smaller icon size */
+    font-size: 18px;
   }
 }
