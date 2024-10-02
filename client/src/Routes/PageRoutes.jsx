@@ -31,10 +31,12 @@ const PagesRoutes = () => {
             <Route path='/' element={<Dashboardpage />} >
                 <Route path="student-dashboard" element={<Student />} />
                 <Route path="teacher-dashboard" element={<Teacher />} />
+
             </Route>
 
             {/* Just Added here for testing, need to link in sidebar */}
-            {/* <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
+            {/*
+             <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
             <Route path="/form" element={<FormPage/>} />
             <Route path="/exam-hall-allocation" element={<ExamHallAllocation/>} />
             <Route path="/exam-hall-allocation" element={<ExamHallAllocation/>} />
@@ -44,7 +46,9 @@ const PagesRoutes = () => {
             <Route path="/maintenance" element={<Maintenance/>} />
             <Route path="/lab-equipment" element={<LabEquipment/>} />
             <Route path="/furniture" element={<FurnitureInventory/>} />
-            <Route path="/electricals" element={<ElectricalsInventory/>} /> */}
+            <Route path="/electricals" element={<ElectricalsInventory/>} /> 
+            
+            */}
 
 
             <Route path="*" element={<ErrorRoutes />} />
