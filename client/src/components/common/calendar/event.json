@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "date": "2024-10-01",
+      "event": "React Bootcamp"
+    },
+    {
+      "id": 2,
+      "date": "2024-10-05",
+      "event": "Project Meeting"
+    },
+    {
+      "id": 3,
+      "date": "2024-10-12",
+      "event": "API Integration"
+    },
+    {
+      "id": 4,
+      "date": "2024-10-15",
+      "event": "Client Demo"
+    },
+    {
+      "id": 5,
+      "date": "2024-10-20",
+      "event": "Testing Phase"
+    }
+  ]
+  
