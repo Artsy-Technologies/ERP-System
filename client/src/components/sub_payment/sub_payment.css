@@ -1,0 +1,97 @@
+.payment-container {
+    max-width: 900px;
+    margin-top:40px;
+    margin-left: 450px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-section, .payment-method-section {
+    width: 45%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label {
+    display: block;
+   
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.fees-summary p {
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.fees-summary span {
+    float: right;
+}
+
+.payment-method {
+    margin-bottom: 10px;
+}
+
+.card-details input {
+    width: calc(33% - 10px);
+    margin-right: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.coupon-code {
+    margin-top: 20px;
+}
+
+.coupon-code input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.coupon-code button {
+    padding: 8px 12px;
+    border:none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.pay-button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
