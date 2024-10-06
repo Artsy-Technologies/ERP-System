@@ -3,10 +3,13 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import PagesRoutes from './Routes/PageRoutes.jsx';
 import axios from 'axios';
 import TeacherList from './components/Teacher/card/TeacherList.js';
-import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js"
-import TeacherDestails from './components/Teacher/TeacherDestails.js';
-axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js";
+import TeacherDetails from './components/Teacher/TeacherDetails.js';
+
+axios.defaults.baseURL = "http://localhost:8000/api"; 
 axios.defaults.withCredentials = process.env.REACT_APP_AXIOS_WITH_CREDENTIALS;
+
+
 
 function App() {
   return (
@@ -15,13 +18,12 @@ function App() {
           <Routes>
             <Route path="/*" element={<PagesRoutes />} />
             <Route path="/teachers" element={<TeacherList />} />
-            <Route path="/teacher/:name" element={<TeacherDestails />} /> {/* Teacher profile route */}
+            <Route path="/teacher/:id" element={<TeacherDetails />} /> 
             <Route path="/teachers/regform" element={<TeacherRegistrationForm/>}/>
-
           </Routes>
       </BrowserRouter>
     </ErrorBoundary>
   )
 }
 
-export default App
+export default App;
