@@ -1,0 +1,52 @@
+{
+    "menu": [
+      {
+        "title": "Home Page",
+        "path": "/home",
+        "icon": "CgSweden"
+      },
+      {
+        "title": "Faculty",
+        "items": [
+          {
+            "name": "Faculty Profile",
+            "path": "/faculty-profile"
+          },
+          {
+            "name": "Faculty Leave Application",
+            "path": "/faculty-leave-application"
+          }
+        ]
+      },
+      {
+        "title": "Student Related",
+        "items": [
+          {
+            "name": "Virtual Class",
+            "path": "/virtual-class"
+          },
+          {
+            "name": "Attendance Management",
+            "path": "/attendance-management"
+          },
+          {
+            "name": "Exam Room Allocation",
+            "path": "/exam-room-allocation"
+          },
+          {
+            "name": "Student Report Card",
+            "path": "/student-report-card"
+          },
+          {
+            "name": "Schedule Management",
+            "path": "/schedule-management"
+          },
+          {
+            "name": "Student Assignment",
+            "path": "/student-assignment"
+          }
+        ]
+      }
+    ]
+  }
+  
