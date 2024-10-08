@@ -21,6 +21,7 @@
     list-style-type: none;
     width: 90%;
     margin: 0.5rem 0;
+    margin: .5rem 0;
 }
 
 .sidebar-link {
@@ -42,6 +43,9 @@
 }
 
 .sidebar-link.active { /* Active class styling */
+}
+
+.sidebar-link:hover{
     background: white;
     color: black;
 }

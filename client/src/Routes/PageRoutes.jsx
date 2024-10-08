@@ -41,6 +41,14 @@ const PagesRoutes = () => {
             {/* Just Added here for testing, need to link in sidebar */}
             {/*
      
+                <Route path="student-dashboard" element={<Student />} />
+                <Route path="teacher-dashboard" element={<Teacher />} />
+
+            </Route>
+
+            {/* Just Added here for testing, need to link in sidebar */}
+            {/*
+             <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
             <Route path="/form" element={<FormPage/>} />
             <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
             <Route path="/exam-hall-allocation" element={<ExamHallAllocation/>} />
