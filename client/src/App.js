@@ -6,7 +6,7 @@ import TeacherList from './components/Teacher/card/TeacherList.js';
 import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js";
 import TeacherDetails from './components/Teacher/TeacherDetails.js';
 
-axios.defaults.baseURL = "http://localhost:8000/api"; 
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 axios.defaults.withCredentials = process.env.REACT_APP_AXIOS_WITH_CREDENTIALS;
 
 
