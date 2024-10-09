@@ -83,11 +83,17 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import connectDB from "./libs/databaseConnection.js";
-dotenv.config();
 import getUserRoutes from "./routes/userRoutes/getRoutes.js";
 import postUserRoutes from "./routes/userRoutes/postRoutes.js";
 import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
+import teacherRoutes from './routes/teachersRoute/teacherRoutes.js'; 
+import path from "path";
+import { fileURLToPath } from 'url';
+
+// Define __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 8000;
@@ -95,21 +101,35 @@ const port = 8000;
 app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(
   cors({
     origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    credentials: true, // if your backend requires credentials
+    credentials: true,
   })
 );
 
+// Define your routes
 app.use("/api", getUserRoutes);
 app.use("/api", postUserRoutes);
-app.use(`/api`, updateUserRoutes);
+app.use("/api", updateUserRoutes);
 app.use("/api", deleteUserRoutes);
+app.use('/api/teachers', teacherRoutes);
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log the error stack for debugging
+  res.status(500).send({ message: 'Something broke!' }); // Send a generic error message
+});
+
+// Start the server and connect to the database
 app.listen(port, async () => {
-  await connectDB();
-  console.log(`Server is running on port ${port}`);
+  try {
+    await connectDB();
+    console.log(`Server is running on port ${port}`);
+  } catch (error) {
+    console.error('Database connection failed:', error.message);
+  }
 });

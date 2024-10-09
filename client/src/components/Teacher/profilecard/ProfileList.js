@@ -1,40 +1,40 @@
-// ProfileList.js
-import React from "react";
-import ProfileCard from "./ProfileCard"; // Import the ProfileCard component
-import "./ProfileCard.css"; // Add your styles here
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ProfileCard from './ProfileCard'; 
+import axios from 'axios'; 
 
-const ProfileList = () => {
-  const teachers = [
-    {
-      name: "Samantha S",
-      role: "Teacher",
-      dob: "14/04/1981",
-      classSection: "12 D",
-      subject: "History",
-      expertise: ["World History", "Philosophy", "Prehistoric", "Culture", "Ancient"],
-      education: [
-        { degree: "History Major", institution: "University Akademi Historia", year: "2001-2004" },
-        { degree: "Master of History", institution: "University Akademi Historia", year: "2005-2009" },
-      ],
-      location: "Kerala, India",
-      email: "samantha@mail.com",
-      phone: "+12 345 6789 0",
-      image: "https://via.placeholder.com/150"
-    },
-    // Add more teachers if needed
-  ];
+const TeacherDetails = () => {
+  const { id } = useParams(); 
+  const [teacher, setTeacher] = useState(null);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
-  return (
-    <div className="container">
-      <div className="row">
-        {teachers.map((teacher, index) => (
-          <div key={index} className="col-md-6 mb-4">
-            <ProfileCard teacher={teacher} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    const fetchTeacher = async () => {
+      try {
+        const response = await axios.get(`/teachers/${id}`);
+        console.log(response.data); 
+        setTeacher(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching teacher:', error);
+        setError('Failed to fetch teacher details');
+        setLoading(false);
+      }
+    };
+
+    fetchTeacher();
+  }, [id]);
+
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
+
+  if (error) {
+    return <div>{error}</div>; 
+  }
+
+  return <ProfileCard teacher={teacher} />; 
 };
 
-export default ProfileList;
+export default TeacherDetails;

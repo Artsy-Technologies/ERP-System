@@ -1,41 +1,53 @@
-// ProfileCard.js
 import React from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa"; // icons
-import "./ProfileCard.css"; // Add your styles here
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import "./ProfileCard.css";
 
-// ProfileCard component that accepts teacher details as props
 const ProfileCard = ({ teacher }) => {
+  // Check if teacher is defined and provide default values
+  if (!teacher) {
+    return <div>No teacher data available.</div>; // Fallback if teacher is undefined
+  }
+
+  // Create expertise based on available information
+  const expertise = teacher.subject ? [teacher.subject] : []; // Adjust based on your logic
+  const education = [
+    {
+      degree: teacher.ugCourse,
+      institution: teacher.ugUniversity,
+      year: teacher.ugYear,
+    },
+    {
+      degree: teacher.pgCourse,
+      institution: teacher.pgUniversity,
+      year: teacher.pgYear,
+    },
+  ]; // Construct education array
+
   return (
-    <div className=" profile-card ">
-      {/* Header */}
+    <div className="profile-card">
       <div className="card-header bg-primary text-white">
         <div className="row align-items-center">
-          {/* Image on the left */}
           <div className="col-md-4 d-flex justify-content-center">
             <img
-              src={teacher.image}
+              src={`http://localhost:8000/uploads/${teacher.photo}`} // Combine the base URL with the photo filename
               alt="Profile"
               className="rounded-circle profile-img"
             />
           </div>
-
-          {/* Name and role on the right */}
           <div className="col-md-8">
-            <h2 className="name">{teacher.name}</h2>
-            <p className="role">{teacher.role}</p>
+            <h2 className="name">{teacher.fullName}</h2>
+            <p className="role">{teacher.subject}</p> {/* You may want to change this */}
           </div>
         </div>
       </div>
 
-      {/* Body */}
       <div className="card-body">
-        {/* Details Section */}
         <section className="details-section">
           <h3>Details</h3>
           <div className="row">
             <div className="col-6">
-              <p><strong>DOB:</strong> {teacher.dob}</p>
-              <p><strong>Class:</strong> {teacher.classSection}</p>
+              <p><strong>DOB:</strong> {teacher.dob.split("T")[0]}</p> {/* Format DOB */}
+              <p><strong>Class:</strong> {teacher.classAllotted}</p> {/* Use correct property */}
             </div>
             <div className="col-6">
               <p><strong>Subject:</strong> {teacher.subject}</p>
@@ -43,28 +55,33 @@ const ProfileCard = ({ teacher }) => {
           </div>
         </section>
 
-        {/* Education Section */}
         <section className="education-section">
           <h3>Education</h3>
-          {teacher.education.map((edu, index) => (
-            <p key={index}>
-              <strong>{edu.degree}</strong>, {edu.institution} ({edu.year})
-            </p>
-          ))}
+          {education.length > 0 ? (
+            education.map((edu, index) => (
+              <p key={index}>
+                <strong>{edu.degree}</strong>, {edu.institution} ({edu.year})
+              </p>
+            ))
+          ) : (
+            <p>No education information available.</p> // Fallback if education is empty
+          )}
         </section>
 
-        {/* Expertise Section */}
         <section className="expertise-section">
           <h3>Expertise</h3>
-          <p>{teacher.expertise.join(", ")}</p>
+          {expertise.length > 0 ? (
+            <p>{expertise.join(", ")}</p>
+          ) : (
+            <p>N/A</p> // Display N/A if no expertise
+          )}
         </section>
 
-        {/* Contact Section */}
         <section className="contact-section">
           <h3>Contact</h3>
-          <p><FaMapMarkerAlt className="icon" /> {teacher.location}</p>
+          <p><FaMapMarkerAlt className="icon" /> {teacher.address}</p> {/* Use correct property */}
           <p><FaEnvelope className="icon" /> {teacher.email}</p>
-          <p><FaPhoneAlt className="icon" /> {teacher.phone}</p>
+          <p><FaPhoneAlt className="icon" /> {teacher.phoneNumber}</p> {/* Use correct property */}
         </section>
       </div>
     </div>
