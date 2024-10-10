@@ -7,11 +7,13 @@ import LandingPage from '../pages/LandingPage/LandingPage'
 import Student from '../pages/Student/student.jsx'
 import Teacher from '../pages/Teacher/teacher.jsx';
 import Dashboardpage from '../components/Layouts/Dashboardpage.jsx';
+import TeacherLayout from '../pages/Teacher/TeacherAdminLayout.jsx';
+import StudentAdminLayout from '../pages/Student/StudentAdminLayout.jsx';
 
-// import TransportDashboard from '../pages/AdminDashboard/Transport/Transport'
+import TransportDashboard from '../pages/AdminDashboard/Transport/Transport'
 // import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
 // import ExamHallAllocation from '../components/Teacher/Exam Hall Allocation/ExamHallAllocation.js';
-// import Inventorymain from '../pages/AdminDashboard/Transport/InventoryManagement/Inventorymain.js';
+import Inventorymain from '../pages/AdminDashboard/Transport/InventoryManagement/Inventorymain.js';
 // import SportsInventory from '../components/Admin/Inventorymanagement/sports/SportsEquipment.js';
 // import PlumbingInventory from '../components/Admin/Inventorymanagement/plumber/Plumbing.js';
 // import Maintenance from '../components/Admin/Inventorymanagement/maintenance/Maintenance.js';
@@ -29,6 +31,16 @@ const PagesRoutes = () => {
 
 
             <Route path='/' element={<Dashboardpage />} >
+                <Route path="inventory" element={<Inventorymain />} />
+            </Route>
+
+            <Route path='/student-dashboard' element={<StudentAdminLayout />} />
+            <Route path='/teacher-dashboard' element={<TeacherLayout />} />
+
+
+            {/* Just Added here for testing, need to link in sidebar */}
+            {/*
+     
                 <Route path="student-dashboard" element={<Student />} />
                 <Route path="teacher-dashboard" element={<Teacher />} />
 
@@ -38,9 +50,9 @@ const PagesRoutes = () => {
             {/*
              <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
             <Route path="/form" element={<FormPage/>} />
+            <Route path='/admin-dashboard-transport' element={<TransportDashboard />} />
             <Route path="/exam-hall-allocation" element={<ExamHallAllocation/>} />
             <Route path="/exam-hall-allocation" element={<ExamHallAllocation/>} />
-            <Route path="/Inventorymain" element={<Inventorymain/>} />
             <Route path="/sports-equipment" element={<SportsInventory/>} />
             <Route path="/plumbing" element={<PlumbingInventory/>} />
             <Route path="/maintenance" element={<Maintenance/>} />
