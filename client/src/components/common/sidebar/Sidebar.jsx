@@ -1,5 +1,3 @@
-import './sidebar.css';
-import { sidebar } from '../../../assets/webData/sidebar'; // Assuming the JSON data is exported from a separate file
 import { NavLink } from 'react-router-dom'; // Use NavLink for active class
 import './sidebar.css'
 import { sidebar } from '../../../assets/webData/sidebar'; // Assuming the JSON data is exported from a separate file
