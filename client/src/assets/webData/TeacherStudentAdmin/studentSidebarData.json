@@ -1,0 +1,64 @@
+{
+    "menu": [
+      {
+        "title": "Home Page",
+        "icon": "bi-house",
+        "path": "/home"
+      },
+      {
+        "title": "ACADEMIC",
+        "items": [
+          {
+            "name": "Student Profile",
+            "path": "/student-profile"
+          },
+          {
+            "name": "Attendance Management",
+            "path": "/attendance-management"
+          },
+          {
+            "name": "Timetable And Schedule",
+            "path": "/timetable"
+          },
+          {
+            "name": "Grade and Report Card",
+            "path": "/grades"
+          },
+          {
+            "name": "Digital Library",
+            "path": "/digital-library"
+          },
+          {
+            "name": "Exam Alerts",
+            "path": "/exam-alerts"
+          },
+          {
+            "name": "Virtual Classes",
+            "path": "/virtual-classes"
+          },
+          {
+            "name": "Doubt Clearance",
+            "path": "/doubt-clearance"
+          },
+          {
+            "name": "Assignments",
+            "path": "/assignments"
+          }
+        ]
+      },
+      {
+        "title": "SERVICES",
+        "items": [
+          {
+            "name": "Payment Management",
+            "path": "/payment-management"
+          },
+          {
+            "name": "Faculty Feedback",
+            "path": "/faculty-feedback"
+          }
+        ]
+      }
+    ]
+  }
+  

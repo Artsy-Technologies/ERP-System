@@ -8,8 +8,8 @@ import "../../../../components/Admin/Inventorymanagement/inventory.css";
 function Inventorymain() {
   return (
     <>
-    <div className="p-12">
-      <h1 className="text-red">Inventory Management</h1>
+    <div style={{padding:"2rem"}} className=" ">
+      <h3 className="text-red">Inventory Management</h3>
       <Categories />
       <main className="main-content">
         <Inventory /> {/* Display Inventory and Asset History */}
