@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-
+import ExamAlerts from '../components/Students/ExamAlerts/ExamAlerts.jsx';
 import { Routes, Route } from 'react-router-dom';
 import ErrorRoutes from './ErrorRoutes';
 import LandingPage from '../pages/LandingPage/LandingPage'
@@ -62,6 +62,7 @@ const PagesRoutes = () => {
             
             */}
 
+             <Route path='/ExamAlerts' element={<ExamAlerts />} />
 
             <Route path="*" element={<ErrorRoutes />} />
         </Routes>

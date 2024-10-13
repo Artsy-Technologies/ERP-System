@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router-dom'; // Use NavLink for active class
+/*import { NavLink } from 'react-router-dom'; // Use NavLink for active class
 import './sidebar.css'
 import { sidebar } from '../../../assets/webData/sidebar'; // Assuming the JSON data is exported from a separate file
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
+    <>
     <aside className='sidebarCantainer'>
       <div>
         <img src='/logo.png' alt='logo' width={250} className='sidebarlogo' />
@@ -33,7 +34,9 @@ const Sidebar = () => {
         ))}
       </div>
     </aside>
+    </>
   );
 };
 
 export default Sidebar;
+*/
