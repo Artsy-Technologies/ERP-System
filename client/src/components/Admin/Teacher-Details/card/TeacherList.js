@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import TeacherCard from './TeacherCard';
-import { Pagination } from 'antd';
-import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import axios from 'axios'; // Import Axios
-import './TeacherList.css';
-import LeaveRequests from '../leaveTable/LeaveRequests';
+import React, { useState, useEffect } from "react";
+import TeacherCard from "./TeacherCard";
+import { Pagination } from "antd";
+import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import axios from "axios"; // Import Axios
+import "./TeacherList.css";
+import LeaveRequests from "../leaveTable/LeaveRequests";
 
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]); // State to hold teacher data
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const pageSize = 6;
 
   // Base URL for images
-  const baseUrl = 'http://localhost:8000/uploads/'; // Adjust as needed
+  const baseUrl = "http://localhost:8000/uploads/"; // Adjust as needed
 
   // Fetch teachers data from the backend
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get('/teachers'); // Adjust the URL as needed
+        const response = await axios.get("/teachers"); // Adjust the URL as needed
         setTeachers(response.data); // Assuming the response data is an array of teacher objects
       } catch (error) {
-        console.error('Error fetching teachers:', error);
+        console.error("Error fetching teachers:", error);
       }
     };
 
     fetchTeachers();
   }, []);
 
-  const filteredTeachers = teachers.filter(teacher =>
-    teacher.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    teacher.subject.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredTeachers = teachers.filter(
+    (teacher) =>
+      teacher.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      teacher.subject.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const startIndex = (currentPage - 1) * pageSize;
@@ -59,7 +60,9 @@ const TeacherList = () => {
         </div>
         <Link to={`/teachers/regform`}>
           <div className="text-center2">
-            <button type="submit" className="sendbutton2">+ New Teacher</button>
+            <button type="submit" className="sendbutton2">
+              + New Teacher
+            </button>
           </div>
         </Link>
         <div className="teacher-card-list">

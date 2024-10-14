@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExamHall.css"; // Ensure this path is correct
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Sidebar from '../../../pages/Teacher/Sidebar'
+import Sidebar from '../components/LeftSidebar'
 import FacultyImg from './Images/faculty.png'
 import ArrowImg from './Images/arrow.png'
 import {

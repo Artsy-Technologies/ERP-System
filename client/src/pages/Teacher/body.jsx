@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import banner from '../../assets/Images/teacher.png';
 import LeftSidebar from '../../components/Teacher/components/LeftSidebar';
 import FacultyList from '../../components/Teacher/components/FacultyList';

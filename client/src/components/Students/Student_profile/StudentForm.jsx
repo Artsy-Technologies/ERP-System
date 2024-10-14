@@ -3,16 +3,11 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGear,
-  faHouse,
   faPencilAlt,
-  faPerson,
-  faPersonCircleCheck,
-  faScrewdriver,
   faSearch,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faCircleUser, faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
-import StudentNav from "./student_nav";
 
 const StudentForm = ({ student, onSubmit }) => {
   const [formValues, setFormValues] = useState({
@@ -133,24 +128,7 @@ const StudentForm = ({ student, onSubmit }) => {
 
   return (
     <>
-      <header className="header">
-        <div className="search-bar">
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder="Search..." />
-        </div>
-        <div className="icons">
-          <div className="icon notifications">
-            <FontAwesomeIcon icon={faBell} />
-          </div>
-          <div className="icon profile">
-            <FontAwesomeIcon icon={faCircleUser} />
-          </div>
-        </div>
-      </header>
       <div className="fullcontainer">
-        <div className="left-section">
-          <StudentNav />
-        </div>
         <div className="mid-section">
           <p>
             <b>

@@ -10,11 +10,11 @@
         "items": [
           {
             "name": "Faculty Profile",
-            "path": "/faculty-profile"
+            "path": "/teacher-dashboard/faculty-profile"
           },
           {
             "name": "Faculty Leave Application",
-            "path": "/faculty-leave-application"
+            "path": "/teacher-dashboard/faculty-leave-application"
           }
         ]
       },
@@ -23,27 +23,27 @@
         "items": [
           {
             "name": "Virtual Class",
-            "path": "/virtual-class"
+            "path": "/teacher-dashboard/virtual-class"
           },
           {
             "name": "Attendance Management",
-            "path": "/attendance-management"
+            "path": "/teacher-dashboard/attendance-management"
           },
           {
             "name": "Exam Room Allocation",
-            "path": "/exam-room-allocation"
+            "path": "/teacher-dashboard/exam-room-allocation"
           },
           {
             "name": "Student Report Card",
-            "path": "/student-report-card"
+            "path": "/teacher-dashboard/student-report-card"
           },
           {
             "name": "Schedule Management",
-            "path": "/schedule-management"
+            "path": "/teacher-dashboard/schedule-management"
           },
           {
             "name": "Student Assignment",
-            "path": "/student-assignment"
+            "path": "/teacher-dashboard/student-assignment"
           }
         ]
       }
