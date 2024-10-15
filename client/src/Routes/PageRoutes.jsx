@@ -32,7 +32,7 @@ import Attendance from "../components/Students/Attendance/Attendance.jsx";
 import TimeTable from "../components/Students/Timetable_students/Timetable.js";
 import GradeAndReport from "../components/Students/GradeAndReport/GradeAndReport.jsx";
 import DigitalLibraryMainPage from "../components/Students/DigitalLibrary/digital_library_main_page.jsx";
-// import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx";
+import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx"
 import VirtualClass from "../components/Students/VirtualClass/VirtualClass.jsx";
 import Doubt from "../components/Students/DoubtClearance/Doubt.js";
 import Assignment from "../components/Students/Assignment/Assignment.js";
@@ -103,7 +103,7 @@ const PagesRoutes = () => {
         <Route path="timetable" element={<TimeTable />} />
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
-        {/* <Route path='exam-alerts' element={<ExamAlerts/>} /> */}
+        <Route path='exam-alerts' element={<ExamAlerts/>} />
         <Route path="virtual-classes" element={<VirtualClass />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
