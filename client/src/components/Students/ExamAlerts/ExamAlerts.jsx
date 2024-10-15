@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-/*import Sidebar from '../components/Sidebar_students/Sidebar.js';
-import Header from '../components/Header/Header.js';*/
 
 function ExamAlerts() {
   const [searchActive, setSearchActive] = useState(false);
@@ -14,21 +12,19 @@ function ExamAlerts() {
     <div className="d-flex vh-100">
       <aside className="bg-dark text-white p-3" style={{ width: '250px' }}>
         <div className="mb-4">
-          <img src="exam-alerts\src\images\logo.png" alt="Logo" className="img-fluid"/>
+          <img src="exam-alerts\src\images\logo.png" alt="Logo" className="img-fluid" />
         </div>
-        
       </aside>
 
       <main className="flex-grow-1 bg-light p-4">
-        
-
         <div className="d-flex justify-content-between align-items-center bg-white p-3 rounded mb-4">
           <button className="btn btn-link" onClick={() => window.history.back()}>&larr;</button>
           <h1 className="h3">EXAM ALERTS</h1>
           <button className="btn btn-outline-secondary">Student Portal</button>
         </div>
 
-        <div className="row g-4">
+        {/* First row of alerts */}
+        <div className="row g-4 align-items-start">
           <div className="col-md-6">
             <h2 className="h5 mb-3">TESTS</h2>
             <div className="alert alert-secondary p-3">
@@ -41,6 +37,7 @@ function ExamAlerts() {
             </div>
           </div>
           <div className="col-md-6">
+            <h2 className="h5 mb-3 invisible">Placeholder</h2> {/* Keeps header alignment consistent */}
             <div className="alert alert-secondary p-3">
               <p className="mb-1">Physics practical test on 1st June 24</p>
               <small>Topics: Wheatstone bridge, mirrors</small>
@@ -52,7 +49,8 @@ function ExamAlerts() {
           </div>
         </div>
 
-        <div className="row g-4 mt-4">
+        {/* Second row of alerts */}
+        <div className="row g-4 align-items-start mt-4">
           <div className="col-md-6">
             <h2 className="h5 mb-3">EXAMS</h2>
             <div className="alert alert-secondary p-3">
@@ -65,6 +63,7 @@ function ExamAlerts() {
             </div>
           </div>
           <div className="col-md-6">
+            <h2 className="h5 mb-3 invisible">Placeholder</h2> {/* Keeps header alignment consistent */}
             <div className="alert alert-secondary p-3">
               <p className="mb-1">Mid Sem exam starts on 2nd November 24</p>
               <small>Till mid-term portions</small>
@@ -81,4 +80,3 @@ function ExamAlerts() {
 }
 
 export default ExamAlerts;
-
