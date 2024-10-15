@@ -6,6 +6,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^6.1.1",
@@ -19,6 +20,7 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-circular-progressbar": "^2.1.0",
+    "react-datepicker": "^7.4.0",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
     "react-icons": "^5.3.0",
@@ -26,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.5",
     "recharts": "^2.12.7",
+    "sweetalert2": "^11.14.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

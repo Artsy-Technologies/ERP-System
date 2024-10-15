@@ -87,7 +87,8 @@ import getUserRoutes from "./routes/userRoutes/getRoutes.js";
 import postUserRoutes from "./routes/userRoutes/postRoutes.js";
 import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
-import teacherRoutes from './routes/teachersRoute/teacherRoutes.js'; 
+import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
+import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
 import path from "path";
 import { fileURLToPath } from 'url';
 
@@ -117,6 +118,7 @@ app.use("/api", postUserRoutes);
 app.use("/api", updateUserRoutes);
 app.use("/api", deleteUserRoutes);
 app.use('/api/teachers', teacherRoutes);
+app.use("/api/assignment", assignmentRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
