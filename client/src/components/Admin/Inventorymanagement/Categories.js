@@ -12,37 +12,37 @@ import sportsImg from './images/sports.png'
 const Categories = () => {
   return (
     <div className="categories">
-      <Link to="/lab-equipment" className="category-box">
+      <Link to="/admin-dashboard/inventory/lab-equipment" className="category-box">
         <img src={labImg} alt="Lab Equipment" />
         <p>Lab Equipment</p>
         <span>Machines, tools, and more</span>
       </Link>
       
-      <Link to="/furniture" className="category-box">
+      <Link to="/admin-dashboard/inventory/furniture" className="category-box">
         <img src={furnitureImg} alt="Furniture" />
         <p>Furniture</p>
         <span>Desks, chairs, and more</span>
       </Link>
       
-      <Link to="/electricals" className="category-box">
+      <Link to="/admin-dashboard/inventory/electricals" className="category-box">
         <img src={electricImg} alt="Electricals" />
         <p>Electricals</p>
         <span>Lights, circuits, and more</span>
       </Link>
       
-      <Link to="/plumbing" className="category-box">
+      <Link to="/admin-dashboard/inventory/plumbing" className="category-box">
         <img src={plumberImg} alt="Plumbing" />
         <p>Plumbing</p>
         <span>Fixtures, pipelines, and more</span>
       </Link>
       
-      <Link to="/sports-equipment" className="category-box">
+      <Link to="/admin-dashboard/inventory/sports-equipment" className="category-box">
         <img src={sportsImg} alt="Sports Equipment" />
         <p>Sports Equipment</p>
         <span>Balls, nets, and more</span>
       </Link>
       
-      <Link to="/maintenance" className="category-box">
+      <Link to="/admin-dashboard/inventory/maintenance" className="category-box">
         <img src={maintainanceImg} alt="Maintenance" />
         <p>Maintenance</p>
         <span>Repairs, service, and more</span>

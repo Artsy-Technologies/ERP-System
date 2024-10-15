@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import StudentForm from "./StudentForm";
-import StudentNav from "./student_nav";
 
 const StudentProfile = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -15,10 +14,7 @@ const StudentProfile = () => {
 
   return (
     <div>
-      
       {/* <StudentList onStudentClick={handleStudentClick} /> */}
-
-
 
       <StudentForm student={selectedStudent} onSubmit={handleFormSubmit} />
     </div>
