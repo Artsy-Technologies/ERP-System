@@ -4,32 +4,32 @@ export const sidebar = {
   "sidebarItems": [
     {
       "text": "Dashboard",
-      "link": "/dashboard",
+      "link": "admin-dashboard/dashboard",
       "icon": <FaTachometerAlt />
     },
     {
       "text": "Teacher",
-      "link": "/teacher",
+      "link": "admin-dashboard/teacher",
       "icon": <FaChalkboardTeacher />
     },
     {
       "text": "Students",
-      "link": "/students",
+      "link": "admin-dashboard/students",
       "icon": <FaUserGraduate />
     },
     {
       "text": "Finance",
-      "link": "/finance",
+      "link": "admin-dashboard/finance",
       "icon": <FaMoneyBill />
     },
     {
       "text": "Transport",
-      "link": "/transport",
+      "link": "admin-dashboard/transport",
       "icon": <FaBus />
     },
     {
       "text": "Inventory Management",
-      "link": "/inventory",
+      "link": "admin-dashboard/inventory",
       "icon": <FaWarehouse />
     }
   ]

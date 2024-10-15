@@ -1,7 +1,7 @@
 import React from "react";
 import "./Assignment_t.css";
 
-const Assignment_t = () => {
+const AssignmentT = () => {
   return (
     <>
       <div></div>
@@ -197,4 +197,4 @@ const Assignment_t = () => {
     </>
   );
 };
-export default Assignment_t;
+export default AssignmentT;

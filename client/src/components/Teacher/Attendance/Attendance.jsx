@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Attendance_t = () => {
+const AttendanceT = () => {
   return (
     <div>
       Attendance Management page goes here
@@ -8,4 +8,4 @@ const Attendance_t = () => {
   )
 }
 
-export default Attendance_t
+export default AttendanceT

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ExamHall.css"; // Ensure this path is correct
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Sidebar from '../components/LeftSidebar'
 import FacultyImg from './Images/faculty.png'
 import ArrowImg from './Images/arrow.png'
 import {
@@ -56,7 +55,6 @@ const ExamHallAllocation = () => {
 
   return (
     <div>
-      <Sidebar/>
       <button className="toggle-btn" id="toggle-btn" onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} />
       </button>

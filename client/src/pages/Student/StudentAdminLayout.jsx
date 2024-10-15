@@ -1,5 +1,5 @@
 import LeftSide from "../../components/StudentTeacherDashboard/Sidebar";
-import sidebarData from "../../assets/webData/TeacherStudentAdmin/studentSidebarData.json";
+import sidebarData from "../../assets/webData/TeacherStudentAdmin/studentSidebarData.json"
 import { Outlet } from "react-router-dom";
 import Header from "../../components/common/header/Header";
 

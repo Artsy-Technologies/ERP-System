@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VirtualClass_t = () => {
+const VirtualClassT = () => {
   return (
     <div>
       VirtualClass page goes here
@@ -8,4 +8,4 @@ const VirtualClass_t = () => {
   )
 }
 
-export default VirtualClass_t
+export default VirtualClassT
