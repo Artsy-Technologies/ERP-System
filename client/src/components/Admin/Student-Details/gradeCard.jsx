@@ -7,7 +7,7 @@ const GradeAndReport = () => {
                 <div style={{ position: 'absolute', color: 'rgb(244, 119, 36)', fontSize: '20px', fontFamily: 'Arial', fontWeight: 'bold', top: '10px', left: '100px' }}>
                     Grade and Report
                 </div>
-                <div style={{ position: 'absolute', top: '40px', left: '10px' }}>
+                <div style={{ position: 'absolute', top: '40px', left: '20px' }}>
                     <select style={{ borderRadius: '5px', height: '30px', border: '1px solid rgb(207, 204, 204)', fontSize: '12px', width: '160px', color: 'gray' }}>
                         <option value="">Please Select Exam</option>
                         <option value="Literature">Literature</option>
