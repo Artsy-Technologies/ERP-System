@@ -10,39 +10,39 @@
         "items": [
           {
             "name": "Student Profile",
-            "path": "/student-profile"
+            "path": "/student-dashboard/student-profile"
           },
           {
             "name": "Attendance Management",
-            "path": "/attendance-management"
+            "path": "/student-dashboard/attendance-management"
           },
           {
             "name": "Timetable And Schedule",
-            "path": "/timetable"
+            "path": "/student-dashboard/timetable"
           },
           {
             "name": "Grade and Report Card",
-            "path": "/grades"
+            "path": "/student-dashboard/grades"
           },
           {
             "name": "Digital Library",
-            "path": "/digital-library"
+            "path": "/student-dashboard/digital-library"
           },
           {
             "name": "Exam Alerts",
-            "path": "/exam-alerts"
+            "path": "/student-dashboard/exam-alerts"
           },
           {
             "name": "Virtual Classes",
-            "path": "/virtual-classes"
+            "path": "/student-dashboard/virtual-classes"
           },
           {
             "name": "Doubt Clearance",
-            "path": "/doubt-clearance"
+            "path": "/student-dashboard/doubt-clearance"
           },
           {
             "name": "Assignments",
-            "path": "/assignments"
+            "path": "/student-dashboard/assignments"
           }
         ]
       },
@@ -51,11 +51,11 @@
         "items": [
           {
             "name": "Payment Management",
-            "path": "/payment-management"
+            "path": "/student-dashboard/payment-management"
           },
           {
             "name": "Faculty Feedback",
-            "path": "/faculty-feedback"
+            "path": "/student-dashboard/faculty-feedback"
           }
         ]
       }

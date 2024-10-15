@@ -1,9 +1,16 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav } from "react-bootstrap";
 import { CgSweden } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 const LeftSide = ({ sidebarData }) => {
+  const navigate = useNavigate();
+
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  }
+
   return (
     <div className="d-flex flex-column bg-dark text-white p-3 sticky-top" style={{ width: "30%", minHeight: "100vh" }}>
       {/* Sidebar Header */}
@@ -23,7 +30,7 @@ const LeftSide = ({ sidebarData }) => {
                 {menuItem.items.map((item, idx) => (
                   <Nav.Link
                     key={idx}
-                    href={item.path}
+                    onClick={() => handleNavigation(item.path)}
                     className="text-white"
                     style={{ fontSize: "14px", fontWeight: "500", padding: "3px 0", marginBottom: "3px", marginLeft: "20px" }}>
                     {item.name}

@@ -3,13 +3,12 @@ import "./libraryApp.css";
 import { faArrowLeft, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StudentNav from "../Student_profile/student_nav.jsx";
 import BookCard from "./BookCard";
 import HistoryBookList from "./Historybooklist";
 import BookPopup from "./Openbookpopup";
 import DueBookList from "./DueBookList";
 import { useNavigate } from "react-router-dom";
-import { getRecommendedBooks, getRecentReadings } from "../../../Api/bookapi.js";
+import { getRecommendedBooks, getRecentReadings } from "./Api/bookapi";
 
 const DigitalLibraryMainPage = () => {
   const navigate = useNavigate();
@@ -210,29 +209,7 @@ const DigitalLibraryMainPage = () => {
 
   return (
     <>
-      <header className="header">
-        <div className="search-bar">
-          <FontAwesomeIcon icon={faSearch} />
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm} // Track search input
-            onChange={handleSearchChange} // Handle search input change
-          />
-        </div>
-        <div className="icons">
-          <div className="icon notifications">
-            <FontAwesomeIcon icon={faBell} />
-          </div>
-          <div className="icon profile">
-            <FontAwesomeIcon icon={faCircleUser} />
-          </div>
-        </div>
-      </header>
       <div className="fullcontainer">
-        <div className="left-section">
-          <StudentNav />
-        </div>
         <div className="library-section">
           <div className="main-page">
             <header>

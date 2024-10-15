@@ -1,7 +1,7 @@
-import React from 'react';
-import { sidebarData } from '../../../assets/webData/techerspagedata';
-import '../../../pages/Teacher/teacher.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
+import React from "react";
+import { sidebarData } from "../../assets/webData/techerspagedata";
+import "../../pages/Teacher/teacher.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported
 
 const LeftSidebar = ({ banner }) => {
   return (

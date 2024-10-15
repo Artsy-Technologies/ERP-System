@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import banner from '../../assets/Images/teacher.png';
-// import '../../components/Calendar/calendar.css';
-import CalendarComponent from '../../components/Teacher/components/Calendar';
-import '../../pages/Teacher/teacher.css'
-import LeftSidebar from '../../components/Teacher/components/LeftSidebar';
-import FacultyList from '../../components/Teacher/components/FacultyList';
-import Calendar from '../../components/common/calendar/Calendar';
+import React, { useEffect } from "react";
+import banner from "../../assets/Images/teacher.png";
+import CalendarComponent from "../../components/StudentTeacherDashboard/Calendar";
+import "../../pages/Teacher/teacher.css";
+import LeftSidebar from "../../components/StudentTeacherDashboard/LeftSidebar";
+import FacultyList from "../../components/StudentTeacherDashboard/FacultyList";
+import Calendar from "../../components/common/calendar/Calendar";
 
 export function Body() {
   useEffect(() => {
@@ -13,11 +12,14 @@ export function Body() {
   }, []);
 
   return (
-    <div style={{ display: "flex", background: "white" }} className="teachercontent">
+    <div
+      style={{ display: "flex", background: "white" }}
+      className="studentcontent"
+    >
       <LeftSidebar banner={banner} />
       <div>
         <Calendar />
-        {/* <FacultyList /> */}
+        <FacultyList />
       </div>
     </div>
   );
