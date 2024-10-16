@@ -7,12 +7,10 @@ import {
   faBell,
   faGear,
   faPencilAlt,
-  faQuestionCircle,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import TeachersNav from "./teacher_nav";
 import axios from "axios";
 
 const TeacherForm = ({ teacher, onSubmit }) => {
@@ -133,25 +131,7 @@ const TeacherForm = ({ teacher, onSubmit }) => {
 
   return (
     <>
-      <header className="header">
-        <div className="search-bar">
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder="Search..." />
-        </div>
-        <div className="icons">
-          <div className="icon notifications">
-            <FontAwesomeIcon icon={faBell} />
-          </div>
-          <div className="icon profile">
-            <FontAwesomeIcon icon={faCircleUser} />
-          </div>
-        </div>
-      </header>
       <div className="fullcontainer">
-        <div className="left-section">
-          <TeachersNav />
-        </div>
-
         <div className="mid-section">
           <p>
             <b>

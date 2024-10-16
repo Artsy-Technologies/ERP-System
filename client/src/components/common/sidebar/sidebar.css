@@ -20,8 +20,8 @@
 .sidebar-item {
     list-style-type: none;
     width: 90%;
+    margin: 0.5rem 0;
     margin: .5rem 0;
-
 }
 
 .sidebar-link {
@@ -34,6 +34,15 @@
     padding: 1rem 0;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover/active */
+}
+
+.sidebar-link:hover {
+    background: white;
+    color: black;
+}
+
+.sidebar-link.active { /* Active class styling */
 }
 
 .sidebar-link:hover{

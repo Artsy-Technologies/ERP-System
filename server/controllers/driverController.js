@@ -1,35 +1,60 @@
-// controllers/driverController.js
-const Driver = require('../models/Driver');
+// controllers/vehicleController.js
+import Vehicle from '../libs/models/Transport/Vehicle.js';
+import Driver from '../libs/models/Transport/Driver.js';
 
-// Get all drivers
-const getAllDrivers = async (req, res) => {
+// Get all vehicles
+export const getAllVehicles = async (req, res) => {
   try {
-    const drivers = await Driver.find();
-    res.json(drivers);
+    const vehicles = await Vehicle.find().populate('driver'); // Populate driver details
+    res.json(vehicles);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-// Add a new driver
-const addDriver = async (req, res) => {
-  const { name, licenseNumber, phoneNumber } = req.body;
+// Add a new vehicle
+export const addVehicle = async (req, res) => {
+  const { model, numberPlate, driverId } = req.body;
 
-  const driver = new Driver({
-    name,
-    licenseNumber,
-    phoneNumber,
+  const vehicle = new Vehicle({
+    model,
+    numberPlate,
+    driver: driverId,
+    status: 'Available',
+    statistics: {
+      averageKm: 0,
+      distanceTravelled: 0,
+      averageFuelConsumption: 0,
+      fuelLeft: 0,
+    },
   });
 
   try {
-    const newDriver = await driver.save();
-    res.status(201).json(newDriver);
+    const newVehicle = await vehicle.save();
+    res.status(201).json(newVehicle);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
-module.exports = {
-  getAllDrivers,
-  addDriver,
+// Assign a driver to a vehicle
+export const assignDriver = async (req, res) => {
+  try {
+    const vehicle = await Vehicle.findById(req.params.vehicleId);
+    const driver = await Driver.findById(req.params.driverId);
+
+    if (!vehicle || !driver) {
+      return res.status(404).json({ message: 'Vehicle or Driver not found' });
+    }
+
+    vehicle.driver = driver._id;
+    driver.assignedVehicle = vehicle._id;
+
+    await vehicle.save();
+    await driver.save();
+
+    res.json({ vehicle, driver });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };
