@@ -106,7 +106,7 @@ const styles = {
     width: '60px',
     height: '30px',
     border: 'none',
-    borderRadius: '5px',
+    borderRadius: '6px',
     cursor:'pointer',
   },
   buttonReceipt: {
