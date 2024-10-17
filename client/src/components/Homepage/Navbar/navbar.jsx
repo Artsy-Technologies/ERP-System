@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "../../../assets/Images/HomePage/logo.png";
 import "./navbarStyle.css";
+import { Link as ScrollLink } from 'react-scroll';
 import { Link } from "react-router-dom";
 
 import axios from "axios";
@@ -72,9 +73,9 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
+       <ScrollLink to="/" className="navbar-brand">
             <img src={logo} alt="logo" width="350px" />
-          </Link>
+        </ScrollLink>
 
           <button
             className="navbar-toggler"
@@ -90,16 +91,16 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="d-flex me-auto" id="childdiv">
-              <Link className="nav-link" to="/">Home</Link>
-              <Link className="nav-link" to="#academics">Academics</Link>
-              <Link className="nav-link" to="#about">About Us</Link>
-              <Link className="nav-link" to="#activities">Activities</Link>
-              <Link className="nav-link" to="#contact">Contact</Link>
+              <Link className="nav-link" to="/home">Home</Link>
+              <ScrollLink className="nav-link" to="academics">Academics</ScrollLink>
+              <ScrollLink className="nav-link" to="about">About Us</ScrollLink>
+              <ScrollLink className="nav-link" to="activities">Activities</ScrollLink>
+              <ScrollLink className="nav-link" to="contact">Contact</ScrollLink>
             </div>
             <div className="d-flex gap-3">
-              <Link to="/signup">
+              <ScrollLink to="/signup">
                 <button className="btn btn-light">Sign up</button>
-              </Link>
+              </ScrollLink>
               <button
                 className="btn btn-light"
                 type="button"
@@ -166,7 +167,7 @@ function Navbar() {
                   onChange={(e) => setpassword(e.target.value)}
                 />
                 <div id="passerror" className="text-danger"></div>
-                <Link className="d-flex float-end" href="#">Forgot password</Link>
+                <ScrollLink className="d-flex float-end" href="#">Forgot password</ScrollLink>
               </form>
             </div>
             <div className="modal-footer">
