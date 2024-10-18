@@ -1,10 +1,8 @@
 
-
-
-
-h1{
-  color:black;
-}
+/* .fullcontainer{
+  display: flex;
+  height: 100%;
+  background-color: #c8c8c8; */
 
 
 /* .vl{
@@ -141,10 +139,10 @@ justify-content: space-between;
   color: rgb(90, 29, 29);
 }
 
-p{
+/* library-p{
   color: #5c5c5c;
   font-size: 25px;
-}
+} */
 section{
   margin-bottom: 10px;
 }

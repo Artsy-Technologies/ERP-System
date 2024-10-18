@@ -10,12 +10,11 @@ const StudentAttendance = () => {
             border: '2px solid rgb(196, 190, 190)',
             height: '340px',
             borderRadius: '20px',
-            width: '620px',
+            width: '640px',
         },
         title: {
             position: 'absolute',
             color: 'rgb(30, 216, 216)',
-            fontSize: '16px',
             fontFamily: 'Arial',
             fontWeight: 'bold',
             top: '10px',
@@ -26,11 +25,10 @@ const StudentAttendance = () => {
             border: '1px solid rgb(196, 190, 190)',
             height: '285px',
             borderRadius: '20px',
-            width: '580px',
+            width: '625spx',
             top: '40px',
             left: '20px',
             right: '20px',
-            fontSize: '12px',
             fontFamily: 'Arial',
             display: 'flex',
             flexDirection: 'row',
@@ -58,6 +56,11 @@ const StudentAttendance = () => {
         },
         boldText: {
             fontWeight: 'bold',
+            fontSize:'14px',
+        },
+
+        contents: {
+            fontSize:'14px',
         },
     };
 
@@ -78,43 +81,43 @@ const StudentAttendance = () => {
                     <div style={styles.columnWithMargin}>
                         <p style={styles.boldText}>Subject</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.subject}</p>
+                            <p style={styles.contents} key={index}>{item.subject}</p>
                         ))}
                     </div>
                     <div style={styles.column}>
                         <p style={styles.boldText}>Faculty</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.faculty}</p>
+                            <p style={styles.contents} key={index}>{item.faculty}</p>
                         ))}
                     </div>
                     <div style={styles.column}>
                         <p style={styles.boldText}>Type</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.type}</p>
+                            <p style={styles.contents} key={index}>{item.type}</p>
                         ))}
                     </div>
                     <div style={styles.column}>
                         <p style={styles.boldText}>Total Classes</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.total}</p>
+                            <p style={styles.contents} key={index}>{item.total}</p>
                         ))}
                     </div>
                     <div style={styles.column}>
                         <p style={styles.boldText}>Attended</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.attended}</p>
+                            <p style={styles.contents} key={index}>{item.attended}</p>
                         ))}
                     </div>
                     <div style={styles.column}>
                         <p style={styles.boldText}>UnAttended</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.unattended}</p>
+                            <p style={styles.contents} key={index}>{item.unattended}</p>
                         ))}
                     </div>
                     <div style={styles.columnWithRightMargin}>
                         <p style={styles.boldText}>Percentage</p>
                         {data.map((item, index) => (
-                            <p key={index}>{item.percentage}</p>
+                            <p style={styles.contents} key={index}>{item.percentage}</p>
                         ))}
                     </div>
                 </div>
