@@ -8,6 +8,7 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faCircleUser, faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import "../DigitalLibrary/libraryApp.css";
 
 const StudentForm = ({ student, onSubmit }) => {
   const [formValues, setFormValues] = useState({
@@ -99,9 +100,9 @@ const StudentForm = ({ student, onSubmit }) => {
     const studentData = { ...formValues };
 
     if (student) {
-      await axios.put(`http://localhost:5000/students/${student._id}`, studentData);
+      await axios.put(`http://localhost:8000/students/${student._id}`, studentData);
     } else {
-      await axios.post("http://localhost:5000/students", studentData);
+      await axios.post("http://localhost:8000/students", studentData);
     }
 
     alert("Student Profile Updated Successfully");
@@ -128,27 +129,27 @@ const StudentForm = ({ student, onSubmit }) => {
 
   return (
     <>
-      <div className="fullcontainer">
-        <div className="mid-section">
-          <p>
+      <div className="d-flex container-fluid mt-5">
+        <div className="text-center" style={{width: "25%", marginTop: "120px"}}>
+          <p style={{marginBottom: "40px"}}>
             <b>
               <FontAwesomeIcon icon={faPencilAlt} style={{ paddingRight: "10px" }} />
               Edit Profile
             </b>
           </p>
-          <p>
+          <p style={{marginBottom: "30px"}}>
             <b>
               <FontAwesomeIcon icon={faBell} style={{ paddingRight: "10px" }} />
               Notification
             </b>
           </p>
-          <p>
+          <p style={{marginBottom: "30px"}}>
             <b>
               <FontAwesomeIcon icon={faGear} style={{ paddingRight: "10px" }} />
               Appearance
             </b>
           </p>
-          <p>
+          <p style={{marginBottom: "30px"}}>
             <b>
               <FontAwesomeIcon icon={faQuestionCircle} style={{ paddingRight: "10px" }} />
               Help
@@ -157,15 +158,15 @@ const StudentForm = ({ student, onSubmit }) => {
           <div className="vl"></div>
         </div>
 
-        <div className="right-section">
+        <div className="">
           <div className="row justify-content-center">
             <div className="form-container">
               <form onSubmit={handleSubmit}>
-                <div className="mb-3 form-heading-container">
-                  <div className="top_edit">
+                <div className="mb-3 form-heading-container d-flex justify-content-between">
+                  
                     <h2 className="form-heading">Edit Profile</h2>
-                    <FontAwesomeIcon icon={faUserCircle} />
-                  </div>
+                    <FontAwesomeIcon icon={faUserCircle} style={{fontSize: "2.5em"}}/>
+           
                 </div>
 
                 {/* Name Fields */}
