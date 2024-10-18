@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teachers_nav</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header  class="header">
+        <div class="search-bar"><i class="fas fa-search"></i>
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="icons">
+            <div class="icon notifications">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="icon profile">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+</header>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="images\logo.png" alt="Logo">
+            
+        </div>
+
+        <span >|<a href="#">
+            <i class="fa-solid fa-house"></i>  Home Page</a>
+        </span>
+
+        <br><br><br>
+        <p>FACULTY</p>
+        <ul class="h">
+            <li><a href="#">Faculty Profile</a></li>
+            <li><a href="#">Faculty Leave Application</a></li>
+           
+        </ul>
+<br><br>
+        <p>STUDENT RELATED</p>
+        <ul class="h">
+           
+            <li><a href="#">Virtual Class</a></li>
+            <li><a href="#">Attendance Management</a></li>
+            <li><a href="#">Exam Room Allocation</a></li>
+            <li><a href="#">Student Report Card</a></li>
+            <li><a href="#">Schedule Management</a></li>
+            <li><a href="#">Student Assignments</a></li>
+        </ul>
+        <br><br><br>
+        <span>
+            <a href="#">
+                <i class="fas fa-arrow-left"></i> Log out
+            </a>
+        </span>
+
+</div>
+
+<button class="toggle-btn" id="toggle-btn"><i class="fa-solid fa-bars"></i></button>
+
+
+</body>
+<script>
+document.getElementById("toggle-btn").addEventListener("click", function() {
+document.getElementById("sidebar").classList.toggle("active");
+});
+
+</script>
+</body>
+</html>
