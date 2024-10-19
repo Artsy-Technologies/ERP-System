@@ -1,5 +1,5 @@
 const express = require("express");
-const Teacher = require("../libs/models/TeacherModel");
+const Teacher = require("../../libs/models/teacherProfile/TeacherModel");
 
 const router = express.Router();
 

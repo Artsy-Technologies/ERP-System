@@ -7,7 +7,7 @@ const {
   deleteBook,
   getRecentReadings,
   getRecommendedBooks,
-} = require("../controllers/BookControllers");
+} = require("../../controllers/digitalLibraryController/BookControllers");
 
 const router = express.Router();
 

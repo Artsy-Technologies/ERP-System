@@ -1,4 +1,4 @@
-const Book = require("../libs/models/BookModel");
+const Book = require("../../libs/models/digitalLibrary/BookModel");
 const express = require("express");
 const router = express.Router();
 
