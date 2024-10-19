@@ -1,5 +1,5 @@
-const express = require("express");
-const Student = require("../../libs/models/studentProfile/StudentModel");
+import express from 'express';
+import Student from "../../libs/models/studentProfile/StudentModel.js";
 
 const router = express.Router();
 
@@ -83,4 +83,4 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

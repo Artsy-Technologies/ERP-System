@@ -1,13 +1,8 @@
-const express = require("express");
-const {
-  getBooks,
-  addBook,
-  getBookById,
-  updateBook,
-  deleteBook,
-  getRecentReadings,
-  getRecommendedBooks,
-} = require("../../controllers/digitalLibraryController/BookControllers");
+import express from 'express';
+import BookControllers from "../../controllers/digitalLibraryController/BookControllers.js";
+
+const { getBooks, addBook, getBookById, updateBook, deleteBook, getRecentReadings, getRecommendedBooks } = BookControllers;
+
 
 const router = express.Router();
 
@@ -18,4 +13,4 @@ router.get("/recent", getRecentReadings);
 router.route("/").get(getBooks).post(addBook);   
 router.route("/:id").get(getBookById).put(updateBook).delete(deleteBook);
 
-module.exports = router;
+export default router;

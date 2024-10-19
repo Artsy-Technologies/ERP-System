@@ -1,10 +1,10 @@
-const Book = require("../../libs/models/digitalLibrary/BookModel");
-const express = require("express");
+import Book from "../../libs/models/digitalLibrary/BookModel.js";
+import express from 'express';
 const router = express.Router();
 
 //@desc   get all books
 //@router get /api/books
-exports.getBooks = async (req, res) => {
+const getBooks = async (req, res) => {
   try {
     const books = await Book.find();
     res.status(200).json(books);
@@ -15,7 +15,7 @@ exports.getBooks = async (req, res) => {
 
 //@desc  Add a new book
 //@routes  post/api/books
-exports.addBook = async (req, res) => {
+const addBook = async (req, res) => {
   const { title, author, year, rating, category, format, penalty_fee, image, description } = req.body;
 
   const book = new Book({
@@ -32,7 +32,7 @@ exports.addBook = async (req, res) => {
 
 //@desc get a single book by id
 //@route get/api/books/:id
-exports.getBookById = async (req, res) => {
+const getBookById = async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
@@ -46,7 +46,7 @@ exports.getBookById = async (req, res) => {
 
 //@desc  Update a book by ID
 //@route put/api/books/:id
-exports.updateBook = async (req, res) => {
+const updateBook = async (req, res) => {
   const { title, author, year, rating, category, format, penalty_fee, image, description } = req.body;
 
   try {
@@ -75,7 +75,7 @@ exports.updateBook = async (req, res) => {
 
 //@desc delete a book by Id
 //@route Delete/api/books/:id
-exports.deleteBook = async (req, res) => {
+const deleteBook = async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
@@ -89,7 +89,7 @@ exports.deleteBook = async (req, res) => {
 };
 
 // Controller for recommended books
-exports.getRecommendedBooks = async (req, res) => {
+const getRecommendedBooks = async (req, res) => {
   try {
     const recommendedBooks = await Book.find({ isRecommended: true });
     if (!recommendedBooks.length) {
@@ -103,7 +103,7 @@ exports.getRecommendedBooks = async (req, res) => {
 };
 
 // Controller for recent readings
-exports.getRecentReadings = async (req, res) => {
+const getRecentReadings = async (req, res) => {
   try {
     const recentBooks = await Book.find({ isRecent: true });
     if (!recentBooks.length) {
@@ -116,4 +116,4 @@ exports.getRecentReadings = async (req, res) => {
   }
 };
 
-// Exporting all functions
+export default {addBook, getBooks, getBookById, deleteBook, getRecentReadings, getRecommendedBooks, updateBook}

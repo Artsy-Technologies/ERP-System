@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 
 const studentSchema = new mongoose.Schema({
@@ -65,4 +65,5 @@ confirmpassword: {
 
 });
 
-module.exports = StudentModel = mongoose.model('studentprofile', studentSchema);
+const StudentModel = mongoose.model('studentprofile', studentSchema);
+export default StudentModel;
