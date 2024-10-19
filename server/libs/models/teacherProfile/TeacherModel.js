@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const studentSchema = new mongoose.Schema({
+const TeacherSchema = new mongoose.Schema({
 
 first_name: {
   type: String,
@@ -25,7 +25,7 @@ dob: {
   type: Date,
    required: true,
 },
-class_grade: {
+subject_expertise: {
   type: String,
    required: true,
 },
@@ -42,7 +42,7 @@ contact_no: {
   type: Number,
    required: true,
 },
-parent_contact_no: {
+managed_classes: {
   type: Number,
    required: true,
 },
@@ -56,14 +56,14 @@ state: {
 },
 newpassword: {
   type: String,
-   required: false,
+   required: true,
 },
 confirmpassword: {
   type: String,
-   required: false,
+   required: true,
 },
 
 });
 
-const StudentModel = mongoose.model('studentprofile', studentSchema);
-export default StudentModel;
+const TeacherModel = mongoose.model('Teacherprojile', TeacherSchema);
+export default TeacherModel

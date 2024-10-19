@@ -89,9 +89,16 @@ import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
 import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
 import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
+<<<<<<< HEAD
 import teacherRouter from "./routes/facultyProfileRoute/TeacherRouter.js";
 import studentRouter from "./routes/studentProfileRoute/StudentRouter.js";
 import bookRoutes from "./routes/digitalLibraryRoute/bookRoutes.js";
+=======
+import teacherRouter from "./routes/teacherProfile/TeacherRouter.js"
+import studentRouter from "./routes/studentProfile/StudentRouter.js";
+import bookRoutes from "./routes/digitalLibrary/bookRoutes.js";
+
+>>>>>>> beed8b6119d5eb22a06ebeba7a471a057584c190
 import path from "path";
 import { fileURLToPath } from 'url';
 
