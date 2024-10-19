@@ -89,6 +89,9 @@ import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
 import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
 import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
+import teacherRouter from "./routes/facultyProfileRoute/TeacherRouter.js";
+import studentRouter from "./routes/studentProfileRoute/StudentRouter.js";
+import bookRoutes from "./routes/digitalLibraryRoute/bookRoutes.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 
@@ -119,6 +122,9 @@ app.use("/api", updateUserRoutes);
 app.use("/api", deleteUserRoutes);
 app.use('/api/teachers', teacherRoutes);
 app.use("/api/assignment", assignmentRoutes);
+app.use("/api/library", bookRoutes);
+app.use("/api/studentDetails", studentRouter);
+app.use("/api/teacherDetails", teacherRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
