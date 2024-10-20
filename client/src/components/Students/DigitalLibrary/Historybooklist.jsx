@@ -20,7 +20,7 @@ const HistoryBookList = ({ books, likedBooks, onToggleLike, dueBooks, view, setV
       return <DueBookList books={dueBooks} likedBooks={likedBooks} onToggleLike={onToggleLike}/>;
     } else {
       return (
-        <div className="history-book-list">
+        <div className="dl-history-book-list">
          
             <div className="d-flex" style={{justifyContent: "space-between"}}>
               <p style={{ width: "290px" }}>Title</p>
@@ -44,9 +44,9 @@ const HistoryBookList = ({ books, likedBooks, onToggleLike, dueBooks, view, setV
   };
 
   return (
-    <div className="card" style={{ width: "100%", marginTop: "60px" }}>
-      <div className="card-body">
-        <div className="card-search-bar">
+    <div className="dl-card" style={{ width: "100%", marginTop: "60px" }}>
+      <div className="dl-card-body">
+        <div className="dl-card-search-bar">
           <input
             type="text"
             placeholder="Search by title or author"

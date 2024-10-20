@@ -19,7 +19,7 @@ const DueBookCard = ({ book, onClose }) => {
   };
 
   return (
-    <div className="card-body">
+    <div className="dl-card-body">
       <div className="history-book-card">
         <img src={book.image} alt={book.title} className="book-image" />
         <div style={{width: "120px"}}>
@@ -63,8 +63,8 @@ const DueBookCard = ({ book, onClose }) => {
         {console.log("first")}
       </div>
       {isPopupOpen && (
-        <div className="modal-overlay">
-          <div className="modal-container">
+        <div className="dl-modal-overlay">
+          <div className="dl-modal-container">
             <button
               className="btn btn-secondary "
               style={{ float: "right" }}
@@ -73,24 +73,24 @@ const DueBookCard = ({ book, onClose }) => {
               &times;
             </button>
             <h2 className="mt-3">PAYMENT</h2>
-            <div className="payment-form">
-              <div className="form-group">
+            <div className="dl-payment-form">
+              <div className="dl-form-group">
                 <label>CREDIT CARD NUMBER</label>
                 <input type="text" placeholder="XXXX XXXX XXXX 8014"  />
               </div>
 
-              <div className="form-group">
+              <div className="dl-form-group">
                 <label>CARD HOLDER NAME</label>
                 <input type="text" placeholder="REINHARD KENSON" />
               </div>
 
-              <div className="form-row">
-                <div className="form-group">
+              <div className="dl-form-row">
+                <div className="dl-form-group">
                   <label>EXPIRY</label>
                   <input type="text" placeholder="08/21" />
                 </div>
 
-                <div className="form-group">
+                <div className="dl-form-group">
                   <label>CVV</label>
                   <input type="text" placeholder="XXX"  />
                 </div>
@@ -98,7 +98,7 @@ const DueBookCard = ({ book, onClose }) => {
 
               <div className="total-amount text-start">TOTAL: {5* book.penality_fee}</div>
 
-              <div className="save-card mt-3 mb-3">
+              <div className="dl-save-card mt-3 mb-3">
                 <input
                   type="checkbox"
                   id="save-card"

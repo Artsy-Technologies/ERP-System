@@ -4,9 +4,9 @@ import "./libraryApp.css";
 const HistoryBookCard = ({  book, liked, onToggleLike }) => {
 
   return (
-    <div className="card-body">
+    <div className="dl-card-body">
       <div className="history-book-card">
-        <img src={book.image} alt={book.title} className="book-image" />
+        <img src={book.image} alt={book.title} className="dl-book-image" />
         {/* <div className="book-details"> */}
         <div style={{ width: "180px" }}>
           <h6>{book.title}</h6>
@@ -59,7 +59,7 @@ const HistoryBookCard = ({  book, liked, onToggleLike }) => {
         </p>
 
         {/* </div> */}
-        <button className="like-button" onClick={onToggleLike}>
+        <button className="dl-like-button" onClick={onToggleLike}>
           {liked ? "❤️" : "♡"}
         </button>
       </div>

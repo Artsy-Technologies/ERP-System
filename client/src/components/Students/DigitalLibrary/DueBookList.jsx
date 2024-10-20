@@ -30,7 +30,7 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
       return <HistoryBookList books={dueBooks} />;
     } else {
       return (
-        <div className="history-book-list" >
+        <div className="dl-history-book-list" >
           <div className="d-flex" style={{fontSize: "15px"}}>
             <p style={{ width: "320px" }}>Title</p>
             <p style={{fontSize: "20px"}}>Due days</p>
@@ -53,8 +53,8 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
 
   return (
     <div
-      className="card" style={{ width: "100%", marginTop: "60px",}} >
-      <div className="card-body">
+      className="dl-card" style={{ width: "100%", marginTop: "60px",}} >
+      <div className="dl-card-body">
 
       <div className="card-search-bar">
           <input
