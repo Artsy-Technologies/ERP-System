@@ -19,19 +19,19 @@ const DueBookCard = ({ book, onClose }) => {
   };
 
   return (
-    <div className="dl-card-body">
+    <div className="dl-due-card-body">
       <div className="history-book-card">
-        <img src={book.image} alt={book.title} className="book-image" />
+        <img src={book.image} alt={book.title} className="dl-book-image" />
         <div style={{width: "120px"}}>
           <h6>{book.title}</h6>
           <p style={{ fontSize: "12px" }}>
             {book.author}, <p style={{ fontSize: "10px" }}> {book.year}</p>
           </p>
         </div>
-        <p>{borrowDuration*1000} days</p>
+        <p  className= "text-center" style={{ fontSize: "20px" }}>{borrowDuration*1000} days</p>
 
         {book.format ? (
-          <p style={{width: "100px", fontSize: "20px"}}>
+          <p className= "text-center" style={{width: "140px", fontSize: "20px", }}>
             {" "}
             <span className={`status ${book.format.toLowerCase()}`}>
               {book.format}
@@ -44,7 +44,7 @@ const DueBookCard = ({ book, onClose }) => {
         )}
         
         {book.penalty_fee ? (
-          <p>
+          <p className= "text-center" style={{ width: "140px" }}>
             {" "}
             <span className={`status ${book.penalty_fee.toLowerCase()}`}>
               {book.penalty_fee}
@@ -56,7 +56,7 @@ const DueBookCard = ({ book, onClose }) => {
           </p>
         )}
         {/* </div> */}
-        <button className="btn btn-secondary" onClick={handleBorrowClick}>
+        <button className="btn btn-secondary" onClick={handleBorrowClick} style={{width:"100px"}}>
           Pay Now
         </button>
 
@@ -67,7 +67,7 @@ const DueBookCard = ({ book, onClose }) => {
           <div className="dl-modal-container">
             <button
               className="btn btn-secondary "
-              style={{ float: "right" }}
+              style={{ float: "right", width:"50px" }}
               onClick={handleClosePopup}
             >
               &times;
@@ -98,7 +98,7 @@ const DueBookCard = ({ book, onClose }) => {
 
               <div className="total-amount text-start">TOTAL: {5* book.penality_fee}</div>
 
-              <div className="dl-save-card mt-3 mb-3">
+              <div className="dl-save-card mt-3">
                 <input
                   type="checkbox"
                   id="save-card"
@@ -107,9 +107,9 @@ const DueBookCard = ({ book, onClose }) => {
                 />
 
                 <button
-                  className="borrow-btn "
+                  className="dl-borrow-btn "
                   onClick={handleClosePopup}
-                  style={{ width: "170px" }}
+                  style={{ width: "500px" }}
                 >
                   PROCEED TO PAY
                 </button>

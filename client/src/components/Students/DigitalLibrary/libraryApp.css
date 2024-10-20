@@ -108,7 +108,7 @@ justify-content: space-between;
 }
 .dl-history-book-list {
   overflow-x: auto;
-  width: 70%;
+  width: 80%;
   margin-left: 90px;
   align-items: center;
   justify-content: space-around;
@@ -189,7 +189,7 @@ section{
 
 .status.due {
   background-color: red;
-  color: white;
+  color: black;
 }
 
 .status.read {
@@ -202,9 +202,9 @@ section{
   color: black;
 }
 
-.dl-like-button {
+.dl-btn-like-button {
   border: none;
-  background: none;
+  width: 100px;
   cursor: pointer;
   font-size: 24px;
 }
@@ -273,7 +273,7 @@ section{
   cursor: pointer;
 }
 
-.borrow-btn:hover {
+.dl-borrow-btn:hover {
   background-color: darkgray;
 }
 
@@ -337,7 +337,12 @@ section{
 .p_btn{
   float: right;
 }
-
+.dl-due-card-body{
+  width: 90vh;
+}
+.dl-history-card-body{
+  width: 90vh;
+}
 
 
 .dl-modal-overlay {
@@ -356,6 +361,7 @@ section{
   background-color: white;
   width: 350px;
   padding: 30px;
+  margin-left: 300px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -373,7 +379,7 @@ h2 {
 }
 
 .dl-form-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .dl-form-group label {
@@ -411,12 +417,16 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .dl-save-card input {
   margin-right: 10px;
 }
+
+
+
+
 
 .pay-button {
   width: 100%;

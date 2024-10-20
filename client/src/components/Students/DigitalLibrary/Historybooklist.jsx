@@ -5,9 +5,15 @@ import DueBookList from "./DueBookList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-const HistoryBookList = ({ books, likedBooks, onToggleLike, dueBooks, view, setView }) => {
-  const [searchTerm, setSearchTerm] = useState(""); 
-
+const HistoryBookList = ({
+  books,
+  likedBooks,
+  onToggleLike,
+  dueBooks,
+  view,
+  setView,
+}) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredBooks = books.filter(
     (book) =>
@@ -17,20 +23,25 @@ const HistoryBookList = ({ books, likedBooks, onToggleLike, dueBooks, view, setV
 
   const renderContent = () => {
     if (view === "Due") {
-      return <DueBookList books={dueBooks} likedBooks={likedBooks} onToggleLike={onToggleLike}/>;
+      return (
+        <DueBookList
+          books={dueBooks}
+          likedBooks={likedBooks}
+          onToggleLike={onToggleLike}
+        />
+      );
     } else {
       return (
         <div className="dl-history-book-list">
-         
-            <div className="d-flex" style={{justifyContent: "space-between"}}>
-              <p style={{ width: "290px" }}>Title</p>
-              <p>Ratings</p>
-              <p>Category</p>
-              <p style={{ width: "140px" }}>Status</p>
-              <p></p>
-            </div>
-            
-           {filteredBooks.map((book) => (
+          <div className="d-flex">
+            <p className = "text-start"  style={{ width: "250px" }}>Title</p>
+            <p style={{ width: "140px" }}>Ratings</p>
+            <p style={{ width: "140px" }}>Category</p>
+            <p style={{ width: "140px" }}>Status</p>
+            <p></p>
+          </div>
+
+          {filteredBooks.map((book) => (
             <HistoryBookCard
               key={book._id}
               book={book}
@@ -66,7 +77,7 @@ const HistoryBookList = ({ books, likedBooks, onToggleLike, dueBooks, view, setV
               style={{
                 borderRadius: "50px",
                 width: "100px",
-                boxShadow: "5px 10px 5px -5px #121212",
+                boxShadow: "5px 5px 5px -5px #121212",
               }}
               onClick={() => setView("Due")}
             >
