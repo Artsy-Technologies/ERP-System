@@ -116,4 +116,4 @@ const getRecentReadings = async (req, res) => {
   }
 };
 
-export default {addBook, getBooks, getBookById, deleteBook, getRecentReadings, getRecommendedBooks, updateBook}
+export default {addBook, getBooks, getBookById, deleteBook, getRecentReadings, getRecommendedBooks, updateBook};
