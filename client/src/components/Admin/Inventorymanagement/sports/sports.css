@@ -1,37 +1,52 @@
 /* Back Link Styling */
 .back-link {
     display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 15px;
+    margin-bottom: 10px; /* Reduced margin */
+    padding: 8px 12px; /* Smaller padding */
     background-color: #c15e91;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px; /* Slightly smaller font */
+    text-align: left; /* Ensure left alignment */
 }
 
-.button:hover {
+.back-link:hover {
     background-color: #a54c75; /* Darker shade on hover */
+}
+
+/* Container */
+.container {
+    position: relative;
+    left: 0; /* Ensures it stays aligned to the left */
+    max-width: 100%; /* Ensures the content doesn’t overflow */
+    padding: 10px; /* Add a bit of padding to prevent overflow */
+    margin: 0; /* No margin to fit content properly */
 }
 
 /* Table Styling */
 .inventory-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
+    font-size: 14px; /* Reduced table font size for compactness */
+    text-align: left; /* Ensure left alignment for all table content */
+    max-width: 100%; /* Ensures table doesn't overflow horizontally */
 }
 
 .inventory-table th,
 .inventory-table td {
-    padding: 15px;
-    text-align: left;
+    padding: 10px; /* Reduced padding */
+    text-align: left; /* Ensure text is aligned to the left */
     border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap; /* Prevents text from wrapping to next line */
 }
 
 .inventory-table th {
     background-color: #33a35f;
     color: white;
+    text-align: left; /* Ensure headers are left-aligned */
 }
 
 .inventory-table td {
@@ -50,10 +65,11 @@
 
 /* Status Styling */
 .status {
-    text-align: center;
+    text-align: left; /* Align status text to the left */
     font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 5px 10px; /* Smaller padding */
+    border-radius: 15px; /* Reduced border-radius for a smaller status badge */
+    font-size: 12px; /* Smaller font size for status */
 }
 
 .status.done {
@@ -68,8 +84,27 @@
 
 /* Footer Styling (if you decide to add one) */
 footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 14px;
+    margin-top: 15px; /* Reduced margin */
+    text-align: left; /* Align footer to the left */
+    font-size: 12px; /* Smaller footer font size */
     color: #666;
+}
+
+/* Adjustments for the Complaints Section */
+.complaints-section {
+    width: 100%; /* Take full width */
+    padding-left: 0; /* Align to left */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .inventory-table td, .inventory-table th {
+        font-size: 12px; /* Make table content smaller for smaller screens */
+        padding: 8px; /* Smaller padding for smaller screens */
+    }
+
+    .status {
+        font-size: 10px; /* Reduce font size of status */
+        padding: 4px 8px; /* Smaller padding for status badges */
+    }
 }

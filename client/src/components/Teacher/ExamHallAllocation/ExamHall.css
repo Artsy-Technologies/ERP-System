@@ -67,7 +67,7 @@ a {
     width: auto;
     background-color: rgba(247, 247, 247, 0.964302);
     ;
-    margin-left: 285px;
+    margin-left: 0px;
 }
 
 .form-history-container {
@@ -75,14 +75,14 @@ a {
     gap: 1px; /* Controls the distance between form and history */
 }
 
-exam-form {
+.exam-form {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 200px; /* Leaves space on the left */
     position: absolute;
-    left: 130px;
+    left: 200px;
     width: 750px;
 }
 
@@ -147,33 +147,38 @@ button:hover {
 }
 
 .history-entry {
-    background-color: #333;
-    color: white;
+    background-color: rgb(50, 49, 49); /* Set background to white */
+    color: rgb(255, 255, 255); /* Change text color to black for contrast */
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
+.history-entry:hover {
+    background-color: rgba(255, 255, 255); /* Light gray on hover */
+}
+
+
 #a1 {
     position: relative;
-    left: 90px;
+    right: 350px;
 }
 
 #a2 {
     position: absolute;
     top: 134px;
-    left: 340px;
+    left: 400px;
 }
 
 #fa {
     position: relative;
     top: 15px;
-    left: 1051px;
+    left: 1000px;
 }
 
 #date,
 #timeTo,
 #timeFrom,
 #rollNumbers {
-    width: 730px;
+    width: 710px;
 }
