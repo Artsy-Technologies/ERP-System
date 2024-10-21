@@ -1,6 +1,9 @@
 export const getRecommendedBooks = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/books/recommended");
+    const response = await fetch("http://localhost:8000/api/library/recommended");
+    if(!response.ok){
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
@@ -11,7 +14,10 @@ export const getRecommendedBooks = async () => {
 
 export const getRecentReadings = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/books/recent");
+    const response = await fetch("http://localhost:8000/api/library/recent");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {

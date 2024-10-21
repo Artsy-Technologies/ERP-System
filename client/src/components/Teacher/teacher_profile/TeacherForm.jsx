@@ -4,11 +4,13 @@ import {
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
 import {
+  faArrowLeft,
   faBell,
   faGear,
   faPencilAlt,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import "../../Students/DigitalLibrary/libraryApp.css"
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
@@ -74,7 +76,10 @@ const TeacherForm = ({ teacher, onSubmit }) => {
     }
 
     // Password matching validation
-    if (formValues.newpassword && formValues.newpassword !== formValues.confirmpassword) {
+    if (
+      formValues.newpassword &&
+      formValues.newpassword !== formValues.confirmpassword
+    ) {
       newErrors.confirmpassword = "Passwords do not match";
     }
 
@@ -99,9 +104,12 @@ const TeacherForm = ({ teacher, onSubmit }) => {
 
     try {
       if (teacher && teacher._id) {
-        await axios.put(`http://localhost:5000/teachers/${teacher._id}`, teacherData);
+        await axios.put(
+          `http://localhost:8000/teachers/${teacher._id}`,
+          teacherData
+        );
       } else {
-        await axios.post("http://localhost:5000/teachers", teacherData);
+        await axios.post("http://localhost:8000/teachers", teacherData);
       }
 
       alert("Teacher Profile Updated Successfully");
@@ -124,54 +132,92 @@ const TeacherForm = ({ teacher, onSubmit }) => {
       });
       setErrors({});
     } catch (error) {
-      console.error("Error updating teacher:", error.response?.data || error.message);
-      alert(`Error updating teacher: ${error.response?.data?.message || error.message}`);
+      console.error(
+        "Error updating teacher:",
+        error.response?.data || error.message
+      );
+      alert(
+        `Error updating teacher: ${
+          error.response?.data?.message || error.message
+        }`
+      );
     }
   };
 
   return (
     <>
-      <div className="fullcontainer">
-        <div className="mid-section">
-          <p>
+      <div className="container-fluid d-flex mt-5">
+        <div
+          className="text-center"
+          style={{ width: "20%", marginTop: "100px", fontWeight: "bolder" }}
+        >
+          <div>
+            <p
+              style={{
+                marginBottom: "50px",
+                color: "black",
+                fontSize: "25px",
+                marginRight: "100px",
+              }}
+            >
+              <b>
+                <FontAwesomeIcon
+                  icon={faArrowLeft}
+                  style={{ paddingRight: "10px" }}
+                />
+                Setting
+              </b>
+            </p>
+          </div>
+          <p style={{ marginBottom: "40px" }}>
             <b>
-              <FontAwesomeIcon icon={faPencilAlt} style={{ paddingRight: "10px" }} />
+              <FontAwesomeIcon
+                icon={faPencilAlt}
+                style={{ paddingRight: "10px" }}
+              />
               Edit Profile
             </b>
           </p>
-          <p>
+          <p style={{ marginBottom: "30px" }}>
             <b>
               <FontAwesomeIcon icon={faBell} style={{ paddingRight: "10px" }} />
               Notification
             </b>
           </p>
-          <p>
+          <p style={{ marginBottom: "30px" }}>
             <b>
               <FontAwesomeIcon icon={faGear} style={{ paddingRight: "10px" }} />
               Appearance
             </b>
           </p>
-          <p>
+          <p style={{ marginBottom: "30px" }}>
             <b>
-              <FontAwesomeIcon icon={faCircleQuestion} style={{ paddingRight: "10px" }} />
+              <FontAwesomeIcon
+                icon={faCircleQuestion}
+                style={{ paddingRight: "10px" }}
+              />
               Help
             </b>
           </p>
-          <div className="vl"></div>
         </div>
+        <div
+          style={{
+            width: "1px",
+            height: "700px",
+            backgroundColor: "#808080",
+            marginRight: "70px",
+          }}
+        ></div>
 
-        <div className="right-section">
-          <div className="row">
+        <div className="right-section" style={{ marginTop: "10px" }}>
+          <div
+            className="row justify-content-center"
+            style={{ width: "100vh" }}
+          >
             <div className="form-container">
               <form onSubmit={handleSubmit}>
-                <div className="mb-3 form-heading-container">
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      marginBottom: "40px",
-                    }}
-                  >
+              <div className="mb-3 form-heading-container d-flex justify-content-between">
+                 
                     <h2 className="form-heading">Edit Profile</h2>
                     <button
                       className="btn btn-light"
@@ -180,13 +226,16 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       <FontAwesomeIcon icon={faUserCircle} className="me-3" />
                       Faculty Portal
                     </button>
-                  </div>
+                
                 </div>
 
                 {/* Form fields */}
                 <div className="row mb-1">
                   <div className="col-md-4">
-                    <label htmlFor="first_name" className="form-label text-start">
+                    <label
+                      htmlFor="first_name"
+                      className="form-label text-start"
+                    >
                       First Name
                     </label>
                     <input
@@ -197,10 +246,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       placeholder="First Name"
                       onChange={handleInputChange}
                     />
-                    {errors.first_name && <div className="text-danger">{errors.first_name}</div>}
+                    {errors.first_name && (
+                      <div className="text-danger">{errors.first_name}</div>
+                    )}
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="middle_name" className="form-label text-start">
+                    <label
+                      htmlFor="middle_name"
+                      className="form-label text-start"
+                    >
                       Middle Name
                     </label>
                     <input
@@ -213,7 +267,10 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                     />
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="last_name" className="form-label text-start">
+                    <label
+                      htmlFor="last_name"
+                      className="form-label text-start"
+                    >
                       Last Name
                     </label>
                     <input
@@ -224,7 +281,9 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.last_name}
                       onChange={handleInputChange}
                     />
-                    {errors.last_name && <div className="text-danger">{errors.last_name}</div>}
+                    {errors.last_name && (
+                      <div className="text-danger">{errors.last_name}</div>
+                    )}
                   </div>
                 </div>
 
@@ -241,7 +300,9 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.email}
                       onChange={handleInputChange}
                     />
-                    {errors.email && <div className="text-danger">{errors.email}</div>}
+                    {errors.email && (
+                      <div className="text-danger">{errors.email}</div>
+                    )}
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="dob" className="form-label text-start">
@@ -254,10 +315,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.dob}
                       onChange={handleInputChange}
                     />
-                    {errors.dob && <div className="text-danger">{errors.dob}</div>}
+                    {errors.dob && (
+                      <div className="text-danger">{errors.dob}</div>
+                    )}
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="subject_expertise" className="form-label text-start">
+                    <label
+                      htmlFor="subject_expertise"
+                      className="form-label text-start"
+                    >
                       Subject of Expertise
                     </label>
                     <input
@@ -268,7 +334,11 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.subject_expertise}
                       onChange={handleInputChange}
                     />
-                    {errors.subject_expertise && <div className="text-danger">{errors.subject_expertise}</div>}
+                    {errors.subject_expertise && (
+                      <div className="text-danger">
+                        {errors.subject_expertise}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -285,7 +355,9 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.address}
                       onChange={handleInputChange}
                     />
-                    {errors.address && <div className="text-danger">{errors.address}</div>}
+                    {errors.address && (
+                      <div className="text-danger">{errors.address}</div>
+                    )}
                   </div>
                   <div className="col-md-4">
                     <label htmlFor="pincode" className="form-label text-start">
@@ -299,13 +371,18 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.pincode}
                       onChange={handleInputChange}
                     />
-                    {errors.pincode && <div className="text-danger">{errors.pincode}</div>}
+                    {errors.pincode && (
+                      <div className="text-danger">{errors.pincode}</div>
+                    )}
                   </div>
                 </div>
 
                 <div className="row mb-1">
                   <div className="col-md-4">
-                    <label htmlFor="contact_no" className="form-label text-start">
+                    <label
+                      htmlFor="contact_no"
+                      className="form-label text-start"
+                    >
                       Contact No
                     </label>
                     <input
@@ -316,10 +393,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.contact_no}
                       onChange={handleInputChange}
                     />
-                    {errors.contact_no && <div className="text-danger">{errors.contact_no}</div>}
+                    {errors.contact_no && (
+                      <div className="text-danger">{errors.contact_no}</div>
+                    )}
                   </div>
                   <div className="col-md-4">
-                    <label htmlFor="managed_classes" className="form-label text-start">
+                    <label
+                      htmlFor="managed_classes"
+                      className="form-label text-start"
+                    >
                       Managed Classes
                     </label>
                     <input
@@ -330,7 +412,11 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.managed_classes}
                       onChange={handleInputChange}
                     />
-                    {errors.managed_classes && <div className="text-danger">{errors.managed_classes}</div>}
+                    {errors.managed_classes && (
+                      <div className="text-danger">
+                        {errors.managed_classes}
+                      </div>
+                    )}
                   </div>
                   <div className="col-md-4">
                     <label htmlFor="city" className="form-label text-start">
@@ -344,7 +430,9 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.city}
                       onChange={handleInputChange}
                     />
-                    {errors.city && <div className="text-danger">{errors.city}</div>}
+                    {errors.city && (
+                      <div className="text-danger">{errors.city}</div>
+                    )}
                   </div>
                 </div>
 
@@ -361,10 +449,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.state}
                       onChange={handleInputChange}
                     />
-                    {errors.state && <div className="text-danger">{errors.state}</div>}
+                    {errors.state && (
+                      <div className="text-danger">{errors.state}</div>
+                    )}
                   </div>
                   <div className="col-md-6">
-                    <label htmlFor="newpassword" className="form-label text-start">
+                    <label
+                      htmlFor="newpassword"
+                      className="form-label text-start"
+                    >
                       New Password
                     </label>
                     <input
@@ -375,13 +468,18 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.newpassword}
                       onChange={handleInputChange}
                     />
-                    {errors.newpassword && <div className="text-danger">{errors.newpassword}</div>}
+                    {errors.newpassword && (
+                      <div className="text-danger">{errors.newpassword}</div>
+                    )}
                   </div>
                 </div>
 
                 <div className="row mb-1">
                   <div className="col-md-6">
-                    <label htmlFor="confirmpassword" className="form-label text-start">
+                    <label
+                      htmlFor="confirmpassword"
+                      className="form-label text-start"
+                    >
                       Confirm Password
                     </label>
                     <input
@@ -392,7 +490,11 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       value={formValues.confirmpassword}
                       onChange={handleInputChange}
                     />
-                    {errors.confirmpassword && <div className="text-danger">{errors.confirmpassword}</div>}
+                    {errors.confirmpassword && (
+                      <div className="text-danger">
+                        {errors.confirmpassword}
+                      </div>
+                    )}
                   </div>
                 </div>
 
