@@ -1,3 +1,4 @@
+/* General Styles */
 .inventory-h2, .inventory-h3 {
     color: #33a35f; /* Main color */
     margin-bottom: 15px; /* Reduced margin */
@@ -6,7 +7,8 @@
 /* Center Page Layout */
 .categories, .main-content {
     max-width: 1200px;
-    margin: 0 auto;
+    position: relative;
+    left: 40px;
 }
 
 /* Category Icons Section */
@@ -47,25 +49,41 @@
 
 /* Main Section */
 .main-content {
+    position: absolute;
+    left: 90px;
     display: flex;
-    gap: 15px; /* Reduced gap */
+    gap: 5px; /* Reduced gap */
+    padding: 0; /* Remove padding */
 }
 
 .left-section {
-    flex: 2; /* Takes up more space */
+    flex: 1; /* Takes up more space */
 }
 
 .right-section {
-    flex: 1; /* Takes up less space */
+    flex: 0; /* Takes up less space */
 }
 
 /* Inventory Section */
+
+
+.inventory-h2 {
+        color: #33a35f; /* Main color */
+        margin-bottom: 15px; /* Reduced margin */
+        white-space: nowrap; /* Prevents wrapping */
+        
+        text-overflow: ellipsis; /* Adds ellipsis for overflow */
+}
+    
+
+
+
 .inventory-table {
-    width: 100%;
+    width: calc(100% - 20px); /* Increased table width, accounting for padding */
     border-collapse: collapse;
     background-color: #ffffff; /* White */
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: px; /* Reduced border radius */
+    border-radius: 15px; /* Reduced border radius */
     overflow: hidden;
 }
 
@@ -83,11 +101,15 @@
 .inventory-table td {
     background-color: #ffffff; /* White */
 }
+/* Add transition for smoother hover effects */
+.inventory-btn, .contact-main-btn {
+    transition: background-color 0.3s ease;
+  }
+  
 
 .status {
     text-align: center;
     font-weight: bold;
-
 }
 
 .status.done {
@@ -97,14 +119,21 @@
     border-radius: 5px;
 }
 
+.col-md-5{
+    position: relative;
+    left: 50px;
+}
 
-/* Complaints and Contacts Section */
+/* Complaints Section */
 .complaints {
     background-color: #ffffff; /* White */
     padding: 15px; /* Reduced padding */
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px; /* Reduced border radius */
+    width: 400px; /* Increased width */
+    margin-top: 0; /* No space above */
 }
+
 
 .complaints h3 {
     color: #6c63ff; /* Secondary color */
@@ -134,20 +163,7 @@
     background-color: #ffffff; /* White */
 }
 
-.inventory-btn {
-    background-color: #6c63ff; /* Secondary color */
-    color: #ffffff; /* White */
-    padding: 6px 12px; /* Reduced padding */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.inventory-btn:hover {
-    background-color: #5348d7; /* Hover color */
-}
-
-/* Maintenance Contacts */
+/* Maintenance and Contacts Section */
 .contacts {
     background-color: #ffffff; /* White */
     padding: 15px; /* Reduced padding */
@@ -155,6 +171,7 @@
     border-radius: 8px; /* Reduced border radius */
     text-align: center;
     margin-top: 5px;
+    width: 400px; /* Increased width */
 }
 
 .contacts h3 {
@@ -173,6 +190,20 @@
 .contacts ul li {
     font-weight: bold;
     margin: 8px 0; /* Reduced margin */
+}
+
+/* Buttons */
+.inventory-btn {
+    background-color: #6c63ff; /* Secondary color */
+    color: #ffffff; /* White */
+    padding: 6px 12px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inventory-btn:hover {
+    background-color: #5348d7; /* Hover color */
 }
 
 .contact-main-btn {
