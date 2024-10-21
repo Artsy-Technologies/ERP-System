@@ -16,7 +16,7 @@ const StudentProfile = () => {
             borderBottom: '2px solid rgb(196, 190, 190)',
             height: '340px',
             borderRadius: '15px',
-            width: '340px',
+            width: '350px',
         },
         header: {
             position: 'relative',
@@ -42,6 +42,7 @@ const StudentProfile = () => {
         studentInfo: {
             margin: '30px 50px 70px 180px',
             color: 'white',
+            fontWeight:'bold',
         },
         bodySection: {
             position: 'relative',
@@ -61,9 +62,8 @@ const StudentProfile = () => {
             fontWeight: 'bold',
             color: 'rgb(148, 143, 143)',
             position: 'absolute',
-            top: '26px',
-            left: '30px',
-            fontSize: '12px',
+            top: '43px',  
+            left:'30px',
         },
         parentsTitle: {
             color: 'blueviolet',
@@ -77,9 +77,8 @@ const StudentProfile = () => {
             fontWeight: 'bold',
             color: 'rgb(148, 143, 143)',
             position: 'absolute',
-            top: '26px',
+            top: '40px',
             left: '230px',
-            fontSize: '12px',
         },
         contactTitle: {
             color: 'blueviolet',
@@ -89,24 +88,26 @@ const StudentProfile = () => {
             left: '200px',
         },
         contactContent: {
-            lineHeight: '20px',
+            lineHeight: '16px',
             fontWeight: 'bold',
             color: 'rgb(148, 143, 143)',
             position: 'absolute',
-            top: '130px',
+            top: '140px',
             left: '230px',
-            fontSize: '12px',
         },
         scholarshipButton: {
             color: 'white',
             backgroundColor: 'rgb(61, 178, 61)',
             fontSize: '12px',
-            width: '60px',
-            height: '25px',
+            width: '75px',
+            height: '38px',
             borderColor: 'white',
             borderRadius: '5px',
             cursor:'pointer'
         },
+        content:{
+            fontSize:'14px',
+        }
     };
 
     return (
@@ -126,10 +127,10 @@ const StudentProfile = () => {
                 <div style={styles.details}>
                     <div style={styles.detailsTitle}>Details:</div>
                     <div style={styles.detailsContent}>
-                        <p>Class - 12B</p>
-                        <p>DOB - 24-01-2007</p>
-                        <p>Reg-id - 123222929</p>
-                        <p>Advisor - Jocob David</p>
+                        <p style={styles.content}>Class - 12B</p>
+                        <p style={styles.content}>DOB - 24-01-2007</p>
+                        <p style={styles.content}>Reg-id - 123222929</p>
+                        <p style={styles.content}>Advisor - Jocob David</p>                        
                     </div>
                 </div>
                 <div style={styles.details}>
@@ -141,12 +142,12 @@ const StudentProfile = () => {
                 <div style={styles.details}>
                     <div style={styles.parentsTitle}>Parents:</div>
                     <div style={styles.parentsContent}>
-                        <p>
-                            <img src={Human} alt="parent" style={{ width: '20px', height: '20px', position: 'absolute', left: '-30px' }} />
+                        <p style={styles.content}>
+                            <img src={Human} alt="parent" style={{ width: '18px', height: '18px', position: 'absolute', left: '-30px' }} />
                             Justin Hope
                         </p>
-                        <p>
-                            <img src={Human} alt="parent" style={{ width: '20px', height: '20px', position: 'absolute', left: '-30px' }} />
+                        <p style={styles.content}>
+                            <img src={Human} alt="parent" style={{ width: '18px', height: '18px', position: 'absolute', left: '-30px' }} />
                             Shella J
                         </p>
                     </div>
@@ -154,15 +155,15 @@ const StudentProfile = () => {
                 <div style={styles.details}>
                     <div style={styles.contactTitle}>Contact:</div>
                     <div style={styles.contactContent}>
-                        <p>
+                        <p style={styles.content}>
                             <img src={Location} alt="location" style={{ width: '20px', height: '20px', position: 'absolute', left: '-30px' }} />
                             KERALA INDIA
                         </p>
-                        <p>
+                        <p style={styles.content}>
                             <img src={Mail} alt="email" style={{ width: '20px', height: '20px', position: 'absolute', left: '-30px' }} />
                             tara@mail.com
                         </p>
-                        <p>
+                        <p style={styles.content}>
                             <img src={Contact} alt="phone" style={{ width: '20px', height: '20px', position: 'absolute', left: '-30px' }} />
                             +12 345 6789 0
                         </p>

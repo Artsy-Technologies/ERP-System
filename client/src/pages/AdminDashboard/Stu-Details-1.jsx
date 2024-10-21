@@ -8,7 +8,7 @@ function StudentDetails1() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '1200px' }}>
-              <div style={{ width:'360px', margin: '10px' }}>
+              <div style={{ width:'350px', margin: '10px' }}>
                   <StudentProfile />
               </div>
               <div style={{ flex: 1, margin: '10px' }}>

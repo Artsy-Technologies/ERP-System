@@ -54,10 +54,10 @@ const styles = {
   container: {
     position: 'relative',
     border: '2px solid rgb(196, 190, 190)',
-    height: '290px',
+    height: '320px',
     borderRadius: '20px',
-    width: '560px',
-    padding: '20px',
+    width: '580px',
+    padding: '10px',
   },
   title: {
     color: 'rgb(30, 216, 216)',
@@ -68,10 +68,13 @@ const styles = {
     marginBottom: '10px',
   },
   table: {
+    position:'absolute',
+    right:'10px',
+    left:'10px',
+    bottom:'10px',
+    top:'50px',
     border: '1px solid rgb(196, 190, 190)',
     borderRadius: '20px',
-    width: '100%',
-    height: '260px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -101,20 +104,20 @@ const styles = {
     backgroundColor: 'rgb(61, 178, 61)',
     fontSize: '12px',
     width: '60px',
-    height: '25px',
+    height: '30px',
     border: 'none',
-    borderRadius: '5px',
-    cursor:'pointer'
+    borderRadius: '6px',
+    cursor:'pointer',
   },
   buttonReceipt: {
     color: 'white',
     backgroundColor: 'rgb(85, 84, 84)',
     fontSize: '12px',
-    width: '60px',
-    height: '25px',
+    width: '70px',
+    height: '30px',
     border: 'none',
     borderRadius: '5px',
-    cursor:'pointer'
+    cursor:'pointer',
   },
 };
 
