@@ -14,15 +14,15 @@ import HistoryBookList from "./Historybooklist";
 const DueBookList = ({ books, dueBooks, view, setView }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-
   if (!books || books.length === 0) {
     return <p>No Due books yet!</p>;
   }
 
   const filteredBooks = books.filter(
-    (book) => book.status === "Due" && 
-    (book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchTerm.toLowerCase()))
+    (book) =>
+      book.status === "Due" &&
+      (book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   const renderContent = () => {
@@ -30,12 +30,21 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
       return <HistoryBookList books={dueBooks} />;
     } else {
       return (
-        <div className="history-book-list" >
-          <div className="d-flex" style={{fontSize: "15px"}}>
-            <p style={{ width: "320px" }}>Title</p>
-            <p style={{fontSize: "20px"}}>Due days</p>
-            <p style={{ width: "140px", fontSize: "20px",marginLeft: "70px" , marginRight: "10px"}}>Book Format</p>
-            <p style={{ width: "140px", fontSize: "20px" }}>Penality Fee</p>
+        <div className="dl-history-book-list">
+          <div className="d-flex" style={{ fontSize: "20px" }}>
+            <p className = "text-start" style={{ width: "100px" }}>Title</p>
+            <p  className= "text-start" style={{ fontSize: "20px" }}>Due days</p>
+            <p
+              style={{
+                width: "140px",
+                fontSize: "20px",
+                textAlign: "center",
+                marginLeft: "20px",
+              }}
+            >
+              Book Format
+            </p>
+            <p style={{ width: "140px", fontSize: "20px", textAlign:"center" }}>Penality Fee</p>
             <p></p>
           </div>
 
@@ -52,16 +61,14 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
   };
 
   return (
-    <div
-      className="card" style={{ width: "100%", marginTop: "60px",}} >
-      <div className="card-body">
-
-      <div className="card-search-bar">
+    <div className="dl-card" style={{ width: "100%", marginTop: "60px" }}>
+      <div className="dl-card-body">
+        <div className="dl-card-search-bar">
           <input
             type="text"
             placeholder="Search"
-            value={searchTerm} 
-            onChange={(e) => setSearchTerm(e.target.value)} 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             style={{
               padding: "10px",
               borderRadius: "30px",
@@ -76,11 +83,11 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
               style={{
                 borderRadius: "50px",
                 width: "100px",
-                boxShadow: "5px 10px 5px -5px #121212",
+                boxShadow: "5px 5px 5px -5px #121212",
               }}
               onClick={() => setView("history")}
             >
-             <FontAwesomeIcon icon={faArrowLeft}/> History
+              <FontAwesomeIcon icon={faArrowLeft} /> History
             </button>
           </div>
         </div>
