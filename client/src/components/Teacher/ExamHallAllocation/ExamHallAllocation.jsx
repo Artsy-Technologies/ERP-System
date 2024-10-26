@@ -68,13 +68,7 @@ const ExamHallAllocation = () => {
             id="f00"
           />
         </span>
-        <img
-          src={ArrowImg}
-          height="40"
-          width="40"
-          id="a2"
-          alt="Arrow"
-        />
+        
         <h2 id="a1">EXAM HALL ALLOCATION</h2>
         <div className="form-history-container">
           <form className="exam-form" id="examForm" onSubmit={handleSubmit}>

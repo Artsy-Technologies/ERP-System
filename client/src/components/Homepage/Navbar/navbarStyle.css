@@ -11,6 +11,7 @@
 }
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -21,4 +22,5 @@
   font-size:larger;
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
