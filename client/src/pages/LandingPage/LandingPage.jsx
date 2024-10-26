@@ -144,7 +144,7 @@ export default function MainPage() {
               height="50%"
             />
             <div className="card-body">
-              <h4>MIDDLE yearS programme</h4>
+              <h4>Middle years programme</h4>
               <p className="card-text">
                 The Middle Years Programme  (Grades 6-10) is a concept
                 and skill-based curriculum that encourages student inquiry and
@@ -156,7 +156,7 @@ export default function MainPage() {
           <div className="card" style={{ width: "18rem" }}>
             <img src={diploma} className="img-fluid" alt="picture" />
             <div className="card-body">
-              <h4>DIPLOMA programme</h4>
+              <h4>Diploma programme</h4>
               <p className="card-text">
                 The Diploma Programme (Grade 11-12) helps students to broaden
                 their experience in education, challenging them to then apply
@@ -310,8 +310,9 @@ export default function MainPage() {
         <br />
         {/* <TeacherList /> */}
         <div
+          id="divider-line"
           className="container"
-          style={{ backgroundColor: "white", height: "2px" }}
+          style={{ backgroundColor: "white", height: "0px",  margin: "0" }}
         ></div>
         <br />
         <br />
