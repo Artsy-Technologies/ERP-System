@@ -191,8 +191,8 @@ export default function MainPage() {
         className="container-fluid d-flex flex-row justify-content-around align-items-center"
         style={{ color: "white", backgroundColor: "#56d8b7" }}
       >
-        <div className="container flex-column">
-          <h2>Contact Us</h2>
+        <div className="container flex-column text-left">
+        <h2 style={{ textAlign: "left" }}>Contact Us</h2>
           <h4 className="registerContact">Register for daily updates</h4>
           <p>
             <i className="bi bi-envelope-check-fill"></i> Hello@relume.io
@@ -251,9 +251,9 @@ export default function MainPage() {
               ></textarea>
               <div id="textareaerror" className="text-danger"></div>
             </div>
-            <div>
-              <input type="checkbox" id="terms" name="terms" value="yes" /> I
-              accept the <Link to="#">Terms & Conditions</Link>
+            <div className="form-check d-flex align-items-center mb-3">
+            <input type="checkbox" className="form-check-input me-2" id="terms" name="terms" value="yes" />
+            I Accept the  <Link to="#"> Terms & Conditions</Link>
               <div id="termserror" className="text-danger"></div>
               <div className="invalid-feedback">
                 You must agree before submitting
