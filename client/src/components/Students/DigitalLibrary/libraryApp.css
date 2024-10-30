@@ -22,8 +22,8 @@
   width: 56%;
   margin-bottom: 70px;
 } */
-.library-section{
-  width: 71%;
+.dl-library-section{
+  width: 90%;
 }
 
 
@@ -62,7 +62,7 @@
 
 /* App.css */
 
-.main-page {
+.dl-main-page {
   padding: 20px;
 }
 
@@ -74,7 +74,7 @@
   border: none;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 5px 10px 5px -5px #121212;
+  box-shadow: 5px 4px 5px -5px #a8a8a8;
   cursor: pointer;
   width: 250px;
 }
@@ -83,40 +83,40 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  font-size: 25px;
 }
 .lower_heading_digital_library{
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 
-.card-search-bar {
+.dl-card-search-bar {
   display: flex;
-  padding: 10px;
+  border-radius: 30px;
   font-size: 16px;
 margin-left: 20px;
 justify-content: space-between;
 } 
 
-.book-list {
+.dl-book-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
 }
-.history-book-list {
+.dl-history-book-list {
   overflow-x: auto;
-  width: 70%;
+  width: 80%;
   margin-left: 90px;
   align-items: center;
   justify-content: space-around;
   gap: 20px;
 }
-.history-book-card{
-  justify-content: space-between;
-}
 
-.book-card {
+
+.dl-book-card {
   border: 1px solid #fffdfd;
   padding: 1px;
   text-align: left;
@@ -124,46 +124,45 @@ justify-content: space-between;
   background-color: rgb(255, 254, 254);
 }
 
-.book-card img {
+.dl-book-card img {
   contain-intrinsic-block-size: auto none;
   width: 100%;
   height: 180px;
 }
 
-.book-card h4 {
+.dl-book-card h4 {
   font-size: 12px;
 }
 
-.book-card p {
+.dl-book-card p {
   font-size: 10px;
   color: rgb(90, 29, 29);
 }
 
-/* library-p{
+library-p{
   color: #5c5c5c;
   font-size: 25px;
-} */
+}
 section{
   margin-bottom: 10px;
 }
 
-
-/* //history book  */
 .history-book-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
+  justify-content: space-between;
   margin: 10px 0;
   border-radius: 10px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-/* .history-book-list {
+.dl-history-book-list {
   display: flex;
   flex-direction: column;
  
-} */
+}
 
 .digital-library {
   padding: 20px;
@@ -173,7 +172,7 @@ section{
   margin-bottom: 20px;
 }
 
-.book-image {
+.dl-book-image {
   height: 80px;
   width: 60px;
   object-fit: cover;
@@ -190,7 +189,7 @@ section{
 
 .status.due {
   background-color: red;
-  color: white;
+  color: black;
 }
 
 .status.read {
@@ -203,15 +202,15 @@ section{
   color: black;
 }
 
-.like-button {
+.dl-btn-like-button {
   border: none;
-  background: none;
+  width: 100px;
   cursor: pointer;
   font-size: 24px;
 }
 
 /* popup style */
-.popup-overlay {
+.dl-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -224,30 +223,35 @@ section{
   z-index: 1000;
 }
 
-.borrow-popup-container {
+.dl-borrow-popup-container {
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  margin-left: 50%;
 }
-.popup-content {
+.dl-popup-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
+  margin-left: 400px;
   position: relative;
   width: 60%;
+  height: 90%;
 }
-.borrow-popup-content{
+.dl-borrow-popup-content{
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  margin-top: 200px;
   width: 350px;
+  height: 450px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -259,44 +263,47 @@ section{
   border: 1px solid #ccc;
 }
 
-.borrow-btn {
+.dl-borrow-btn {
   background-color: gray;
   color: white;
   padding: 10px 20px;
   border: none;
+  width: 250px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.borrow-btn:hover {
+.dl-borrow-btn:hover {
   background-color: darkgray;
 }
 
-.open-popup-btn {
+.dl-open-popup-btn {
   background-color: #595a5b;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 250px;
 }
 
-.popup-header button {
+.dl-popup-header button {
   border: none;
   font-size: 24px;
   position: absolute;
   right: 10px;
   top: 10px;
+  width: auto;
   cursor: pointer;
 }
 
-.popup-body {
+.dl-popup-body {
   margin-top: 10px;
   justify-content: center;
   display: flex;
   width: 100%;
 }
-.card-left{
+.dl-card-left{
   width:70%;
   display: flex;
 }
@@ -314,10 +321,10 @@ section{
 .c-left-bottom{
   width: 400px;
 }
-.card-right{
+.dl-card-right{
   width: 30%;
 }
-.card-right p{
+.dl-card-right p{
   font-size: 13px;
 }
 
@@ -330,10 +337,15 @@ section{
 .p_btn{
   float: right;
 }
+.dl-due-card-body{
+  width: 90vh;
+}
+.dl-history-card-body{
+  width: 90vh;
+}
 
 
-
-.modal-overlay {
+.dl-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -345,10 +357,11 @@ section{
   align-items: center;
 }
 
-.modal-container {
+.dl-modal-container {
   background-color: white;
   width: 350px;
   padding: 30px;
+  margin-left: 300px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -360,21 +373,21 @@ h2 {
   color: #333;
 }
 
-.payment-form {
+.dl-payment-form {
   display: flex;
   flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.dl-form-group {
+  margin-bottom: 5px;
 }
 
-.form-group label {
+.dl-form-group label {
   font-size: 12px;
   color: gray;
 }
 
-.form-group input {
+.dl-form-group input {
   width: 100%;
   padding: 8px;
   border-radius: 4px;
@@ -384,12 +397,12 @@ h2 {
   color: #333;
 }
 
-.form-row {
+.dl-form-row {
   display: flex;
   justify-content: space-between;
 }
 
-.form-row .form-group {
+.dl-form-row .dl-form-group {
   width: 48%;
 }
 
@@ -400,16 +413,20 @@ h2 {
   font-size: 18px;
 }
 
-.save-card {
+.dl-save-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
-.save-card input {
+.dl-save-card input {
   margin-right: 10px;
 }
+
+
+
+
 
 .pay-button {
   width: 100%;

@@ -19,19 +19,19 @@ const DueBookCard = ({ book, onClose }) => {
   };
 
   return (
-    <div className="card-body">
+    <div className="dl-due-card-body">
       <div className="history-book-card">
-        <img src={book.image} alt={book.title} className="book-image" />
+        <img src={book.image} alt={book.title} className="dl-book-image" />
         <div style={{width: "120px"}}>
           <h6>{book.title}</h6>
           <p style={{ fontSize: "12px" }}>
             {book.author}, <p style={{ fontSize: "10px" }}> {book.year}</p>
           </p>
         </div>
-        <p>{borrowDuration*1000} days</p>
+        <p  className= "text-center" style={{ fontSize: "20px" }}>{borrowDuration*1000} days</p>
 
         {book.format ? (
-          <p style={{width: "100px", fontSize: "20px"}}>
+          <p className= "text-center" style={{width: "140px", fontSize: "20px", }}>
             {" "}
             <span className={`status ${book.format.toLowerCase()}`}>
               {book.format}
@@ -44,7 +44,7 @@ const DueBookCard = ({ book, onClose }) => {
         )}
         
         {book.penalty_fee ? (
-          <p>
+          <p className= "text-center" style={{ width: "140px" }}>
             {" "}
             <span className={`status ${book.penalty_fee.toLowerCase()}`}>
               {book.penalty_fee}
@@ -56,41 +56,41 @@ const DueBookCard = ({ book, onClose }) => {
           </p>
         )}
         {/* </div> */}
-        <button className="btn btn-secondary" onClick={handleBorrowClick}>
+        <button className="btn btn-secondary" onClick={handleBorrowClick} style={{width:"100px"}}>
           Pay Now
         </button>
 
         {console.log("first")}
       </div>
       {isPopupOpen && (
-        <div className="modal-overlay">
-          <div className="modal-container">
+        <div className="dl-modal-overlay">
+          <div className="dl-modal-container">
             <button
               className="btn btn-secondary "
-              style={{ float: "right" }}
+              style={{ float: "right", width:"50px" }}
               onClick={handleClosePopup}
             >
               &times;
             </button>
             <h2 className="mt-3">PAYMENT</h2>
-            <div className="payment-form">
-              <div className="form-group">
+            <div className="dl-payment-form">
+              <div className="dl-form-group">
                 <label>CREDIT CARD NUMBER</label>
                 <input type="text" placeholder="XXXX XXXX XXXX 8014"  />
               </div>
 
-              <div className="form-group">
+              <div className="dl-form-group">
                 <label>CARD HOLDER NAME</label>
                 <input type="text" placeholder="REINHARD KENSON" />
               </div>
 
-              <div className="form-row">
-                <div className="form-group">
+              <div className="dl-form-row">
+                <div className="dl-form-group">
                   <label>EXPIRY</label>
                   <input type="text" placeholder="08/21" />
                 </div>
 
-                <div className="form-group">
+                <div className="dl-form-group">
                   <label>CVV</label>
                   <input type="text" placeholder="XXX"  />
                 </div>
@@ -98,7 +98,7 @@ const DueBookCard = ({ book, onClose }) => {
 
               <div className="total-amount text-start">TOTAL: {5* book.penality_fee}</div>
 
-              <div className="save-card mt-3 mb-3">
+              <div className="dl-save-card mt-3">
                 <input
                   type="checkbox"
                   id="save-card"
@@ -107,9 +107,9 @@ const DueBookCard = ({ book, onClose }) => {
                 />
 
                 <button
-                  className="borrow-btn "
+                  className="dl-borrow-btn "
                   onClick={handleClosePopup}
-                  style={{ width: "170px" }}
+                  style={{ width: "500px" }}
                 >
                   PROCEED TO PAY
                 </button>

@@ -47,16 +47,16 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
 
 
   return (
-    <div className="popup-overlay">
-      <div className="popup-content">
-        <div className="popup-header">
+    <div className="dl-popup-overlay">
+      <div className="dl-popup-content">
+        <div className="dl-popup-header">
           {/* <h2>{book.title}</h2> */}
           <button className="btn btn-secondary" onClick={onClose}>
             &times;
           </button>
         </div>
-        <div className="popup-body">
-          <div className="card-left">
+        <div className="dl-popup-body">
+          <div className="dl-card-left">
             <div style={{ width: "250px" }}>
               <div className="c-left-left">
                 <img
@@ -139,7 +139,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
                 <p>119 Have read</p>
               </div>
               <button
-                className=" open-popup-btn btn btn-secondary ps-5 pe-5 "
+                className=" dl-open-popup-btn btn btn-secondary ps-5 pe-5 "
                 style={{ marginTop: "90px" }}
                 onClick={handleBorrowClick}
               >
@@ -147,8 +147,8 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
               </button>
             </div>
           </div>
-          <div className="card-right">
-            <div className="card me-5 p-3">
+          <div className="dl-card">
+            <div className="dl-card me-5 p-3" style={{fontSize: "13px"}}>
               <p style={{ fontSize: "18px" }}>
                 <b>Book Details</b>
               </p>
@@ -187,16 +187,16 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
           </div>
         </div>
         {isPopupOpen && (
-          <div className="borrow-popup-container">
-            <div className="borrow-popup-content">
+          <div className="dl-borrow-popup-container">
+            <div className="dl-borrow-popup-content">
               <button
                 className="btn btn-secondary "
-                style={{ float: "right" }}
+                style={{ float: "right", width: "50px"}}
                 onClick={onClose}
               >
                 &times;
               </button>
-              <h3 className="mt-3">Fill Up the Details</h3>
+              <h3 className="mt-5">Fill Up the Details</h3>
 
               <div>
                 <label>From </label>
@@ -228,7 +228,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
               </div>
 
               <button
-                className="borrow-btn mt-5 mb-3"
+                className="dl-borrow-btn mt-5 mb-3"
                 onClick={handleConfirmBorrow}
               >
                 Confirm Borrow
