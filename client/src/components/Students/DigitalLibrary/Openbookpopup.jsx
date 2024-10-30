@@ -39,8 +39,9 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     setTimeout(() => {
       setBookStatus("Due");
       onUpdateBookStatus(book, "Due");  // Notify the parent component again
-    }, borrowDuration * 1000); // This is to simulate the borrow time
+    }, borrowDuration * 24 * 60 * 60 * 1000); 
     // }, borrowDuration *24*60*60* 1000); // This is to simulate the borrow time
+    // borrowDuration * 1000 ; this is to stimultate borrow time
     
     setIsPopupOpen(false);
   };
