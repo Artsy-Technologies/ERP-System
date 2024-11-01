@@ -10,6 +10,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; 
 import Swal from "sweetalert2";
+import DueBookCard from "./Duebook";
 
 const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -43,6 +44,10 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     // }, borrowDuration *24*60*60* 1000); // This is to simulate the borrow time
     
     setIsPopupOpen(false);
+
+    <DueBookCard
+    book={book}
+    borrowDuration = {borrowDuration}/>
   };
 
 
