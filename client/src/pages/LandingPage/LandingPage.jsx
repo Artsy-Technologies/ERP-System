@@ -13,7 +13,6 @@ import axios from "axios";
 import Intro from "../../components/Homepage/Hero/introBox.jsx";
 import Navbar from "../../components/Homepage/Navbar/navbar.jsx";
 
-
 export default function MainPage() {
   const navigate = useNavigate();
   const [myemail, setmyemail] = useState("");
@@ -192,7 +191,7 @@ export default function MainPage() {
         style={{ color: "white", backgroundColor: "#56d8b7" }}
       >
         <div className="container flex-column text-left">
-        <h2 style={{ textAlign: "left" }}>Contact Us</h2>
+          <h2 style={{ textAlign: "left", color: "white" }}>Contact Us</h2>
           <h4 className="registerContact">Register for daily updates</h4>
           <p>
             <i className="bi bi-envelope-check-fill"></i> Hello@relume.io
@@ -252,8 +251,14 @@ export default function MainPage() {
               <div id="textareaerror" className="text-danger"></div>
             </div>
             <div className="form-check d-flex align-items-center mb-3">
-            <input type="checkbox" className="form-check-input me-2" id="terms" name="terms" value="yes" />
-            I Accept the  <Link to="#"> Terms & Conditions</Link>
+              <input
+                type="checkbox"
+                className="form-check-input me-2"
+                id="terms"
+                name="terms"
+                value="yes"
+              />
+              I Accept the <Link to="#"> Terms & Conditions</Link>
               <div id="termserror" className="text-danger"></div>
               <div className="invalid-feedback">
                 You must agree before submitting
@@ -274,7 +279,6 @@ export default function MainPage() {
           backgroundColor: "#313131",
           color: "white",
           textDecoration: "none",
-          
         }}
       >
         <br />
@@ -313,26 +317,21 @@ export default function MainPage() {
         <div
           id="divider-line"
           className="container"
-          style={{ backgroundColor: "white", height: "0px",  margin: "0" }}
+          style={{ backgroundColor: "white", height: "0px", margin: "0" }}
         ></div>
         <br />
         <br />
-        <hr style={{ borderTop: "4px solid white", width: "100%", margin: "0 " }} />
-        <div className="d-flex flex-row justify-content-between">
-          
-          <div
-            className="d-flex flex-row justify-content-around"
-            style={{ gap: "10px" }}
-          >
+        <hr
+          style={{ borderTop: "4px solid white", width: "100%", margin: "0 " }}
+        />
+        <div className="d-flex justify-content-between">
+          <div className="d-flex flex-row" style={{ gap: "20px" }}>
             <p>2024 Vancover.All rights reserved</p>
             <Link to="#">Privacy Policy</Link>
             <Link to="#">Terms of service</Link>
             <Link to="#">Cookies settings</Link>
           </div>
-          <div
-            className="d-flex flex-row justify-content-around"
-            style={{ gap: "10px" }}
-          >
+          <div className="d-flex flex-row" style={{ gap: "10px" }}>
             <Link to="#">
               <i className="bi bi-facebook"></i>
             </Link>
@@ -340,7 +339,7 @@ export default function MainPage() {
               <i className="bi bi-instagram"></i>
             </Link>
             <Link to="#">
-              <i className="bi bi-twitter-x"></i>
+              <i className="bi bi-twitter"></i>
             </Link>
             <Link to="#">
               <i className="bi bi-linkedin"></i>
