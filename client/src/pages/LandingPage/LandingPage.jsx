@@ -274,6 +274,7 @@ export default function MainPage() {
           backgroundColor: "#313131",
           color: "white",
           textDecoration: "none",
+          
         }}
       >
         <br />
@@ -316,7 +317,9 @@ export default function MainPage() {
         ></div>
         <br />
         <br />
+        <hr style={{ borderTop: "4px solid white", width: "100%", margin: "0 " }} />
         <div className="d-flex flex-row justify-content-between">
+          
           <div
             className="d-flex flex-row justify-content-around"
             style={{ gap: "10px" }}
