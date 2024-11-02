@@ -99,7 +99,7 @@ function Navbar() {
             </div>
             <div className="d-flex gap-3">
               <ScrollLink to="/signup">
-                <button className="btn btn-light">Sign up</button>
+                <button className="btn btn-light" style={{ whiteSpace: 'nowrap' }}>Sign up</button>
               </ScrollLink>
               <button
                 className="btn btn-light"
