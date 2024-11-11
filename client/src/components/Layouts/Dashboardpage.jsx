@@ -7,7 +7,7 @@ export default function Dashboardpage() {
   return (
     <main style={{ width: "100vw" , display:"flex" , justifyContent:"space-between" }} >
       <Sidebar />
-      <section style={{ width: "100%" }} >
+      <section style={{ width: "80%" }} >
         <Header />
         <Outlet />
       </section>
