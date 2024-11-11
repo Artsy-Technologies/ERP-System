@@ -50,6 +50,7 @@ import ElectricalsInventory from '../components/Admin/Inventorymanagement/electr
 import FurnitureInventory from '../components/Admin/Inventorymanagement/furniture/Furniture.js';
 
 import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
+import AdminDashboardPage from "../pages/AdminDashboard/Dashboard/AdminDashboardPage.jsx";
 // import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js";
 // import TeacherDetails from './components/Teacher/TeacherDetails.js';
 
@@ -58,15 +59,16 @@ const PagesRoutes = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<LandingPage />} />
-      <Route path="/form" element={<FormPage/>} />
+      <Route path="/form" element={<FormPage />} />
 
       {/* Admin Routes */}
       <Route path="/admin-dashboard" element={<Dashboardpage />}>
-        {/* <Route index element={<Admin />} /> */}
+        <Route path="dashboard" element={<AdminDashboardPage/>} />
         <Route path="teacher" element={<TeacherList />} />
         <Route path="students" element={<StudentDetails1 />} />
         <Route path="transport" element={<Transport />} />
         <Route path="finance" element={<Finance />} />
+
 
         {/* Inventory Management Sub-Routes */}
         <Route path="inventory" element={<Inventorymain />}>
@@ -76,7 +78,8 @@ const PagesRoutes = () => {
           <Route path="lab-equipment" element={<LabEquipment />} />
           <Route path="electricals" element={<ElectricalsInventory />} />
           <Route path="furniture" element={<FurnitureInventory />} />
-      </Route>
+
+        </Route>
 
       </Route>
 
@@ -104,7 +107,7 @@ const PagesRoutes = () => {
         <Route path="timetable" element={<TimeTable />} />
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
-        <Route path='exam-alerts' element={<ExamAlerts/>} />
+        <Route path='exam-alerts' element={<ExamAlerts />} />
         <Route path="virtual-classes" element={<VirtualClass />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
@@ -112,7 +115,7 @@ const PagesRoutes = () => {
         <Route path="faculty-feedback" element={<FacultyFeedback />} />
       </Route>
 
-            {/*
+      {/*
             <Route path="/teacher/:id" element={<TeacherDetails />} />
             <Route path="/teachers/regform" element={<TeacherRegistrationForm/>}/> 
             */}
