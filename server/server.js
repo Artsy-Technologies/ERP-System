@@ -89,8 +89,8 @@ import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
 import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
 import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
-import teacherRouter from "./routes/teacherProfile/TeacherRouter.js"
-import studentRouter from "./routes/studentProfile/StudentRouter.js";
+import TeacherRouter from "./routes/teacherProfile/TeacherRouter.js"
+import StudentRouter from "./routes/studentProfile/StudentRouter.js";
 import bookRoutes from "./routes/digitalLibrary/bookRoutes.js";
 
 import path from "path";
@@ -124,8 +124,8 @@ app.use("/api", deleteUserRoutes);
 app.use('/api/teachers', teacherRoutes);
 app.use("/api/assignment", assignmentRoutes);
 app.use("/api/library", bookRoutes);
-app.use("/api/studentDetails", studentRouter);
-app.use("/api/teacherDetails", teacherRouter);
+app.use("/api/studentDetails", StudentRouter);
+app.use("/api/teacherDetails", TeacherRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
