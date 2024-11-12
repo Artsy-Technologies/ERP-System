@@ -51,11 +51,12 @@ export default function PaymentDueStudents({ data }) {
                 </tbody>
             </Table>
             {/* Add pagination controls if needed */}
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                <button style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}>1</button>
-                <button style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}>2</button>
-                <button style={{ border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}>3</button>
-            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', gap: '20px', color: 'white', textAlign: 'center' }}>
+    <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '50%', backgroundColor: 'grey', cursor: 'pointer', width: '40px', height: '40px' }}>1</button>
+    <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '50%', backgroundColor: 'grey', cursor: 'pointer', width: '40px', height: '40px' }}>2</button>
+    <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', borderRadius: '50%', backgroundColor: 'grey', cursor: 'pointer', width: '40px', height: '40px' }}>3</button>
+</div>
+
         </div>
     );
 }

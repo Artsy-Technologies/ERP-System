@@ -63,7 +63,7 @@ const PagesRoutes = () => {
 
       {/* Admin Routes */}
       <Route path="/admin-dashboard" element={<Dashboardpage />}>
-        <Route path="dashboard" element={<AdminDashboardPage/>} />
+        <Route index element={<AdminDashboardPage/>} />
         <Route path="teacher" element={<TeacherList />} />
         <Route path="students" element={<StudentDetails1 />} />
         <Route path="transport" element={<Transport />} />
