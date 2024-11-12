@@ -105,11 +105,11 @@ const TeacherForm = ({ teacher, onSubmit }) => {
     try {
       if (teacher && teacher._id) {
         await axios.put(
-          `http://localhost:8000/teachers/${teacher._id}`,
+          `http://localhost:8000/api/teacherDetails/${teacher._id}`,
           teacherData
         );
       } else {
-        await axios.post("http://localhost:8000/teachers", teacherData);
+        await axios.post("http://localhost:8000/api/teacherDetails", teacherData);
       }
 
       alert("Teacher Profile Updated Successfully");
@@ -288,7 +288,7 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                 </div>
 
                 <div className="row mb-1">
-                  <div className="col-md-5">
+                  <div className="col-md-4">
                     <label htmlFor="email" className="form-label text-start">
                       Email
                     </label>
@@ -304,7 +304,7 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       <div className="text-danger">{errors.email}</div>
                     )}
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-md-4">
                     <label htmlFor="dob" className="form-label text-start">
                       DOB
                     </label>

@@ -109,11 +109,11 @@ const StudentForm = ({ student, onSubmit }) => {
 
     if (student) {
       await axios.put(
-        `http://localhost:8000/students/${student._id}`,
+        `http://localhost:8000/api/studentDetails/${student._id}`,
         studentData
       );
     } else {
-      await axios.post("http://localhost:8000/students", studentData);
+      await axios.post("http://localhost:8000/api/studentDetails", studentData);
     }
 
     alert("Student Profile Updated Successfully");
