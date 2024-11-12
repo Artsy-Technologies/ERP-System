@@ -14,6 +14,8 @@ const DueBookCard = ({ book, onClose, borrowDuration }) => {
     setIsPopupOpen(false);
   };
 
+// console.log(borrowDuration);
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };

@@ -17,7 +17,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
   const [fromDate, setFromDate] = useState(null); 
    const [toDate, setToDate] = useState(null);
    const [bookStatus, setBookStatus] = useState(null);
-  const [borrowDuration, setBorrowDuration] = useState(7);
+  const [borrowDuration, setBorrowDuration] = useState();
 
   const handleBorrowClick = () => {
     setIsPopupOpen(true);
@@ -40,16 +40,26 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     setTimeout(() => {
       setBookStatus("Due");
       onUpdateBookStatus(book, "Due");  // Notify the parent component again
-    }, borrowDuration * 24 * 60 * 60 * 1000); 
-    // }, borrowDuration *24*60*60* 1000); // This is to simulate the borrow time
-    // borrowDuration * 1000 ; this is to stimultate borrow time
+    }, borrowDuration* 1* 1000); 
+    // }, borrowDuration *24*60*60* 1000)
+    console.log(borrowDuration);
     
     setIsPopupOpen(false);
-    // {onclose}
-
-    <DueBookCard
-    book={book}
-    borrowDuration= {borrowDuration}/>
+    
+    // {bookStatus === "Due" && (
+    //   <DueBookCard book={book} borrowDuration={borrowDuration}
+    //    />
+    //    )}
+if(bookStatus === "Due"){
+  return(
+    
+  <DueBookCard book={book}
+  borrowDuration={borrowDuration}/>
+  )
+}
+    // <DueBookCard
+    // book={book}
+    // borrowDuration= {borrowDuration}/>
   };
 
 
@@ -244,6 +254,9 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
           </div>
         )}
       </div>
+
+   
+
     </div>
   );
 };

@@ -36,10 +36,10 @@ h3{
     color: #000;
   }
   
-  button:hover {
+  /* button:hover {
     background-color: #000;
-    color: #fff; /* Invert on hover */
-  }
+    color: #fff;
+  }     remove this button hover it effecting others buttons as well */
   
   .doubt-image {
  

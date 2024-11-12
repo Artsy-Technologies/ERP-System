@@ -14,9 +14,7 @@ import HistoryBookList from "./Historybooklist";
 const DueBookList = ({ books, dueBooks, view, setView }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  if (!books || books.length === 0) {
-    return <p>No Due books yet!</p>;
-  }
+ 
 
   const filteredBooks = books.filter(
     (book) =>
@@ -25,6 +23,7 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
         book.author.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  
   const renderContent = () => {
     if (view === "history") {
       return <HistoryBookList books={dueBooks} />;
