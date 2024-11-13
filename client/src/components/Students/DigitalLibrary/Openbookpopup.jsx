@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./libraryApp.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +18,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
    const [toDate, setToDate] = useState(null);
    const [bookStatus, setBookStatus] = useState(null);
   const [borrowDuration, setBorrowDuration] = useState();
+  const [overduedays, setOverduedays] = useState();
 
   const handleBorrowClick = () => {
     setIsPopupOpen(true);
@@ -45,6 +46,29 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     setIsPopupOpen(false);
   };
 
+  // calculation of due days after borrow duration get over 
+  // current date - borrow date
+  // if + add each days and send to duebook, if - do nothing
+  const startOverdueCounter = () => {
+    const endDate = new Date(toDate);
+    const interval = setInterval(() => {
+      const currentDate = new Date();
+      const differenceInTime = currentDate - endDate;
+      if(differenceInTime > 0) {
+        const daysOverdue = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+        setOverduedays(daysOverdue);
+      }
+    }, 24 * 60 * 60 * 1000);
+    return () => clearInterval(interval);
+
+  };
+
+  //pass overduedays to duebook component
+  useEffect(() => {
+if(bookStatus === "Due") {
+  onUpdateBookStatus(book, "Due", overduedays);
+}
+  }, [bookStatus, overduedays, book, onUpdateBookStatus]);
 
   return (
     <div className="dl-popup-overlay">
@@ -236,6 +260,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
             </div>
           </div>
         )}
+        {bookStatus === "Due" && <p>Overdue Days: {overduedays}</p>}
       </div>
 
    
