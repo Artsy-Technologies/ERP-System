@@ -1,7 +1,7 @@
 
 export default function SchoolBalance() {
     return (
-        <div style={{ width: "20%", height: "70%", marginTop:'2rem' }} className=" d-flex flex-column justify-content-between " >
+        <div style={{ width: "20%", height:'250px', marginTop:'2rem' }} className=" d-flex flex-column justify-content-between " >
             <button style={{ background: "#FF71A4", border: "none", color: "white", fontSize:'.9rem' }} >
                 Print Annual Report
             </button>
