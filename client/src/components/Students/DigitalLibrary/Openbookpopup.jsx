@@ -40,26 +40,9 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     setTimeout(() => {
       setBookStatus("Due");
       onUpdateBookStatus(book, "Due");  // Notify the parent component again
-    }, borrowDuration* 1* 1000); 
-    // }, borrowDuration *24*60*60* 1000)
-    console.log(borrowDuration);
+    }, borrowDuration * 1000); 
     
     setIsPopupOpen(false);
-    
-    // {bookStatus === "Due" && (
-    //   <DueBookCard book={book} borrowDuration={borrowDuration}
-    //    />
-    //    )}
-if(bookStatus === "Due"){
-  return(
-    
-  <DueBookCard book={book}
-  borrowDuration={borrowDuration}/>
-  )
-}
-    // <DueBookCard
-    // book={book}
-    // borrowDuration= {borrowDuration}/>
   };
 
 

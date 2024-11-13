@@ -4,7 +4,7 @@ export const sidebar = {
   "sidebarItems": [
     {
       "text": "Dashboard",
-      "link": "admin-dashboard/dashboard",
+      "link": "admin-dashboard/",
       "icon": <FaTachometerAlt />
     },
     {

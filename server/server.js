@@ -89,11 +89,9 @@ import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
 import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
 import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
-import TeacherRouter from "./routes/teacherProfile/TeacherRouter.js"
-import StudentRouter from "./routes/studentProfile/StudentRouter.js";
-import bookRoutes from "./routes/digitalLibrary/bookRoutes.js";
 
 import path from "path";
+
 import { fileURLToPath } from 'url';
 
 // Define __dirname

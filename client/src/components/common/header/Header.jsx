@@ -1,10 +1,14 @@
 import React from 'react'
 
+
+
 export default function Header() {
   return (
-    <header style={{height:"4rem", position:"sticky",top:"0",left:"20",zIndex:"4" }} className="header">
-      <div className="search-bar"><i className="fas fa-search"></i>
-        <input type="text" id="search bar" placeholder="Search..." />
+    <header style={{ height: "5rem", position: "sticky", top: "0", left: "20", zIndex: "4", background: "white", boxShadow: "0px 8px 28px 0px #4859661A",}} className="header">
+      <div class="container-fluid">
+        <form class="d-flex">
+          <input style={{ width: "40%" }} class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        </form>
       </div>
       <div className="icons">
         <div className="icon notifications">
