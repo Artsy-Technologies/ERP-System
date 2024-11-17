@@ -1,0 +1,21 @@
+/* src/components/SettingsSidebar.css */
+.settings-sidebar {
+    width: 200px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    min-height: 200vh;
+  }
+  
+.settings-links {
+  padding: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.settings-links li {
+  list-style: none;
+  margin: 15px 0;
+  cursor: pointer;
+}
