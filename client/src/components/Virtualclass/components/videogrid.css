@@ -1,0 +1,12 @@
+/* src/components/VideoGrid.css */
+.video-grid {
+  padding: 20px;
+  margin: 0 auto; /* Center the grid */
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-column-gap: 20px;
+}
+  
