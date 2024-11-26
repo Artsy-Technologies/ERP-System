@@ -1,44 +1,78 @@
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2d2c2c;
+  background-color: #ededed;
   padding: 10px 20px;
-  color: rgb(15, 13, 13);
+  color: rgb(21, 21, 21);
 }
 
+/* Search Bar */
 .search-bar {
-  flex: 1;
-  position: relative; /* Make the container relative */
-  margin-left: 259px;
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  transition: width 0.3s ease;
+  width: 40px; /* Default size (icon only) */
 }
 
-.search-bar input[type="text"] {
-  width: 75%;
-  padding: 8px 40px 8px 30px; /* Add padding on the right and left to fit the icon */
-  border-radius: 4px;
-  border: none;
-  outline: none;
+.search-bar.expanded {
+  width: 300px; /* Expanded size */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
 }
 
 .search-bar .search-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px; /* Position the icon inside the input */
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #999;
-  pointer-events: none; /* Ensure the icon doesn't block input interaction */
+  font-size: 20px;
+  margin-right: 10px;
+  color: #555;
+  cursor: pointer;
 }
 
+.search-bar input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px;
+  display: block; /* Always display when expanded */
+}
+
+/* Icons */
+/* Icons */
 .icons {
   display: flex;
-  font-size: 30px;
-  margin-left: 900px;
-  color: white;
+  gap: 20px;
+  position: absolute; /* Keep it fixed on the right end */
+  right: 20px; /* Distance from the right edge */
+  top: 3%; /* Vertically center */
+  transform: translateY(-50%); /* Adjust for centering */
 }
 
 .icons .icon {
-  margin-left: 30px;
+  font-size: 24px;
   cursor: pointer;
+  color: #555;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .search-bar.expanded {
+    width: 200px;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .search-bar.expanded {
+    width: 150px;
+  }
+
+  
 }
