@@ -1,0 +1,50 @@
+/* Card Container */
+.card-container {
+  display: flex; /* Use flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping to avoid overlap */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Add spacing between cards */
+  margin-top: 20px; /* Optional: add margin at the top */
+}
+
+/* Individual Card */
+.card {
+  background-color: #89e3eb; /* Light cyan color */
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  display: flex; /* Flex layout for card content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .icon {
+  margin-bottom: 10px;
+}
+
+.card .icon img {
+  width: 30px;
+  height: 40px;
+  padding: 5px;
+}
+
+.card-content .number {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.card-content .label {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 5px;
+}
