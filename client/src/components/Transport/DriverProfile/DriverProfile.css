@@ -1,0 +1,219 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General Layout */
+  .driver-profile-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .back-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: -1600px;
+  }
+  
+  .driver-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .new-driver-btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    margin-right: -210px;
+  }
+  
+  /* Driver Info */
+  .driver-info {
+    flex: 1;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    text-align: left;
+  }
+  
+  .driver-card {
+    background-color: #efefef;
+    color: rgb(114, 107, 107);
+    margin-left: 260px;
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+  }
+  
+  .driver-img {
+    border-radius: 50%;
+    width: 160px;
+    height: 150px;
+  }
+  
+  .rating {
+    margin: 10px 0;
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+  }
+  
+  .experience, .contact {
+    margin-top: 18px;
+    text-align: left;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px
+  }
+  
+  /* Vehicle Info */
+  .vehicle-info {
+    text-align: left;
+    flex: 1;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    box-shadow: none;
+    
+  }
+  
+  .vehicle-card {
+    background-color: #efefef;
+    color: rgb(114, 107, 107);
+    margin-left: 70px;
+    margin-top: 5px;
+    padding: 40px;
+    gap: 30px;
+    border-radius: 10px;
+    text-align: left;
+    width:450px;
+    height: 555px;
+  }
+  .vehicle-card h3{
+    font-size: 40px;
+    padding-bottom: 30px;
+  }
+  .vehicle-card p{
+    padding: 8px;
+  }
+  
+  .vehicle-img {
+    
+    width: 350px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+  
+  /* Payments Section */
+  .payments-section {
+    flex: 1;
+    
+  }
+  .payments-section h3
+  {
+    color: #3b3b3b;
+    font-size:xx-large;
+    padding-bottom: 40px;
+    margin-top: -10px;
+    text-align: left;
+  }
+  
+  .payment-btn {
+    display: block;
+    width: 70%;
+    height: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: -80px;
+    border: none;
+    background-color: #ff6cee;
+    color: white;
+    size: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Payment Modal */
+  .payment-modal, .new-driver-modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .payment-modal input, .new-driver-modal input {
+    padding: 10px;
+    margin: 15px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-btn, .pay-btn, .cancel-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-btn, .pay-btn {
+    background-color: #00bcd4;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #ddd;
+  }
+  
