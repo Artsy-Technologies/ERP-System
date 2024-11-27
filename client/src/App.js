@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ErrorBoundary from './errorBoundary';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import PagesRoutes from './Routes/PageRoutes.jsx';
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+axios.defaults.withCredentials = process.env.REACT_APP_AXIOS_WITH_CREDENTIALS;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ErrorBoundary>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<PagesRoutes />} />
+          </Routes>
+      </BrowserRouter>
+    </ErrorBoundary>
+  )
 }
 
 export default App;

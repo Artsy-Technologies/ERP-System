@@ -1,0 +1,26 @@
+#parentdiv {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#childdiv {
+  display: flex;
+  width: auto;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.nav-link{
+  font-size:larger;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
