@@ -21,6 +21,25 @@ const DigitalLibraryMainPage = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [searchTerm, setSearchTerm] = useState(""); // New state for search
   const [likedBooks, setLikedBooks] = useState({});
+  // const [books, setBooks] = useState(initialBooksData);
+
+
+  // useEffect(() => {
+  //   const updatedBooks = books.map((book) => {
+  //     if(book.status === "Due") {
+  //       const duedays = calculateDueDays(book.dueDate);
+  //       return {...book, duedays};
+  //     }
+  //     return book;
+  //   });
+  //   setBooks(updatedBooks);
+  //   setDueBooks(updatedBooks.filter((book) => book.status === "Due"));
+  // }, [books]);
+  // const calculateDueDays = (dueDate) => {
+  //   const currentDate = new Date();
+  //   const due = new Date(dueDate);
+  //   return Math.ceil((due - currentDate) / (1000 * 60 * 60* 24));
+  // };
 
   const handleToggleLike = (bookId) => {
     setLikedBooks((prev) => ({
@@ -126,6 +145,7 @@ const DigitalLibraryMainPage = () => {
           books={historyBooks}
           dueBooks={dueBooks}
           view={view}
+          // onUpdateBookStatus={handleUpdateBookStatus}
           setView={setView}
         />
       );
@@ -240,7 +260,7 @@ const DigitalLibraryMainPage = () => {
           book={selectedBook}
           onClose={handleClosePopup}
           onUpdateBookStatus={handleUpdateBookStatus}
-          onStatusChange={handleStatusChange}
+          // onStatusChange={handleStatusChange}
         />
       )}
     </>

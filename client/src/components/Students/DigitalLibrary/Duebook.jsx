@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./libraryApp.css";
 
-const DueBookCard = ({ book, onClose, borrowDuration }) => {
+const DueBookCard = ({ book, onClose, daysOverdue }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
   // const [borrowDuration, setBorrowDuration] = useState();
@@ -30,7 +30,7 @@ const DueBookCard = ({ book, onClose, borrowDuration }) => {
             {book.author}, <p style={{ fontSize: "10px" }}> {book.year}</p>
           </p>
         </div>
-        <p  className= "text-center" style={{ fontSize: "20px" }}>{borrowDuration} days</p>
+        <p  className= "text-center" style={{ fontSize: "20px" }}>{daysOverdue} days</p>
 
         {book.format ? (
           <p className= "text-center" style={{width: "140px", fontSize: "20px", }}>
@@ -98,7 +98,7 @@ const DueBookCard = ({ book, onClose, borrowDuration }) => {
                 </div>
               </div>
 
-              <div className="total-amount text-start">TOTAL:  {(borrowDuration)* (book.penalty_fee)}</div>
+              <div className="total-amount text-start">TOTAL:  {(daysOverdue)* (book.penalty_fee)}</div>
 
               <div className="dl-save-card mt-3">
                 <input

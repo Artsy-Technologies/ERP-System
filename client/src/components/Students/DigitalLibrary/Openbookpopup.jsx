@@ -17,8 +17,8 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
   const [fromDate, setFromDate] = useState(null); 
    const [toDate, setToDate] = useState(null);
    const [bookStatus, setBookStatus] = useState(null);
-  const [borrowDuration, setBorrowDuration] = useState();
-  const [overduedays, setOverduedays] = useState();
+  const [borrowDuration, setBorrowDuration] = useState(null);
+  const [overduedays, setOverduedays] = useState(null);
 
   const handleBorrowClick = () => {
     setIsPopupOpen(true);
@@ -38,10 +38,12 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
     onUpdateBookStatus(book, "Borrow"); // Notify the parent component
   
     // Set timeout for due status
+    const borrowDurationDays = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
     setTimeout(() => {
       setBookStatus("Due");
       onUpdateBookStatus(book, "Due");  // Notify the parent component again
-    }, borrowDuration * 1000); 
+      startOverdueCounter();
+    }, borrowDuration * 24 * 60 * 60 *1000); 
     
     setIsPopupOpen(false);
   };
@@ -55,7 +57,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
       const currentDate = new Date();
       const differenceInTime = currentDate - endDate;
       if(differenceInTime > 0) {
-        const daysOverdue = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+        const daysOverdue = Math.floor(differenceInTime / (1000 * 60 * 60 * 24 ));
         setOverduedays(daysOverdue);
       }
     }, 24 * 60 * 60 * 1000);
@@ -65,7 +67,7 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
 
   //pass overduedays to duebook component
   useEffect(() => {
-if(bookStatus === "Due") {
+if(bookStatus === "Due" && overduedays) {
   onUpdateBookStatus(book, "Due", overduedays);
 }
   }, [bookStatus, overduedays, book, onUpdateBookStatus]);
@@ -260,7 +262,7 @@ if(bookStatus === "Due") {
             </div>
           </div>
         )}
-        {bookStatus === "Due" && <p>Overdue Days: {overduedays}</p>}
+       
       </div>
 
    
