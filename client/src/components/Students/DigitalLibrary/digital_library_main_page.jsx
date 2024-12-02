@@ -34,24 +34,23 @@ const DigitalLibraryMainPage = () => {
     const fetchBooks = async () => {
       const recommended = await getRecommendedBooks();
       const recent = await getRecentReadings();
-      
+
       // Check and update state only when the fetched data is valid arrays
       if (Array.isArray(recommended)) {
         setRecommendedBooks(recommended);
       }
-  
+
       if (Array.isArray(recent)) {
         setRecentReadings(recent);
       }
     };
-  
+
     fetchBooks();
   }, []);
 
   const handleBookOpen = (book) => {
     setHistoryBooks((prev) => [...prev, { ...book, status: "Reading" }]);
 
-  
     setDueBooks((prev) => [...prev, book]);
     setSelectedBook(book); // Set the selected book to show the popup
   };
@@ -63,15 +62,13 @@ const DigitalLibraryMainPage = () => {
   const goToLibraryMainPage = () => {
     console.log("Navigating to Digital Library");
     setView("main"); // Ensure this line is here to reset the view state
-    navigate("/d_library");
+    navigate("/student-dashboard/digital-library");
   };
 
   // Handle search input change
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
- 
 
   const handleUpdateBookStatus = (updatedBook, newStatus) => {
     setHistoryBooks((prevBooks) =>
@@ -118,7 +115,6 @@ const DigitalLibraryMainPage = () => {
           books={historyBooks}
           likedBooks={likedBooks} // Pass likedBooks
           onToggleLike={handleToggleLike} // Pass handleToggleLike
-          
           dueBooks={dueBooks}
           view={view}
           setView={setView}
@@ -128,7 +124,6 @@ const DigitalLibraryMainPage = () => {
       return (
         <DueBookList
           books={historyBooks}
-         
           dueBooks={dueBooks}
           view={view}
           setView={setView}
@@ -136,9 +131,9 @@ const DigitalLibraryMainPage = () => {
       );
     } else {
       return (
-        <div className="card" style={{ width: "105%", marginTop: "60px" }}>
-          <div className="card-body">
-            <div className="card-search-bar">
+        <div className="dl-card" style={{ width: "100%", marginTop: "60px" }}>
+          <div className="dl-card-body">
+            <div className="dl-card-search-bar">
               <input
                 type="text"
                 placeholder="Search by title or author"
@@ -158,7 +153,7 @@ const DigitalLibraryMainPage = () => {
                   style={{
                     borderRadius: "50px",
                     width: "100px",
-                    boxShadow: "5px 10px 5px -5px #121212",
+                    boxShadow: "5px 4px 5px -5px #121212",
                   }}
                   onClick={() => setView("history")}
                 >
@@ -169,7 +164,7 @@ const DigitalLibraryMainPage = () => {
                   style={{
                     borderRadius: "50px",
                     width: "100px",
-                    boxShadow: "5px 10px 5px -5px #121212",
+                    boxShadow: "5px 4px 5px -5px #121212",
                   }}
                   onClick={() => setView("Due")}
                 >
@@ -178,8 +173,10 @@ const DigitalLibraryMainPage = () => {
               </div>
             </div>
             <section>
-              <p style={{ marginBottom: "10px" }}>Recommended for You</p>
-              <div className="book-list">
+              <p style={{ marginBottom: "15px", fontSize: "25px" }}>
+                Recommended for You
+              </p>
+              <div className="dl-book-list">
                 {filteredRecommendedBooks.map((book, index) => (
                   <BookCard
                     key={index}
@@ -190,8 +187,10 @@ const DigitalLibraryMainPage = () => {
               </div>
             </section>
             <section>
-              <p style={{ marginBottom: "10px" }}>Recent Readings</p>
-              <div className="book-list">
+              <p style={{ marginBottom: "15px", fontSize: "25px" }}>
+                Recent Readings
+              </p>
+              <div className="dl-book-list">
                 {filteredRecentReadings.map((book, index) => (
                   <BookCard
                     key={index}
@@ -209,9 +208,9 @@ const DigitalLibraryMainPage = () => {
 
   return (
     <>
-      <div className="fullcontainer">
-        <div className="library-section">
-          <div className="main-page">
+      <div className="container-fluid">
+        <div className="dl-library-section">
+          <div className="dl-main-page" style={{marginLeft: "30px"}}>
             <header>
               <div className="lower_heading_digital_library">
                 <div

@@ -89,7 +89,13 @@ import updateUserRoutes from "./routes/userRoutes/updatesRoutes.js";
 import deleteUserRoutes from "./routes/userRoutes/deleteRoutes.js";
 import teacherRoutes from './routes/teachersRoute/teacherRoutes.js';
 import assignmentRoutes from "./routes/assignment/assignmentRoutes.js"
+
+import bookRoutes from "./routes/digitalLibrary/bookRoutes.js"
+import studentRouter from "./routes/studentProfile/StudentRouter.js"
+import teacherRouter from "./routes/teacherProfile/TeacherRouter.js"
+
 import path from "path";
+
 import { fileURLToPath } from 'url';
 
 // Define __dirname
@@ -119,6 +125,9 @@ app.use("/api", updateUserRoutes);
 app.use("/api", deleteUserRoutes);
 app.use('/api/teachers', teacherRoutes);
 app.use("/api/assignment", assignmentRoutes);
+app.use("/api/library", bookRoutes);
+app.use("/api/studentDetails", studentRouter);
+app.use("/api/teacherDetails", teacherRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

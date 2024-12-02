@@ -6,6 +6,8 @@ import TransactionHistory from "../../../components/Admin/Transport/TransactionH
 import ExpensesChart from "../../../components/Admin/Transport/ExpensesChart-transport/ExpensesChart";
 import Card from "../../../components/Admin/Transport/Card-transport/Card";
 import "./Dashboard.css";
+import dollarImg from './images/dollar.png'
+import roadImg from './images/road.png'
 
 const TransportDashboard = () => {
   const [isDrivers, setIsDrivers] = useState(true);
@@ -13,10 +15,10 @@ const TransportDashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="cards-section">
-        <Card iconPath="/images/road.png" number="99,002" label="KM" />
+        <Card iconPath={roadImg} number="99,002" label="KM" />
         <br></br>
         <Card
-          iconPath="/images/dollar.png"
+          iconPath={dollarImg}
           number="10.8K"
           label="Total Expense"
         />
