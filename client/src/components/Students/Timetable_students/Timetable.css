@@ -1,6 +1,8 @@
 .timetable-container {
-  margin-top: 30px;
+  margin-left:  200px;
+  margin-top: 70px;
   max-width: 800px;
+  
   
   
 }
@@ -9,23 +11,27 @@
   border-collapse: collapse;
   width: 100%;
   margin-top: 20px;
-  background-color: #3bcb9eca;
+  background-color: #ccffefca;
   border: 1px solid black;
+  
 }
 
 .timetable, .timetable th, .timetable td {
   border: 1px solid #141313;
+  
 }
 
 .timetable th, .timetable td {
+  
   padding: 10px;
   text-align: center;
 }
 .timetable th{
   background-color: #006d77;
+  color: rgb(255, 255, 255);
   font-size: 17px;
 }
 .timetable td{
-  background-color: #a0e7e5;
+  background-color: #c3fffd;
   font-size: 14px;
 }
