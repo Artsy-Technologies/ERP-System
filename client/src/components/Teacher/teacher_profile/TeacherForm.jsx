@@ -1,6 +1,7 @@
 import {
   faCircleQuestion,
   faCircleUser,
+  faQuestionCircle,
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -10,7 +11,7 @@ import {
   faPencilAlt,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import "../../Students/DigitalLibrary/libraryApp.css"
+import "../../Students/DigitalLibrary/libraryApp.css";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
@@ -109,7 +110,10 @@ const TeacherForm = ({ teacher, onSubmit }) => {
           teacherData
         );
       } else {
-        await axios.post("http://localhost:8000/api/teacherDetails", teacherData);
+        await axios.post(
+          "http://localhost:8000/api/teacherDetails",
+          teacherData
+        );
       }
 
       alert("Teacher Profile Updated Successfully");
@@ -152,52 +156,27 @@ const TeacherForm = ({ teacher, onSubmit }) => {
           style={{ width: "20%", marginTop: "100px", fontWeight: "bolder" }}
         >
           <div>
-            <p
-              style={{
-                marginBottom: "50px",
-                color: "black",
-                fontSize: "25px",
-                marginRight: "100px",
-              }}
-            >
-              <b>
-                <FontAwesomeIcon
-                  icon={faArrowLeft}
-                  style={{ paddingRight: "10px" }}
-                />
-                Setting
-              </b>
-            </p>
-          </div>
-          <p style={{ marginBottom: "40px" }}>
-            <b>
-              <FontAwesomeIcon
-                icon={faPencilAlt}
-                style={{ paddingRight: "10px" }}
-              />
-              Edit Profile
-            </b>
+    <p className="mb-5 text-black fs-4 me-5 fw-bold">
+      <FontAwesomeIcon icon={faArrowLeft} className="pe-2" />
+      Setting
+    </p>
+  </div>
+          <p className="mb-4 fw-bold text-secondary">
+            <FontAwesomeIcon icon={faPencilAlt} className="pe-3" />
+            Edit Profile
           </p>
-          <p style={{ marginBottom: "30px" }}>
-            <b>
-              <FontAwesomeIcon icon={faBell} style={{ paddingRight: "10px" }} />
-              Notification
-            </b>
+
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faBell} className="pe-3" />
+            Notification
           </p>
-          <p style={{ marginBottom: "30px" }}>
-            <b>
-              <FontAwesomeIcon icon={faGear} style={{ paddingRight: "10px" }} />
-              Appearance
-            </b>
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faGear} className="pe-3" />
+            Appearance
           </p>
-          <p style={{ marginBottom: "30px" }}>
-            <b>
-              <FontAwesomeIcon
-                icon={faCircleQuestion}
-                style={{ paddingRight: "10px" }}
-              />
-              Help
-            </b>
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faQuestionCircle} className="pe-3" />
+            Help
           </p>
         </div>
         <div
@@ -216,17 +195,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
           >
             <div className="form-container">
               <form onSubmit={handleSubmit}>
-              <div className="mb-3 form-heading-container d-flex justify-content-between">
-                 
-                    <h2 className="form-heading">Edit Profile</h2>
-                    <button
-                      className="btn btn-light"
-                      style={{ width: "200px", fontSize: "20px" }}
-                    >
-                      <FontAwesomeIcon icon={faUserCircle} className="me-3" />
-                      Faculty Portal
-                    </button>
-                
+                <div className="mb-3 form-heading-container d-flex justify-content-between">
+                  <h2 className="form-heading">Edit Profile</h2>
+                  <button
+                    className="btn btn-light"
+                    style={{ width: "200px", fontSize: "20px" }}
+                  >
+                    <FontAwesomeIcon icon={faUserCircle} className="me-3" />
+                    Faculty Portal
+                  </button>
                 </div>
 
                 {/* Form fields */}

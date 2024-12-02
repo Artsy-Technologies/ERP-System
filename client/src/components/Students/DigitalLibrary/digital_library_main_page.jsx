@@ -193,7 +193,7 @@ const DigitalLibraryMainPage = () => {
               </div>
             </div>
             <section>
-              <p style={{ marginBottom: "15px", fontSize: "25px" }}>
+              <p style={{ marginBottom: "25px", fontSize: "25px" }}>
                 Recommended for You
               </p>
               <div className="dl-book-list">
@@ -207,10 +207,10 @@ const DigitalLibraryMainPage = () => {
               </div>
             </section>
             <section>
-              <p style={{ marginBottom: "15px", fontSize: "25px" }}>
+              <p style={{ marginBottom: "25px", fontSize: "25px" }}>
                 Recent Readings
               </p>
-              <div className="dl-book-list">
+              <div className="dl-book-list mt-10">
                 {filteredRecentReadings.map((book, index) => (
                   <BookCard
                     key={index}
