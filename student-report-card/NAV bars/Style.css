@@ -1,0 +1,174 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+    overflow-y:auto;
+    max-height:100%;
+}
+
+.logo {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: -55px;
+  
+}
+
+.logo img {
+    max-width: 300px;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.h{
+    list-style-type: none;
+
+}
+.h li {
+    padding-bottom: 15px;
+   
+}
+
+
+.toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 350px; /* Adjusted to the width of the sidebar */
+    margin-top: 0px; /* Space for the upper bar */
+    padding: 20px;
+    flex: 1;
+    overflow: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.report-card {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.exam-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-top: 5px;
+}
+
+form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f8f8;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(223, 223, 223);
+    padding: 10px 20px;
+    color: rgb(21, 21, 21);
+}
+
+.search-bar {
+    flex: 1;
+    margin-left: 280px;
+}
+
+.search-bar input[type="text"] {
+    width: 20%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.icons {
+    display: flex;
+    font-size: 30px;
+   
+}
+
+.icons .icon {
+    margin-left: 30px;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+}
