@@ -1,0 +1,28 @@
+/* src/components/ProfileS/ProfileS.css */
+.profile-container {
+    margin-left: 280px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+  }
+  
+  .profile-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  

@@ -1,0 +1,24 @@
+._container-fluid {
+    margin-top: 70px;
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 768px) {
+    ._container-fluid {
+      margin-left: 0;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  
+    .input-group {
+      flex-wrap: wrap;
+    }
+  
+    .dropdown {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
