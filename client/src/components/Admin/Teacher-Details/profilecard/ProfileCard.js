@@ -3,86 +3,95 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./ProfileCard.css";
 
 const ProfileCard = ({ teacher }) => {
-  // Check if teacher is defined and provide default values
-  
   if (!teacher) {
-    return <div>No teacher data available.</div>; // Fallback if teacher is undefined
+    return <div>No teacher data available.</div>;
   }
 
-  // Create expertise based on available information
-  const expertise = teacher.subject ? [teacher.subject] : []; // Adjust based on your logic
+  const expertise = teacher.subject ? [teacher.subject] : ["N/A"];
   const education = [
     {
-      degree: teacher.ugCourse,
-      institution: teacher.ugUniversity,
-      year: teacher.ugYear,
+      degree: teacher.ugCourse || "N/A",
+      institution: teacher.ugUniversity || "N/A",
+      year: teacher.ugYear || "N/A",
     },
     {
-      degree: teacher.pgCourse,
-      institution: teacher.pgUniversity,
-      year: teacher.pgYear,
+      degree: teacher.pgCourse || "N/A",
+      institution: teacher.pgUniversity || "N/A",
+      year: teacher.pgYear || "N/A",
     },
-  ]; // Construct education array
+  ];
+
+  const teacherImage = teacher.photo
+    ? `http://localhost:8000/uploads/${teacher.photo}`
+    : "http://via.placeholder.com/150";
 
   return (
-    <div className="profile-card">
-      <div className="card-header bg-primary text-white">
+    <div className="teacher-profile-card">
+      <div className="teacher-card-header bg-primary text-white">
         <div className="row align-items-center">
           <div className="col-md-4 d-flex justify-content-center">
             <img
-              src={`http://localhost:8000/uploads/${teacher.photo}`} // Combine the base URL with the photo filename
-              alt="Profile"
-              className="rounded-circle profile-img"
+              src={teacherImage}
+              alt={`${teacher.fullName}'s profile`}
+              className="rounded-circle teacher-profile-img"
             />
           </div>
           <div className="col-md-8">
-            <h2 className="name">{teacher.fullName}</h2>
-            <p className="role">{teacher.subject}</p> {/* You may want to change this */}
+            <h2 className="teacher-name">{teacher.fullName || "N/A"}</h2>
+            <p className="teacher-role">{teacher.subject || "N/A"}</p>
           </div>
         </div>
       </div>
 
-      <div className="card-body">
-        <section className="details-section">
-          <h3>Details</h3>
+      <div className="teacher-card-body">
+        <section className="teacher-details-section">
+          <h3 className="teacher-section-title">Details</h3>
           <div className="row">
             <div className="col-6">
-              <p><strong>DOB:</strong> {teacher.dob.split("T")[0]}</p> {/* Format DOB */}
-              <p><strong>Class:</strong> {teacher.classAllotted}</p> {/* Use correct property */}
+              <p>
+                <strong>DOB:</strong>{" "}
+                {teacher.dob ? teacher.dob.split("T")[0] : "N/A"}
+              </p>
+              <p>
+                <strong>Class:</strong> {teacher.classAllotted || "N/A"}
+              </p>
             </div>
             <div className="col-6">
-              <p><strong>Subject:</strong> {teacher.subject}</p>
+              <p>
+                <strong>Subject:</strong> {teacher.subject || "N/A"}
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="education-section">
-          <h3>Education</h3>
-          {education.length > 0 ? (
-            education.map((edu, index) => (
-              <p key={index}>
-                <strong>{edu.degree}</strong>, {edu.institution} ({edu.year})
-              </p>
-            ))
-          ) : (
-            <p>No education information available.</p> // Fallback if education is empty
-          )}
+        <section className="teacher-education-section">
+          <h3 className="teacher-section-title">Education</h3>
+          {education.map((edu, index) => (
+            <p key={index}>
+              <strong>{edu.degree}</strong>, {edu.institution} ({edu.year})
+            </p>
+          ))}
         </section>
 
-        <section className="expertise-section">
-          <h3>Expertise</h3>
-          {expertise.length > 0 ? (
-            <p>{expertise.join(", ")}</p>
-          ) : (
-            <p>N/A</p> // Display N/A if no expertise
-          )}
+        <section className="teacher-expertise-section">
+          <h3 className="teacher-section-title">Expertise</h3>
+          <p>{expertise.join(", ")}</p>
         </section>
 
-        <section className="contact-section">
-          <h3>Contact</h3>
-          <p><FaMapMarkerAlt className="icon" /> {teacher.address}</p> {/* Use correct property */}
-          <p><FaEnvelope className="icon" /> {teacher.email}</p>
-          <p><FaPhoneAlt className="icon" /> {teacher.phoneNumber}</p> {/* Use correct property */}
+        <section className="teacher-contact-section">
+          <h3 className="teacher-section-title">Contact</h3>
+          <p>
+            <FaMapMarkerAlt className="teacher-contact-icon" />{" "}
+            {teacher.address || "N/A"}
+          </p>
+          <p>
+            <FaEnvelope className="teacher-contact-icon" />{" "}
+            {teacher.email || "N/A"}
+          </p>
+          <p>
+            <FaPhoneAlt className="teacher-contact-icon" />{" "}
+            {teacher.phoneNumber || "N/A"}
+          </p>
         </section>
       </div>
     </div>

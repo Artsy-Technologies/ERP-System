@@ -1,99 +1,98 @@
-/* Dashboard.css */
-.dashboard-container {
+.teacher-dashboard-container {
     display: flex;
     height: 100vh; /* Full height of the viewport */
     width: 100%;
     align-items: center;
-
 }
 
-.profile-list {
+.teacher-profile-list {
     width: 30%; 
     height: 100%;
     background-color: #f7f7f7; 
     padding: 10px;
 }
 
-.ratings-and-leave {
-    flex:1;
-
+.teacher-ratings-section {
+    flex: 1;
     height: 100%;
 }
 
-.ratings-and-leave > div {
+.teacher-ratings-section > div {
     flex: 1; /* Take equal height for TeacherRating and LeaveHistory */
     margin-bottom: 10px; /* Space between components */
 }
 
+.teacher-leave-section {
+    flex-grow: 1;
+}
+
 /* Optional styles for better visibility */
-.leave-history-container {
+.teacher-leave-history-container {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
 }
 
-.leave-history-title {
+.teacher-leave-history-title {
     margin-bottom: 10px;
 }
 
-.leave-history-table {
+.teacher-leave-history-table {
     width: 100%;
 }
-.leave{
-    flex-grow: 1;
-}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 992px) { /* For tablets */
-    .dashboard-container {
+    .teacher-dashboard-container {
         flex-direction: row; /* Maintain side-by-side layout */
     }
 
-    .profile-list {
+    .teacher-profile-list {
         width: 35%; /* Slightly increase width for better spacing */
     }
 
-    .ratings-and-leave {
+    .teacher-ratings-section {
         width: 65%; /* Slightly decrease width for better spacing */
     }
 
-    .ratings-and-leave > div {
+    .teacher-ratings-section > div {
         margin-bottom: 15px; /* Space between components */
     }
 }
 
 @media (max-width: 768px) { /* For medium mobile devices */
-    .dashboard-container {
+    .teacher-dashboard-container {
         flex-direction: column; /* Stack components vertically */
     }
 
-    .profile-list {
+    .teacher-profile-list {
         width: 100%; /* Full width for profile list */
         height: auto; /* Adjust height automatically */
     }
 
-    .ratings-and-leave {
+    .teacher-ratings-section {
         width: 100%; /* Full width for ratings and leave */
         height: auto; /* Adjust height automatically */
     }
 
-    .ratings-and-leave > div {
+    .teacher-ratings-section > div {
         margin-bottom: 10px; /* Adjust margin for smaller screens */
     }
-    .leave{
-            width: 100%;
+    .teacher-leave-section {
+        width: 100%;
     }
 }
 
 @media (max-width: 576px) { /* For small mobile devices */
-    .profile-list {
+    .teacher-profile-list {
         padding: 5px; /* Reduce padding */
     }
 
-    .leave-history-title {
+    .teacher-leave-history-title {
         font-size: 1.2rem; /* Slightly larger title for visibility */
     }
 
-    .leave-history-table {
+    .teacher-leave-history-table {
         font-size: 0.9rem; /* Reduce table font size for mobile */
     }
 }
