@@ -11,7 +11,7 @@ const TeacherList = () => {
   const [teachers, setTeachers] = useState([]); // State to hold teacher data
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const pageSize = 6;
+  const pageSize = 5;
 
   // Base URL for images
   const baseUrl = "http://localhost:8000/uploads/"; // Adjust as needed
@@ -20,7 +20,7 @@ const TeacherList = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get("/teachers"); // Adjust the URL as needed
+        const response = await axios.get("api/teachers"); // Adjust the URL as needed
         setTeachers(response.data); // Assuming the response data is an array of teacher objects
       } catch (error) {
         console.error("Error fetching teachers:", error);
@@ -43,12 +43,12 @@ const TeacherList = () => {
   return (
     <>
       <div className="teacher-list-container">
-        <div className="search-container">
-          <div className="search-box">
-            <FaSearch className="search-icon" />
+        <div className="teacher-list-search-container">
+          <div className="teacher-list-search-box">
+            <FaSearch className="teacher-list-search-icon" />
             <input
               type="text"
-              className="search-input"
+              className="teacher-list-search-input"
               placeholder="Search here..."
               value={searchQuery}
               onChange={(e) => {
@@ -58,14 +58,18 @@ const TeacherList = () => {
             />
           </div>
         </div>
-        <Link to={`/teachers/regform`}>
-          <div className="text-center2">
-            <button type="submit" className="sendbutton2">
+
+        {/* New Teacher Button */}
+        <div className="teacher-list-text-center">
+          <Link to="/admin-dashboard/teachersregform">
+            <button type="button" className="teacher-list-sendbutton">
               + New Teacher
             </button>
-          </div>
-        </Link>
-        <div className="teacher-card-list">
+          </Link>
+        </div>
+
+        {/* Teacher Cards */}
+        <div className="teacher-list-card-list">
           {paginatedTeachers.length > 0 ? (
             paginatedTeachers.map((teacher, index) => (
               <TeacherCard
@@ -80,15 +84,19 @@ const TeacherList = () => {
             <div>No teachers found.</div>
           )}
         </div>
+
+        {/* Pagination */}
         <Pagination
           current={currentPage}
           pageSize={pageSize}
           total={filteredTeachers.length}
           onChange={(page) => setCurrentPage(page)}
-          className="d-flex justify-content-center mt-4"
+          className="teacher-list-pagination"
           hideOnSinglePage
         />
       </div>
+
+      {/* Leave Requests Section */}
       <LeaveRequests />
     </>
   );
