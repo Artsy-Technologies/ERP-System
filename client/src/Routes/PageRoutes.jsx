@@ -51,6 +51,9 @@ import FurnitureInventory from '../components/Admin/Inventorymanagement/furnitur
 
 import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
 import AdminDashboardPage from "../pages/AdminDashboard/Dashboard/AdminDashboardPage.jsx";
+import TeacherRegistrationForm from "../components/Admin/Teacher-Details/form/TeacherRegistrationForm.js";
+import TeacherDetails from "../components/Admin/Teacher-Details/profilecard/ProfileList.js";
+import Dashboard from "../components/Admin/Teacher-Details/TeacherDetails.js";
 // import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js";
 // import TeacherDetails from './components/Teacher/TeacherDetails.js';
 
@@ -63,12 +66,15 @@ const PagesRoutes = () => {
 
       {/* Admin Routes */}
       <Route path="/admin-dashboard" element={<Dashboardpage />}>
-        <Route index element={<AdminDashboardPage/>} />
+        <Route index element={<AdminDashboardPage />} />
+        <Route path="teachersregform" element={<TeacherRegistrationForm />} />
+
         <Route path="teacher" element={<TeacherList />} />
+        <Route path="teacher/:id" element={<Dashboard/>} />
+
         <Route path="students" element={<StudentDetails1 />} />
         <Route path="transport" element={<Transport />} />
         <Route path="finance" element={<Finance />} />
-
 
         {/* Inventory Management Sub-Routes */}
         <Route path="inventory" element={<Inventorymain />}>
@@ -78,19 +84,14 @@ const PagesRoutes = () => {
           <Route path="lab-equipment" element={<LabEquipment />} />
           <Route path="electricals" element={<ElectricalsInventory />} />
           <Route path="furniture" element={<FurnitureInventory />} />
-
         </Route>
-
       </Route>
 
       {/* Teacher Routes */}
       <Route path="/teacher-dashboard" element={<TeacherLayout />}>
         <Route index element={<Teacher />} />
         <Route path="faculty-profile" element={<TeacherProfile />} />
-        <Route
-          path="faculty-leave-application"
-          element={<FacultyPage />}
-        />
+        <Route path="faculty-leave-application" element={<FacultyPage />} />
         <Route path="virtual-class" element={<VirtualPage />} />
         <Route path="attendance-management" element={<AttendanceT />} />
         <Route path="exam-room-allocation" element={<ExamHallAllocation />} />
@@ -107,7 +108,7 @@ const PagesRoutes = () => {
         <Route path="timetable" element={<TimeTable />} />
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
-        <Route path='exam-alerts' element={<ExamAlerts />} />
+        <Route path="exam-alerts" element={<ExamAlerts />} />
         <Route path="virtual-classes" element={<VirtualPage />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />

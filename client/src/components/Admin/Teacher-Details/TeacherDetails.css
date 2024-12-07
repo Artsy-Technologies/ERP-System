@@ -2,21 +2,22 @@
 .dashboard-container {
     display: flex;
     height: 100vh; /* Full height of the viewport */
+    width: 100%;
+    align-items: center;
+
 }
 
 .profile-list {
-    width: 30%; /* 25% to 35% width */
+    width: 30%; 
     height: 100%;
-    background-color: #f7f7f7; /* Light background for visibility */
-    padding: 10px; /* Optional padding */
+    background-color: #f7f7f7; 
+    padding: 10px;
 }
 
 .ratings-and-leave {
-    width: 70%; /* 50% to 70% width */
-    display: flex;
-    flex-direction: column;
+    flex:1;
+
     height: 100%;
-    padding: 10px; /* Optional padding */
 }
 
 .ratings-and-leave > div {
@@ -38,7 +39,9 @@
 .leave-history-table {
     width: 100%;
 }
-
+.leave{
+    flex-grow: 1;
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 992px) { /* For tablets */
     .dashboard-container {
@@ -75,6 +78,9 @@
 
     .ratings-and-leave > div {
         margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+    .leave{
+            width: 100%;
     }
 }
 

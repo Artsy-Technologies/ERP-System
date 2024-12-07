@@ -12,7 +12,8 @@ const TeacherList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const pageSize = 6;
-
+   
+    
   // Base URL for images
   const baseUrl = "http://localhost:8000/uploads/"; // Adjust as needed
 
@@ -20,7 +21,7 @@ const TeacherList = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get("/teachers"); // Adjust the URL as needed
+        const response = await axios.get("api/teachers"); // Adjust the URL as needed
         setTeachers(response.data); // Assuming the response data is an array of teacher objects
       } catch (error) {
         console.error("Error fetching teachers:", error);
@@ -58,7 +59,7 @@ const TeacherList = () => {
             />
           </div>
         </div>
-        <Link to={`/teachers/regform`}>
+        <Link to={`/admin-dashboard/teachersregform`}>
           <div className="text-center2">
             <button type="submit" className="sendbutton2">
               + New Teacher

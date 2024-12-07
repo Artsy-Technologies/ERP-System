@@ -6,15 +6,19 @@ import './TeacherDetails.css';
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-container">
-      <div className="profile-list">
-        <ProfileList />
+    <>
+      <div className="dashboard-container h-auto">
+        <div className="profile-list">
+          <ProfileList />
+        </div>
+        <div className="ratings-and-leave">
+          <TeacherRating />
+        </div>
       </div>
-      <div className="ratings-and-leave">
-        <TeacherRating />
+      <div className="leave">
         <LeaveHistory />
       </div>
-    </div>
+    </>
   );
 };
 

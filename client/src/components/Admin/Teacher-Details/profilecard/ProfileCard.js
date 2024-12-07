@@ -4,6 +4,7 @@ import "./ProfileCard.css";
 
 const ProfileCard = ({ teacher }) => {
   // Check if teacher is defined and provide default values
+  
   if (!teacher) {
     return <div>No teacher data available.</div>; // Fallback if teacher is undefined
   }

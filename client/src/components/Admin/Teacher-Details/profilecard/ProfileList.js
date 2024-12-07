@@ -12,8 +12,9 @@ const TeacherDetails = () => {
   useEffect(() => {
     const fetchTeacher = async () => {
       try {
-        const response = await axios.get(`/teachers/${id}`);
-        console.log(response.data); 
+        const response = await axios.get(
+          `/api/teachers/${id}`
+        );
         setTeacher(response.data);
         setLoading(false);
       } catch (error) {

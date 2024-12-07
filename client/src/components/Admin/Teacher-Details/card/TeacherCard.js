@@ -4,9 +4,12 @@ import { FiPhone, FiMail } from 'react-icons/fi';
 import './TeacherCard.css';
 
 const TeacherCard = ({ id, name, subject, image }) => {
+  
   return (
     <div className="col-lg-2 col-md-4 col-sm-6 mb-4">
-      <Link to={`/teacher/${id}`} className="card text-center"> {/* Use id instead of name */}
+      <Link to={`/admin-dashboard/teacher/${id}`} className="card text-center">
+        {" "}
+        {/* Use id instead of name */}
         <div className="card-body">
           <img src={image} alt={name} className="teacher-img mx-auto mb-3" />
           <h5 className="card-title">{name}</h5>
