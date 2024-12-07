@@ -1,0 +1,42 @@
+.form-container {
+    padding: 30px;
+    background-color: white;
+  }
+  
+  .form-header {
+    font-size: 28px;
+    color: #ff6f61;
+    margin-bottom: 20px;
+  }
+  
+  .section-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6f61;
+  }
+  
+  .subsection-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .teacher-form {
+    margin: 20px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  .text-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sendbutton{
+      width: 15%;
+  }
+  @media (max-width: 768px) {
+    .sendbutton{
+      width: 50%;
+    }
+  }

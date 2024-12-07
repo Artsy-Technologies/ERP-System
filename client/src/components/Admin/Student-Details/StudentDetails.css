@@ -1,0 +1,92 @@
+.student-details-table {
+    padding: 20px 20px 60px 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 250px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 30px;
+  }
+  
+  .add-student-btn {
+    background-color: purple;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 10px;
+  }
+  
+  .table-wrapper {
+    overflow-x:auto;
+   
+  }
+  
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .student-table th,
+  .student-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .student-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .contact-icon {
+    margin-right: 10px;
+    color: #00f;
+    cursor: pointer;
+  }
+  
+  .grade-badge {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+  }
+  
+  .green-text {
+    color: green;
+  }
+  
+  .pagination {
+    font-size: 14px;
+    color: #555;
+    position: absolute;
+    bottom :10px;
+  }
+  

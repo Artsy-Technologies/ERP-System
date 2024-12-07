@@ -1,0 +1,13 @@
+.signup{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+#addspace{
+    height:600px;
+}
+#signform{
+    background-color: rgba(113, 116, 115,0.3);
+    padding:15px;
+}

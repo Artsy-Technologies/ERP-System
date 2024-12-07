@@ -1,29 +1,21 @@
-import { useState } from 'react';
 import ErrorBoundary from './errorBoundary';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import MainPage from '../src/components/Homepage/mainPage';
-import Carousel from '../src/components/Homepage/Carousel/carousel';
-import Intro from '../src/components/Homepage/Hero/introBox.jsx';
-import Navbar from '../src/components/Homepage/Navbar/navbar.jsx';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import PagesRoutes from './Routes/PageRoutes.jsx';
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+axios.defaults.withCredentials = process.env.REACT_APP_AXIOS_WITH_CREDENTIALS;
 
 function App() {
-  
-
   return (
-    <>
     <ErrorBoundary>
-    <BrowserRouter>
-    <Routes>
-      <Route index path='/' element={<MainPage/>} />
-      <Route path='/carousel' element={<Carousel/>} />
-      <Route path='/intro' element={<Intro/>} />
-      <Route path='/navbar' element={<Navbar/>} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<PagesRoutes />} />
+          </Routes>
+      </BrowserRouter>
     </ErrorBoundary>
-        
-    </>
   )
 }
 
-export default App
+export default App;

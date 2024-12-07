@@ -1,0 +1,153 @@
+.teacher-list-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-right: 20px;
+  padding-top: 30px;
+ 
+}
+
+.search-input {
+  text-align: center;
+  width: 100%;
+  padding: 12px 40px 12px 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.3s;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 30px;
+}
+
+.teacher-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.btn {
+  padding: 8px 12px;
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-teal {
+  background-color: teal;
+  color: white;
+  border: none;
+}
+
+.text-center2 {
+  display: flex;
+  justify-content: right; /* Center the button horizontally */
+  text-decoration: none;
+  padding-bottom: 30px;
+  margin-top: 10px; /* Add space above the button */
+  
+}
+
+.sendbutton2 {
+  background-color: teal;
+  color: white; 
+  border: none;
+  border-radius: 25px; 
+  padding: 10px 20px; 
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; 
+  cursor: pointer;
+  width: 15%;
+  text-decoration: none;
+
+}
+
+.sendbutton2:hover {
+  background-color: #006666; /* Darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 10px;
+  }
+
+  .sendbutton2 {
+    width: 50%;
+  }
+
+  .teacher-card-list {
+    justify-content: flex-start;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-input {
+    font-size: 14px;
+  }
+
+  .search-icon {
+    font-size: 18px;
+  }
+}

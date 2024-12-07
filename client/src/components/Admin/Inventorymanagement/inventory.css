@@ -1,0 +1,238 @@
+/* General Styles */
+.inventory-h2, .inventory-h3 {
+    color: #33a35f; /* Main color */
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Center Page Layout */
+.categories, .main-content {
+    max-width: 1200px;
+    position: relative;
+    left: 40px;
+}
+
+/* Category Icons Section */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Reduced gap */
+    margin-bottom: 30px; /* Reduced margin */
+}
+
+.category-box {
+    display: block; /* Make the anchor tag block-level */
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    background-color: #ffffff; /* White */
+    border: 1px solid #e0e0e0; /* Light gray */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.category-box img {
+    width: 40px; /* Reduced icon size */
+    height: 40px; /* Reduced icon size */
+}
+
+.category-box p {
+    font-weight: bold;
+    margin: 8px 0 4px 0; /* Reduced margins */
+    color: #333; /* Dark gray */
+}
+
+.category-box span {
+    font-size: 0.8em; /* Reduced font size */
+    color: #777;
+}
+
+/* Main Section */
+.main-content {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    gap: 5px; /* Reduced gap */
+    padding: 0; /* Remove padding */
+}
+
+.left-section {
+    flex: 1; /* Takes up more space */
+}
+
+.right-section {
+    flex: 0; /* Takes up less space */
+}
+
+/* Inventory Section */
+
+
+.inventory-h2 {
+        color: #33a35f; /* Main color */
+        margin-bottom: 15px; /* Reduced margin */
+        white-space: nowrap; /* Prevents wrapping */
+        
+        text-overflow: ellipsis; /* Adds ellipsis for overflow */
+}
+    
+
+
+
+.inventory-table {
+    width: calc(100% - 20px); /* Increased table width, accounting for padding */
+    border-collapse: collapse;
+    background-color: #ffffff; /* White */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Reduced border radius */
+    overflow: hidden;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 12px; /* Reduced padding */
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Light gray */
+}
+
+.inventory-table th {
+    background-color: #33a35f; /* Main color */
+    color: #ffffff; /* White */
+}
+
+.inventory-table td {
+    background-color: #ffffff; /* White */
+}
+/* Add transition for smoother hover effects */
+.inventory-btn, .contact-main-btn {
+    transition: background-color 0.3s ease;
+  }
+  
+
+.status {
+    text-align: center;
+    font-weight: bold;
+}
+
+.status.done {
+    background-color: #32cd32;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.col-md-5{
+    position: relative;
+    left: 50px;
+}
+
+/* Complaints Section */
+.complaints {
+    background-color: #ffffff; /* White */
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    width: 400px; /* Increased width */
+    margin-top: 0; /* No space above */
+}
+
+
+.complaints h3 {
+    color: #6c63ff; /* Secondary color */
+}
+
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    overflow: hidden;
+}
+
+.complaints-table th, .complaints-table td {
+    padding: 12px; /* Reduced padding */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Light gray */
+}
+
+.complaints-table th {
+    background-color: #6c63ff; /* Secondary color */
+    color: #ffffff; /* White */
+}
+
+.complaints-table td {
+    background-color: #ffffff; /* White */
+}
+
+/* Maintenance and Contacts Section */
+.contacts {
+    background-color: #ffffff; /* White */
+    padding: 15px; /* Reduced padding */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Reduced border radius */
+    text-align: center;
+    margin-top: 5px;
+    width: 400px; /* Increased width */
+}
+
+.contacts h3 {
+    color: #333; /* Dark gray */
+}
+
+.contacts {
+    text-align: left; /* Aligns text to the left */
+}
+
+.contacts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacts ul li {
+    font-weight: bold;
+    margin: 8px 0; /* Reduced margin */
+}
+
+/* Buttons */
+.inventory-btn {
+    background-color: #6c63ff; /* Secondary color */
+    color: #ffffff; /* White */
+    padding: 6px 12px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inventory-btn:hover {
+    background-color: #5348d7; /* Hover color */
+}
+
+.contact-main-btn {
+    background-color: #333; /* Dark gray */
+    color: #ffffff; /* White */
+    padding: 8px 15px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-main-btn:hover {
+    background-color: #555; /* Darker gray */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid layout */
+    }
+}

@@ -1,0 +1,93 @@
+/* Dashboard.css */
+.dashboard-container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.profile-list {
+    width: 30%; /* 25% to 35% width */
+    height: 100%;
+    background-color: #f7f7f7; /* Light background for visibility */
+    padding: 10px; /* Optional padding */
+}
+
+.ratings-and-leave {
+    width: 70%; /* 50% to 70% width */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px; /* Optional padding */
+}
+
+.ratings-and-leave > div {
+    flex: 1; /* Take equal height for TeacherRating and LeaveHistory */
+    margin-bottom: 10px; /* Space between components */
+}
+
+/* Optional styles for better visibility */
+.leave-history-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.leave-history-title {
+    margin-bottom: 10px;
+}
+
+.leave-history-table {
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* For tablets */
+    .dashboard-container {
+        flex-direction: row; /* Maintain side-by-side layout */
+    }
+
+    .profile-list {
+        width: 35%; /* Slightly increase width for better spacing */
+    }
+
+    .ratings-and-leave {
+        width: 65%; /* Slightly decrease width for better spacing */
+    }
+
+    .ratings-and-leave > div {
+        margin-bottom: 15px; /* Space between components */
+    }
+}
+
+@media (max-width: 768px) { /* For medium mobile devices */
+    .dashboard-container {
+        flex-direction: column; /* Stack components vertically */
+    }
+
+    .profile-list {
+        width: 100%; /* Full width for profile list */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .ratings-and-leave {
+        width: 100%; /* Full width for ratings and leave */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .ratings-and-leave > div {
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 576px) { /* For small mobile devices */
+    .profile-list {
+        padding: 5px; /* Reduce padding */
+    }
+
+    .leave-history-title {
+        font-size: 1.2rem; /* Slightly larger title for visibility */
+    }
+
+    .leave-history-table {
+        font-size: 0.9rem; /* Reduce table font size for mobile */
+    }
+}
