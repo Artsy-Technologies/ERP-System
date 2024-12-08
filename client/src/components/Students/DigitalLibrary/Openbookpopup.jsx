@@ -25,28 +25,27 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
   };
 
 
-  const handleClosePopup = () => {
-    console.log("borrow done");
-    setIsPopupOpen(false);
-  };
+  // const handleClosePopup = () => {
+  //   console.log("borrow done");
+  //   setIsPopupOpen(false);
+  // };
   const handleConfirmBorrow = () => {
-    if (!fromDate || !toDate) {
-      alert("Please select both the 'From' and 'To' dates");
-      return;
-    }
-    setBookStatus("Borrowed");
-    onUpdateBookStatus(book, "Borrow"); // Notify the parent component
+    const updatedBooks = books.map((book) => {
+      if (book.id === selectedBook.id) {
+        return {
+          ...book,
+          borrowDate: fromDate,
+          dueDate: toDate,
+          status: "Due",
+        };
+      }
+      return book;
+    });
   
-    // Set timeout for due status
-    const borrowDurationDays = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
-    setTimeout(() => {
-      setBookStatus("Due");
-      onUpdateBookStatus(book, "Due");  // Notify the parent component again
-      startOverdueCounter();
-    }, borrowDuration * 24 * 60 * 60 *1000); 
-    
-    setIsPopupOpen(false);
+    setBooks(updatedBooks); 
+    onClose(); 
   };
+  
 
   // calculation of due days after borrow duration get over 
   // current date - borrow date

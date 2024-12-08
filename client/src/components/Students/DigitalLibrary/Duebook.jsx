@@ -19,6 +19,12 @@ const DueBookCard = ({ book, onClose, daysOverdue }) => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+  const calculateOverdueDays = (dueDate) => {
+    const today = new Date();
+    const due = new Date(dueDate);
+    const difference = Math.ceil((today - due) / (1000 * 60 * 60 * 24));
+    return difference > 0 ? difference : 0; // Return only positive overdue days
+  };
 
   return (
     <div className="dl-due-card-body">
