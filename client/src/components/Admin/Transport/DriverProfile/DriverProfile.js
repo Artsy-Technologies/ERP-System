@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './DriverProfile.css';
-
 const DriverProfile = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showNewDriverModal, setShowNewDriverModal] = useState(false);

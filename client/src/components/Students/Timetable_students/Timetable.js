@@ -44,8 +44,9 @@ const Timetable = () => {
   useEffect(() => {
     const fetchTimetables = async () => {
       try {
-        const response = await axios.get('/api/timetables');
-        setTimetables(response.data);
+        // Updated URL to reflect correct backend address
+        const response = await axios.get('http://localhost:8000/api/timetables');
+        setTimetables(response.data.timetables); // Access timetables array from response
         setError(null); // Reset error if fetching is successful
       } catch (error) {
         console.error('Error fetching timetables:', error);
@@ -58,11 +59,15 @@ const Timetable = () => {
   return (
     <div className="timetable-container">
       {error && <div className="error-message">{error}</div>}
-      {timetables.map((timetable, index) => (
-        <div key={index} className="timetable">
-          <TimetableTable timetableData={timetable} />
-        </div>
-      ))}
+      {timetables.length === 0 ? (
+        <div>No timetables available</div>
+      ) : (
+        timetables.map((timetable, index) => (
+          <div key={index} className="timetable">
+            <TimetableTable timetableData={timetable} />
+          </div>
+        ))
+      )}
     </div>
   );
 };

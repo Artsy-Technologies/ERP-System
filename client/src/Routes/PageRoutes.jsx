@@ -18,8 +18,8 @@ import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventory
 
 import Teacher from "../pages/Teacher/teacher.jsx";
 import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
-import FacultyLeaveApplication from "../components/Teacher/FacultyLeaveApplication/FacultyLeaveApplication.jsx";
-import VirtualClassT from "../components/Teacher/VirtualClass/VirtualClass.jsx";
+import FacultyPage from "../components/Teacher/FacultyLeave/facultyLeave.jsx";
+import VirtualPage from "../components/Teacher/Virtualclass/virtual_class.jsx";
 import AttendanceT from "../components/Teacher/Attendance/Attendance.jsx";
 import ExamHallAllocation from "../components/Teacher/ExamHallAllocation/ExamHallAllocation.jsx";
 import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
@@ -33,7 +33,7 @@ import TimeTable from "../components/Students/Timetable_students/Timetable.js";
 import GradeAndReport from "../components/Students/GradeAndReport/GradeAndReport.jsx";
 import DigitalLibraryMainPage from "../components/Students/DigitalLibrary/digital_library_main_page.jsx";
 import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx"
-import VirtualClass from "../components/Students/VirtualClass/VirtualClass.jsx";
+
 import Doubt from "../components/Students/DoubtClearance/Doubt.js";
 import Assignment from "../components/Students/Assignment/Assignment.js";
 import Payment from "../components/Students/PaymentManagement/payment/payment.js";
@@ -51,6 +51,9 @@ import FurnitureInventory from '../components/Admin/Inventorymanagement/furnitur
 
 import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
 import AdminDashboardPage from "../pages/AdminDashboard/Dashboard/AdminDashboardPage.jsx";
+import TeacherRegistrationForm from "../components/Admin/Teacher-Details/form/TeacherRegistrationForm.js";
+import TeacherDetails from "../components/Admin/Teacher-Details/profilecard/ProfileList.js";
+import Dashboard from "../components/Admin/Teacher-Details/TeacherDetails.js";
 // import TeacherRegistrationForm from "./components/Teacher/form/TeacherRegistrationForm.js";
 // import TeacherDetails from './components/Teacher/TeacherDetails.js';
 
@@ -63,12 +66,15 @@ const PagesRoutes = () => {
 
       {/* Admin Routes */}
       <Route path="/admin-dashboard" element={<Dashboardpage />}>
-        <Route index element={<AdminDashboardPage/>} />
+        <Route index element={<AdminDashboardPage />} />
+        <Route path="teachersregform" element={<TeacherRegistrationForm />} />
+
         <Route path="teacher" element={<TeacherList />} />
+        <Route path="teacher/:id" element={<Dashboard/>} />
+
         <Route path="students" element={<StudentDetails1 />} />
         <Route path="transport" element={<Transport />} />
         <Route path="finance" element={<Finance />} />
-
 
         {/* Inventory Management Sub-Routes */}
         <Route path="inventory" element={<Inventorymain />}>
@@ -78,20 +84,15 @@ const PagesRoutes = () => {
           <Route path="lab-equipment" element={<LabEquipment />} />
           <Route path="electricals" element={<ElectricalsInventory />} />
           <Route path="furniture" element={<FurnitureInventory />} />
-
         </Route>
-
       </Route>
 
       {/* Teacher Routes */}
       <Route path="/teacher-dashboard" element={<TeacherLayout />}>
         <Route index element={<Teacher />} />
         <Route path="faculty-profile" element={<TeacherProfile />} />
-        <Route
-          path="faculty-leave-application"
-          element={<FacultyLeaveApplication />}
-        />
-        <Route path="virtual-class" element={<VirtualClassT />} />
+        <Route path="faculty-leave-application" element={<FacultyPage />} />
+        <Route path="virtual-class" element={<VirtualPage />} />
         <Route path="attendance-management" element={<AttendanceT />} />
         <Route path="exam-room-allocation" element={<ExamHallAllocation />} />
         <Route path="student-report-card" element={<StudentReport />} />
@@ -107,8 +108,8 @@ const PagesRoutes = () => {
         <Route path="timetable" element={<TimeTable />} />
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
-        <Route path='exam-alerts' element={<ExamAlerts />} />
-        <Route path="virtual-classes" element={<VirtualClass />} />
+        <Route path="exam-alerts" element={<ExamAlerts />} />
+        <Route path="virtual-classes" element={<VirtualPage />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
         <Route path="payment-management" element={<Payment />} />

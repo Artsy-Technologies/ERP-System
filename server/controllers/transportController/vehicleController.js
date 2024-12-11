@@ -1,5 +1,5 @@
 // controllers/driverController.js
-import Driver from '../libs/models/Transport/Driver.js';
+import Driver from '../../libs/models/Transport/Driver.js';
 
 // Get all drivers
 export const getAllDrivers = async (req, res) => {

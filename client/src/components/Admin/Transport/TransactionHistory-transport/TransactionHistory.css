@@ -2,13 +2,14 @@
     position: relative;
     font-size: 25px;
     gap: 20px;
-    margin-left: 300px;
+    margin-left: 40px;
+    text-align: left;
   }
 .transaction-section table {
     width: 80%;
     border-collapse: collapse;
     margin-top: 20px;
-    margin-left: 300px;
+    margin-left: 40px;
   }
   
   .transaction-section th, .transaction-section td {
