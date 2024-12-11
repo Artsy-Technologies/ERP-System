@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./libraryApp.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,59 +17,41 @@ const BookPopup = ({ book,onUpdateBookStatus,onClose }) => {
   const [fromDate, setFromDate] = useState(null); 
    const [toDate, setToDate] = useState(null);
    const [bookStatus, setBookStatus] = useState(null);
-  const [borrowDuration, setBorrowDuration] = useState(null);
-  const [overduedays, setOverduedays] = useState(null);
+  const [borrowDuration, setBorrowDuration] = useState(7);
 
   const handleBorrowClick = () => {
     setIsPopupOpen(true);
   };
 
 
-  // const handleClosePopup = () => {
-  //   console.log("borrow done");
-  //   setIsPopupOpen(false);
-  // };
+  const handleClosePopup = () => {
+    console.log("borrow done");
+    setIsPopupOpen(false);
+  };
   const handleConfirmBorrow = () => {
-    const updatedBooks = books.map((book) => {
-      if (book.id === selectedBook.id) {
-        return {
-          ...book,
-          borrowDate: fromDate,
-          dueDate: toDate,
-          status: "Due",
-        };
-      }
-      return book;
-    });
+    if (!fromDate || !toDate) {
+      alert("Please select both the 'From' and 'To' dates");
+      return;
+    }
+    setBookStatus("Borrowed");
+    onUpdateBookStatus(book, "Borrow"); // Notify the parent component
   
-    setBooks(updatedBooks); 
-    onClose(); 
-  };
-  
+    // Set timeout for due status
+    setTimeout(() => {
+      setBookStatus("Due");
+      onUpdateBookStatus(book, "Due");  // Notify the parent component again
+    }, borrowDuration * 24 * 60 * 60 * 1000); 
+    // }, borrowDuration *24*60*60* 1000); // This is to simulate the borrow time
+    // borrowDuration * 1000 ; this is to stimultate borrow time
+    
+    setIsPopupOpen(false);
+    // {onclose}
 
-  // calculation of due days after borrow duration get over 
-  // current date - borrow date
-  // if + add each days and send to duebook, if - do nothing
-  const startOverdueCounter = () => {
-    const endDate = new Date(toDate);
-    const interval = setInterval(() => {
-      const currentDate = new Date();
-      const differenceInTime = currentDate - endDate;
-      if(differenceInTime > 0) {
-        const daysOverdue = Math.floor(differenceInTime / (1000 * 60 * 60 * 24 ));
-        setOverduedays(daysOverdue);
-      }
-    }, 24 * 60 * 60 * 1000);
-    return () => clearInterval(interval);
-
+    <DueBookCard
+    book={book}
+    borrowDuration= {borrowDuration}/>
   };
 
-  //pass overduedays to duebook component
-  useEffect(() => {
-if(bookStatus === "Due" && overduedays) {
-  onUpdateBookStatus(book, "Due", overduedays);
-}
-  }, [bookStatus, overduedays, book, onUpdateBookStatus]);
 
   return (
     <div className="dl-popup-overlay">
@@ -261,11 +243,7 @@ if(bookStatus === "Due" && overduedays) {
             </div>
           </div>
         )}
-       
       </div>
-
-   
-
     </div>
   );
 };

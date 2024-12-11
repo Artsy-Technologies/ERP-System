@@ -25,7 +25,7 @@ const TeacherRegistrationForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/teachers', formData, {
+      const response = await axios.post('api/teachers', formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Ensure the correct content type is set
         },

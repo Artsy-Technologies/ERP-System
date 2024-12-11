@@ -1,3 +1,4 @@
+/* Teacher List Container */
 .teacher-list-container {
   padding: 20px;
   border: 1px solid #ccc;
@@ -5,21 +6,21 @@
   background-color: #fff;
 }
 
-.search-container {
+/* Search Bar */
+.teacher-list-search-container {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.search-box {
+.teacher-list-search-box {
   position: relative;
   width: 100%;
   max-width: 300px;
   margin-right: 20px;
-  padding-top: 30px;
- 
+  padding-top: 10px;
 }
 
-.search-input {
+.teacher-list-search-input {
   text-align: center;
   width: 100%;
   padding: 12px 40px 12px 20px;
@@ -30,27 +31,55 @@
   transition: box-shadow 0.3s;
 }
 
-.search-input:focus {
+.teacher-list-search-input:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
-.search-icon {
+.teacher-list-search-icon {
   position: absolute;
   left: 10px;
-  top: 50px;
+  top: 50%;
   transform: translateY(-50%);
   color: green;
   font-size: 30px;
 }
 
-.teacher-card-list {
+/* Button for New Teacher */
+.teacher-list-text-center {
+  display: flex;
+  justify-content:end; /* Center the button horizontally */
+  padding-bottom: 30px;
+  margin-top: 10px;
+}
+
+.teacher-list-sendbutton {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  width: auto; /* Allow the button to take its natural width */
+  min-width: 150px; /* Set a minimum width to prevent shrinking too much */
+  text-decoration: none;
+}
+
+.teacher-list-sendbutton:hover {
+  background-color: #006666; /* Darker shade on hover */
+}
+
+/* Teacher Cards List */
+.teacher-list-card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 1.5em;
 }
 
-.card {
+.teacher-list-card {
   width: 100%;
   max-width: 300px;
   margin: 10px;
@@ -58,96 +87,42 @@
   transition: transform 0.2s;
 }
 
-.card:hover {
+.teacher-list-card:hover {
   transform: scale(1.05);
 }
 
-.card-body {
+.teacher-list-card-body {
   padding: 15px;
 }
 
-.card-title {
+.teacher-list-card-title {
   font-weight: bold;
 }
 
-.card-text {
+.teacher-list-card-text {
   font-size: 14px;
 }
 
-.btn {
-  padding: 8px 12px;
-}
-
-.ant-pagination {
+/* Pagination */
+.teacher-list-pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.btn-teal {
-  background-color: teal;
-  color: white;
-  border: none;
-}
-
-.text-center2 {
-  display: flex;
-  justify-content: right; /* Center the button horizontally */
-  text-decoration: none;
-  padding-bottom: 30px;
-  margin-top: 10px; /* Add space above the button */
-  
-}
-
-.sendbutton2 {
-  background-color: teal;
-  color: white; 
-  border: none;
-  border-radius: 25px; 
-  padding: 10px 20px; 
-  font-size: 16px; /* Font size */
-  transition: background-color 0.3s, transform 0.2s; 
-  cursor: pointer;
-  width: 15%;
-  text-decoration: none;
-
-}
-
-.sendbutton2:hover {
-  background-color: #006666; /* Darker shade on hover */
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .search-container {
-    flex-direction: column;
-    align-items: flex-start;
+  .teacher-list-text-center {
+    justify-content: center; /* Ensure the button is centered */
   }
 
-  .search-box {
-    width: 100%;
-    max-width: none;
-    margin-bottom: 10px;
-  }
-
-  .sendbutton2 {
-    width: 50%;
-  }
-
-  .teacher-card-list {
-    justify-content: flex-start;
-  }
-
-  .card {
-    max-width: 90%;
+  .teacher-list-sendbutton {
+    width: 50%; /* Adjust width on smaller screens */
   }
 }
 
 @media (max-width: 576px) {
-  .search-input {
-    font-size: 14px;
-  }
-
-  .search-icon {
-    font-size: 18px;
+  .teacher-list-sendbutton {
+    width: 80%; /* On very small screens, make the button more prominent */
   }
 }
