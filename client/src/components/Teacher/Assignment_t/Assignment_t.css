@@ -1,11 +1,92 @@
-.upload-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #343a40;
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main Container */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Equal spacing between items */
+    padding: 20px;
+  }
+  
+  /* Individual Cards */
+  .card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Header Styling */
+  .card-header {
+    background-color: #17a2b8;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1em;
+  }
+  
+  /* Table Styling */
+  .card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .card th,
+  .card td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card th {
+    background-color: #e9ecef;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .card tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* History Section Full Width */
+  .history {
+    flex: 1 0 100%;
+    width: 400px;
+    margin-left: 200px;
+
+     /* Ensures it spans full width */
+  }
+  
+  .history .card {
+    width: 400px;
+
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card,
+    .history .card {
+      width: 100%;
+    }
+  }
+  
