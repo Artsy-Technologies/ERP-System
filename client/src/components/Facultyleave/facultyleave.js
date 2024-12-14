@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './facultyfff.css'
+import './facultyleave.css'
 import Sidebar from '../../pages/Teacher/Sidebar';
 
 const SettingsSidebar = () => {
