@@ -144,13 +144,3 @@ app.listen(port, async () => {
     console.error('Database connection failed:', error.message);
   }
 });
-
-// Start the server and connect to the database
-app.listen(port, async () => {
-  try {
-    await connectDB();
-    console.log(`Server is running on port ${port}`);
-  } catch (error) {
-    console.error('Database connection failed:', error.message);
-  }
-});

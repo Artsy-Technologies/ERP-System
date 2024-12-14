@@ -18,10 +18,8 @@ import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventory
 
 import Teacher from "../pages/Teacher/teacher.jsx";
 import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
-
-import FacultyPage from "../components/Facultyleave/facultyleave.js";
-import VirtualPage from "../components/Virtualclass/virtualclass.js";
-
+import FacultyPage from "../components/Teacher/FacultyLeave/facultyLeave.jsx";
+import VirtualPage from "../components/Teacher/Virtualclass/virtualclass.js"
 import AttendanceT from "../components/Teacher/Attendance/Attendance.jsx";
 import ExamHallAllocation from "../components/Teacher/ExamHallAllocation/ExamHallAllocation.jsx";
 import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
@@ -35,6 +33,7 @@ import TimeTable from "../components/Students/Timetable_students/Timetable.js";
 import GradeAndReport from "../components/Students/GradeAndReport/GradeAndReport.jsx";
 import DigitalLibraryMainPage from "../components/Students/DigitalLibrary/digital_library_main_page.jsx";
 import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx"
+import VirtualClassS from "../components/Students/VirtualClassS/VirtualClassS.jsx"
 
 import Doubt from "../components/Students/DoubtClearance/Doubt.js";
 import Assignment from "../components/Students/Assignment/Assignment.js";
@@ -94,7 +93,7 @@ const PagesRoutes = () => {
         <Route index element={<Teacher />} />
         <Route path="faculty-profile" element={<TeacherProfile />} />
         <Route path="faculty-leave-application" element={<FacultyPage />} />
-        <Route path="virtual-class" element={<VirtualPage />} />
+        <Route path="virtual-class" element={<VirtualPage/>} />
         <Route path="attendance-management" element={<AttendanceT />} />
         <Route path="exam-room-allocation" element={<ExamHallAllocation />} />
         <Route path="student-report-card" element={<StudentReport />} />
@@ -111,7 +110,7 @@ const PagesRoutes = () => {
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
         <Route path="exam-alerts" element={<ExamAlerts />} />
-        <Route path="virtual-classes" element={<VirtualPage />} />
+        <Route path="virtual-classes" element={<VirtualClassS />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
         <Route path="payment-management" element={<Payment />} />
