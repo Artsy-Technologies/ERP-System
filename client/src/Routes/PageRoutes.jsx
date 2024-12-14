@@ -19,7 +19,8 @@ import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventory
 import Teacher from "../pages/Teacher/teacher.jsx";
 import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
 import FacultyPage from "../components/Facultyleave/facultyleave.js";
-import VirtualPage from "../components/Virtualclass/virtualclass.js";
+import VirtualPageTeacher from "../components/Virtualclass/virtualclass_teacher.js";
+import VirtualPageStudent from "../components/Virtualclass/virtualclass_student.js";
 import AttendanceT from "../components/Teacher/Attendance/Attendance.jsx";
 import ExamHallAllocation from "../components/Teacher/ExamHallAllocation/ExamHallAllocation.jsx";
 import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
@@ -92,7 +93,7 @@ const PagesRoutes = () => {
         <Route index element={<Teacher />} />
         <Route path="faculty-profile" element={<TeacherProfile />} />
         <Route path="faculty-leave-application" element={<FacultyPage />} />
-        <Route path="virtual-class" element={<VirtualPage />} />
+        <Route path="virtual-class" element={<VirtualPageTeacher />} />
         <Route path="attendance-management" element={<AttendanceT />} />
         <Route path="exam-room-allocation" element={<ExamHallAllocation />} />
         <Route path="student-report-card" element={<StudentReport />} />
@@ -109,7 +110,7 @@ const PagesRoutes = () => {
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
         <Route path="exam-alerts" element={<ExamAlerts />} />
-        <Route path="virtual-classes" element={<VirtualPage />} />
+        <Route path="virtual-class" element={<VirtualPageStudent />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
         <Route path="payment-management" element={<Payment />} />
