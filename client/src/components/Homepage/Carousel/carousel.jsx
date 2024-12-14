@@ -29,9 +29,9 @@ function Carousel() {
         className="carousel slide main"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
+        <div className="carousel-inner container">
           <div className="carousel-item active">
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img
@@ -65,7 +65,7 @@ function Carousel() {
                 </div>
               </div>
             </div>
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img
@@ -101,7 +101,7 @@ function Carousel() {
 
           {/* Second carousel item */}
           <div className="carousel-item">
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img
@@ -139,7 +139,7 @@ function Carousel() {
                 </div>
               </div>
             </div>
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img
@@ -179,7 +179,7 @@ function Carousel() {
 
           {/* Third carousel item */}
           <div className="carousel-item">
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img
@@ -213,7 +213,7 @@ function Carousel() {
                 </div>
               </div>
             </div>
-            <div className="container d-flex flex-row">
+            <div className="container d-flex flex-row justify-content-center align-content-center">
               <div className="card m-3 aca">
                 <div className="card-body">
                   <img

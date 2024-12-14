@@ -1,0 +1,128 @@
+/* Teacher List Container */
+.teacher-list-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Search Bar */
+.teacher-list-search-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.teacher-list-search-box {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+.teacher-list-search-input {
+  text-align: center;
+  width: 100%;
+  padding: 12px 40px 12px 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.3s;
+}
+
+.teacher-list-search-input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.teacher-list-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 30px;
+}
+
+/* Button for New Teacher */
+.teacher-list-text-center {
+  display: flex;
+  justify-content:end; /* Center the button horizontally */
+  padding-bottom: 30px;
+  margin-top: 10px;
+}
+
+.teacher-list-sendbutton {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  width: auto; /* Allow the button to take its natural width */
+  min-width: 150px; /* Set a minimum width to prevent shrinking too much */
+  text-decoration: none;
+}
+
+.teacher-list-sendbutton:hover {
+  background-color: #006666; /* Darker shade on hover */
+}
+
+/* Teacher Cards List */
+.teacher-list-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5em;
+}
+
+.teacher-list-card {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.teacher-list-card:hover {
+  transform: scale(1.05);
+}
+
+.teacher-list-card-body {
+  padding: 15px;
+}
+
+.teacher-list-card-title {
+  font-weight: bold;
+}
+
+.teacher-list-card-text {
+  font-size: 14px;
+}
+
+/* Pagination */
+.teacher-list-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-list-text-center {
+    justify-content: center; /* Ensure the button is centered */
+  }
+
+  .teacher-list-sendbutton {
+    width: 50%; /* Adjust width on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .teacher-list-sendbutton {
+    width: 80%; /* On very small screens, make the button more prominent */
+  }
+}

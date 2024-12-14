@@ -18,8 +18,10 @@ import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventory
 
 import Teacher from "../pages/Teacher/teacher.jsx";
 import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
+
 import FacultyPage from "../components/Facultyleave/facultyleave.js";
 import VirtualPage from "../components/Virtualclass/virtualclass.js";
+
 import AttendanceT from "../components/Teacher/Attendance/Attendance.jsx";
 import ExamHallAllocation from "../components/Teacher/ExamHallAllocation/ExamHallAllocation.jsx";
 import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
