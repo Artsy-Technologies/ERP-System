@@ -6,6 +6,8 @@ const timetableRoutes = require('./routes/timetableRoutes');
 const cors = require('cors');
 const path = require('path');
 const profileRoutes = require('./routes/profile');
+const videoRoutes = require('./routes/videoRoutes');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); //Enable CORS for all routes
 app.use(express.json());
 app.use(express.static('public')); //Serve static files from the public directory
+
+
+
 
 //Database Connection
 mongoose.connect(process.env.MONGODB_URI, {
