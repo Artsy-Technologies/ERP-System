@@ -1,0 +1,59 @@
+/* Calendar.css */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cccccc48;
+  border-radius: 8px;
+  /* margin-top: 2rem; */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.151);
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header > h4{
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day, .calendar-day-name {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.calendar-day.current {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.empty {
+  background-color: transparent;
+  border: none;
+}
+
+.calendar-day-name {
+  font-weight: bold;
+  background-color: #eee;
+  border: none;
+}

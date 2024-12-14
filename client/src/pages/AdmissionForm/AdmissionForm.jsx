@@ -18,37 +18,32 @@ export default function FormPage(){
       <center>
         <h1 className="text-white admission">Admissions form</h1>
       </center>
+      
       {/* Form Part 1 */}
       <form action="#">
-        <div className="container ac">
-          <p>Admissions at Vancouver International School</p>
-          <div className="row d-flex justify-content-around align-items-center">
-            <div className="col-auto">
-              <label className="form-label">Select the branch</label>
-              <br />
-              <select value="branch" className="form-control" name="option">
-                <option value="Coimbatore">Coimbatore</option>
-                <option value="Amritapuri">Amritapuri</option>
-                <option value="Amritsar">Amritsar</option>
-                <option value="Malaysia">Malaysia</option>
-                <option value="Mexico">Mexico</option>
-              </select>
-            </div>
-            <div className="col-auto">
-              <label className="form-label">Registration number*</label>
-              <br />
-              <input type="number" id="RegNumber" className="form-control" name="RegNumber" />
-              <div id="RegNumError" className="text-danger"></div>
-            </div>
-            <div className="col-auto">
-              <label htmlFor="image" className="form-label">Photo of the student</label>
-              <br />
-              <input type="file" id="image" className="form-control" name="image" />
-              <div id="imageError" className="text-danger"></div>
+          <div className="container ac">
+            <p>Admissions at Vancouver International School</p>
+            <div className="row d-flex justify-content-around align-items-center">
+              <div className="col-auto">
+                <label className="form-label">Select the branch</label>
+                <br />
+                <select value="branch" className="form-control" name="option">
+                  <option value="Coimbatore">Coimbatore</option>
+                  <option value="Amritapuri">Amritapuri</option>
+                  <option value="Amritsar">Amritsar</option>
+                  <option value="Malaysia">Malaysia</option>
+                  <option value="Mexico">Mexico</option>
+                </select>
+              </div>
+              <div className="col-auto">
+                <label htmlFor="image" className="form-label">Photo of the student</label>
+                <br />
+                <input type="file" id="image" className="form-control" name="image" />
+                <div id="imageError" className="text-danger"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <br />
+          <br />
         {/* Form Part 2 */}
         <div className="container ac">
           <div className="row d-flex justify-content-around align-items-center">
@@ -83,7 +78,7 @@ export default function FormPage(){
             <div className="col-md-3">
               <label className="form-label">Date of birth</label>
               <br />
-              <input type="date" id="date" className="form-control" name="date" placeholder="dd/mm/yy" />
+              <input type="date" id="date" className="form-control" name="date" placeholder="dd/mm/yy" style={{maxWidth: "100%" }} />
               <div id="dateerror" className="text-danger"></div>
             </div>
             <div className="col-md-3">

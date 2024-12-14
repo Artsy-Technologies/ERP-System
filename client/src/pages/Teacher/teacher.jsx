@@ -1,17 +1,9 @@
-
-import Sidebar from './Sidebar';
-import Header from './header';
 import Body from './body';
-import './teacher.css';
-function Teacher(){
-    return(
-        <>
-        <Header/>
-        <Sidebar/>
-        <Body/>
-        
-
-        </>
+function Teacher() {
+    return (
+        <section style={{ width: "100%" }} >
+            <Body />
+        </section>
     )
 }
 export default Teacher

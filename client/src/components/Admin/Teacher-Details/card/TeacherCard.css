@@ -1,0 +1,139 @@
+/* General Card Container */
+.teacher-card-col {
+  margin-bottom: 16px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher-card {
+  width: 180px;
+  height: auto; /* Allow flexible height */
+  text-decoration: none;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+ 
+}
+
+.teacher-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Content */
+.teacher-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.teacher-card-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  transition: transform 0.3s ease;
+}
+
+.teacher-card-img:hover {
+  transform: scale(1.1);
+}
+
+.teacher-card-title, .teacher-card-text {
+  color: #4a5ca7;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.teacher-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.teacher-card-text {
+  font-size: 0.85rem;
+  color: #9d8eaa;
+}
+
+/* Contact Icons */
+.teacher-card-contact-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.teacher-card-contact-btn {
+  width: 35px;
+  height: 35px;
+  background-color: #277585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.teacher-card-contact-btn:hover {
+  background-color: #1e606d;
+}
+
+.teacher-card-contact-btn:active {
+  background-color: #144c55;
+  transform: scale(0.95);
+}
+
+.teacher-card-icon {
+  font-size: 18px;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-card {
+    width: 140px;
+    height: auto;
+  }
+
+  .teacher-card-title {
+    font-size: 0.9rem;
+  }
+
+  .teacher-card-text {
+    font-size: 0.75rem;
+  }
+
+  .teacher-card-contact-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .teacher-card-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teacher-card {
+    width: 100%;
+    padding: 10px;
+  }
+}

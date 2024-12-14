@@ -1,16 +1,11 @@
 
-import Sidebar from './Sidebar';
-import Header from './header';
 import Body from './body';
-import './style.css';
 
-function Student(){
-    return(
-        <>
-        <Header/>
-        <Sidebar/>
-        <Body/>
-        </>
+function Student() {
+    return (
+        <section style={{width:"100%"}} >
+            <Body />
+        </section>
     )
 }
 export default Student

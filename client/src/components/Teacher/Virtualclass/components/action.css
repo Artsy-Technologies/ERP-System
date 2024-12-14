@@ -1,0 +1,22 @@
+/* src/components/ActionButtons.css */
+.action-buttons {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .action-btn {
+    background-color: #191111;
+    color: rgb(198, 185, 185);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .action-btn:hover {
+    background-color: #845858;
+  }
+  

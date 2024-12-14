@@ -1,0 +1,98 @@
+.teacher-dashboard-container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;
+    align-items: center;
+}
+
+.teacher-profile-list {
+    width: 30%; 
+    height: 100%;
+    background-color: #f7f7f7; 
+    padding: 10px;
+}
+
+.teacher-ratings-section {
+    flex: 1;
+    height: 100%;
+}
+
+.teacher-ratings-section > div {
+    flex: 1; /* Take equal height for TeacherRating and LeaveHistory */
+    margin-bottom: 10px; /* Space between components */
+}
+
+.teacher-leave-section {
+    flex-grow: 1;
+}
+
+/* Optional styles for better visibility */
+.teacher-leave-history-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.teacher-leave-history-title {
+    margin-bottom: 10px;
+}
+
+.teacher-leave-history-table {
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* For tablets */
+    .teacher-dashboard-container {
+        flex-direction: row; /* Maintain side-by-side layout */
+    }
+
+    .teacher-profile-list {
+        width: 35%; /* Slightly increase width for better spacing */
+    }
+
+    .teacher-ratings-section {
+        width: 65%; /* Slightly decrease width for better spacing */
+    }
+
+    .teacher-ratings-section > div {
+        margin-bottom: 15px; /* Space between components */
+    }
+}
+
+@media (max-width: 768px) { /* For medium mobile devices */
+    .teacher-dashboard-container {
+        flex-direction: column; /* Stack components vertically */
+    }
+
+    .teacher-profile-list {
+        width: 100%; /* Full width for profile list */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .teacher-ratings-section {
+        width: 100%; /* Full width for ratings and leave */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .teacher-ratings-section > div {
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+    .teacher-leave-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) { /* For small mobile devices */
+    .teacher-profile-list {
+        padding: 5px; /* Reduce padding */
+    }
+
+    .teacher-leave-history-title {
+        font-size: 1.2rem; /* Slightly larger title for visibility */
+    }
+
+    .teacher-leave-history-table {
+        font-size: 0.9rem; /* Reduce table font size for mobile */
+    }
+}

@@ -1,0 +1,109 @@
+.teacher-profile-card {
+  width: 100%;
+  max-width: 400px;
+  min-width: 300px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background-color: white;
+}
+
+.teacher-card-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #007bff, #00c4ff);
+  position: relative;
+}
+
+.teacher-profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-name {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.teacher-role {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #e1f1f8;
+}
+
+.teacher-card-body {
+  padding: 20px;
+}
+
+.teacher-section-title {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.teacher-card-body p,
+.teacher-card-body li {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.teacher-contact-icon {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.teacher-details-section,
+.teacher-education-section,
+.teacher-expertise-section,
+.teacher-contact-section {
+  margin-bottom: 20px;
+}
+
+.teacher-contact-section p {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .teacher-profile-card {
+    width: 100%;
+  }
+
+  .teacher-profile-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .teacher-name {
+    font-size: 1.3rem;
+  }
+
+  .teacher-role {
+    font-size: 0.9rem;
+  }
+
+  .teacher-section-title {
+    font-size: 1.1rem;
+  }
+
+  .teacher-card-body p,
+  .teacher-card-body li {
+    font-size: 0.85rem;
+  }
+}
+
+.teacher-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #007bff;
+  padding: 20px;
+}
