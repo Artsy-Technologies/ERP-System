@@ -15,7 +15,7 @@ const VideoGrid = () => {
   return (
     <div className="video-grid">
       <h2>Recent Uploads</h2>
-      <div className="grid">
+      <div className="virtual-grid">
         {videos.map((video, index) => (
           <VideoCard key={index} video={video} />
         ))}
