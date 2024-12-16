@@ -1,5 +1,6 @@
 import express from 'express';
-import Teacher from "../../libs/models/teacherProfile/TeacherModel.js";
+import Teacher from '../../libs/models/teacherProfile/TeacherModel.js';
+
 
 const router = express.Router();
 
@@ -12,6 +13,21 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+
+//get teacher by id
+router.get('/teacher/:id', async(req, res) => {
+  try{
+    const teacher = await Teacher.findById(req.params.id);
+    if (!teacher) return res.status(404).send('Teacher not found');
+    res.json(teacher);
+  }catch(error){
+    res.status(500).send('server Error');
+  }
+});
+
+
+
 
 // Create a new teacher
 router.post('/', async (req, res) => {
@@ -41,9 +57,9 @@ router.post('/', async (req, res) => {
 });
 
 // Update a teacher by id
-router.put('/:id', async (req, res) => {
+router.put('teacher/:id', async (req, res) => {
   try {
-    const teacher = await Teacher.findById(req.params.id);
+    const teacher = await Teacher.findByIdAndUpdate(req.params.id, {$set: req.body }, {new: true});
     if (!teacher) {
       return res.status(400).json({ message: "Teacher not found" });
     }
@@ -71,7 +87,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete a teacher
-router.delete('/:id', async (req, res) => {
+router.delete('teacher/:id', async (req, res) => {
   try {
     const teacher = await Teacher.findById(req.params.id);
     if (!teacher) {

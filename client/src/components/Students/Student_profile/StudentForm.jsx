@@ -142,33 +142,33 @@ const StudentForm = ({ student, onSubmit }) => {
     <>
       <div className="d-flex container-fluid mt-5">
       <div
-  className="text-center"
-  style={{ width: "20%", marginTop: "100px", fontWeight: "bolder" }}
->
-  <div>
-    <p className="mb-5 text-black fs-4 me-5 fw-bold">
-      <FontAwesomeIcon icon={faArrowLeft} className="pe-2" />
-      Setting
-    </p>
-  </div>
-  <p className="mb-4 fw-bold text-secondary">
-      <FontAwesomeIcon icon={faPencilAlt} className="pe-3" />
-      Edit Profile
-    </p>
-  
-  <p className="mb-4 fw-bold">
-    <FontAwesomeIcon icon={faBell} className="pe-3" />
-    Notification
-  </p>
-  <p className="mb-4 fw-bold">
-    <FontAwesomeIcon icon={faGear} className="pe-3" />
-    Appearance
-  </p>
-  <p className="mb-4 fw-bold">
-    <FontAwesomeIcon icon={faQuestionCircle} className="pe-3" />
-    Help
-  </p>
-</div>
+          className="text-center d-flex flex-column"
+          style={{ width: "20%", marginTop: "-210px", fontWeight: "bolder" }}
+        >
+          <div>
+            <p className="mb-5 text-black fs-4 me-5 fw-bold">
+              <FontAwesomeIcon icon={faArrowLeft} className="pe-2" />
+              Setting
+            </p>
+          </div>
+          <p className="mb-4 fw-bold text-secondary">
+            <FontAwesomeIcon icon={faPencilAlt} className="pe-3" />
+            Edit Profile
+          </p>
+
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faBell} className="pe-3" />
+            Notification
+          </p>
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faGear} className="pe-3" />
+            Appearance
+          </p>
+          <p className="mb-4 fw-bold">
+            <FontAwesomeIcon icon={faQuestionCircle} className="pe-3" />
+            Help
+          </p>
+        </div>
 
         <div
           style={{

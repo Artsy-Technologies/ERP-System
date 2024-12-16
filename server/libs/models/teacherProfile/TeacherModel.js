@@ -65,5 +65,5 @@ confirmpassword: {
 
 });
 
-const TeacherModel = mongoose.model('Teacherprofile', TeacherSchema);
+const TeacherModel = mongoose.model('teachers', TeacherSchema);
 export default TeacherModel

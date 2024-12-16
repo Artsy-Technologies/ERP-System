@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./ProfileCard.css";
+import { Link } from "react-router-dom";
 
 const ProfileCard = ({ teacher }) => {
   if (!teacher) {
@@ -26,6 +27,7 @@ const ProfileCard = ({ teacher }) => {
     : "http://via.placeholder.com/150";
 
   return (
+    //link
     <div className="teacher-profile-card">
       <div className="teacher-card-header bg-primary text-white">
         <div className="row align-items-center">
@@ -40,6 +42,10 @@ const ProfileCard = ({ teacher }) => {
             <h2 className="teacher-name">{teacher.fullName || "N/A"}</h2>
             <p className="teacher-role">{teacher.subject || "N/A"}</p>
           </div>
+
+          <Link to={`/teacher-dashboard/faculty-profile`} className="mt-2">
+            <button>Edit Profile</button>
+          </Link>
         </div>
       </div>
 

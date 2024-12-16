@@ -12,11 +12,28 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import "../../Students/DigitalLibrary/libraryApp.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TeacherForm = ({ teacher, onSubmit }) => {
+  useEffect(() => {
+    // Fetch teacher data
+    const fetchTeacherData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/api/teachers/:id`
+        );
+        setFormValues(response.data);
+      } catch (error) {
+        console.error("Error fetching teacher data:", error);
+      }
+    };
+
+    fetchTeacherData();
+  }, [teacher]);
+
   const [formValues, setFormValues] = useState({
     first_name: teacher?.first_name || "",
     middle_name: teacher?.middle_name || "",
@@ -106,14 +123,11 @@ const TeacherForm = ({ teacher, onSubmit }) => {
     try {
       if (teacher && teacher._id) {
         await axios.put(
-          `http://localhost:8000/api/teacherDetails/${teacher._id}`,
+          `http://localhost:8000/api/teachers/${teacher._id}`,
           teacherData
         );
       } else {
-        await axios.post(
-          "http://localhost:8000/api/teacherDetails",
-          teacherData
-        );
+        await axios.post("http://localhost:8000/api/teachers", teacherData);
       }
 
       alert("Teacher Profile Updated Successfully");
@@ -152,15 +166,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
     <>
       <div className="container-fluid d-flex mt-5">
         <div
-          className="text-center"
-          style={{ width: "20%", marginTop: "100px", fontWeight: "bolder" }}
+          className="text-center d-flex flex-column"
+          style={{ width: "20%", marginTop: "-210px", fontWeight: "bolder" }}
         >
           <div>
-    <p className="mb-5 text-black fs-4 me-5 fw-bold">
-      <FontAwesomeIcon icon={faArrowLeft} className="pe-2" />
-      Setting
-    </p>
-  </div>
+            <p className="mb-5 text-black fs-4 me-5 fw-bold">
+              <FontAwesomeIcon icon={faArrowLeft} className="pe-2" />
+              Setting
+            </p>
+          </div>
           <p className="mb-4 fw-bold text-secondary">
             <FontAwesomeIcon icon={faPencilAlt} className="pe-3" />
             Edit Profile
@@ -476,15 +490,15 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                 </div>
 
                 {/* Submit button */}
-                <div className="p_btn">
-                  <button
-                    type="submit"
-                    className="btn btn-dark me-3"
-                    style={{ width: "150px" }}
-                  >
-                    Update
-                  </button>
-                </div>
+                {/* <Link to={`/admin-dashboard/teacher/${teacher._id}`} className="p_btn"> */}
+                <button
+                  type="submit"
+                  className="btn btn-dark me-3"
+                  style={{ width: "150px" }}
+                >
+                  Update
+                </button>
+                {/* </Link> */}
               </form>
             </div>
           </div>
