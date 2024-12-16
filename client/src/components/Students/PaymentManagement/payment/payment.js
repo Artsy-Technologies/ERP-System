@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Payment.css';
+import sub_payment from '../sub_payment/sub_payment';
 
 function Payment() {
     return(
         <div className="main-content">
-        <h3><i className="fas fa-chevron-left"></i> PAYMENT MANAGEMENT</h3>
+          <div className="content container-fluid p-0">
+      <div className="heading-container d-flex justify-content-start align-items-left mb-4">
+        <h3 className="mb-0">
+          <i className="fas fa-chevron-left"></i>PAYMENT MANAGEMENT
+        </h3>
+      </div>
+     </div>
         
         <div className="t">
             <div className="top-section">
-                <div>
-                    <img id="pay_image" src="images/image_10.png" alt="Payment Image"></img>
+                <div className="image-container"> 
+                    <img id="pay_image" src={require('../../../../assets/Images/image_10.png')} alt="Payment Image"></img>
                 </div>
                 <div className="buttons-top">
                     <button>History</button>
@@ -28,8 +35,7 @@ function Payment() {
             </div>
         </div>
     </div>
-
     );
-
 };
+
 export default Payment;

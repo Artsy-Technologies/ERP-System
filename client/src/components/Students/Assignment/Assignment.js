@@ -5,7 +5,7 @@ const Assignment=() => {
     return(
         <div className="_container-fluid">
         <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-1">
                 </div>
             <div className="col-md-8">
             <h3  className="mb-0">

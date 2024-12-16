@@ -1,53 +1,52 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import ErrorRoutes from "./ErrorRoutes";
 
-import LandingPage from "../pages/LandingPage/LandingPage";
 import Dashboardpage from "../components/Layouts/Dashboardpage.jsx";
-import TeacherLayout from "../pages/Teacher/TeacherAdminLayout.jsx";
+import LandingPage from "../pages/LandingPage/LandingPage";
 import StudentLayout from "../pages/Student/StudentAdminLayout.jsx";
+import TeacherLayout from "../pages/Teacher/TeacherAdminLayout.jsx";
 
 // import Admin from "../pages/AdminDashboard/Admin.jsx";
+import Finance from "../components/Admin/Finance/Finance.jsx";
 import TeacherList from "../components/Admin/Teacher-Details/card/TeacherList.js";
+import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventorymain.js";
 import StudentDetails1 from "../pages/AdminDashboard/Stu-Details-1.jsx";
 import Transport from "../pages/AdminDashboard/Transport/Transport.jsx";
-import Finance from "../components/Admin/Finance/Finance.jsx";
-import Inventorymain from "../pages/AdminDashboard/InventoryManagement/Inventorymain.js";
 
-import Teacher from "../pages/Teacher/teacher.jsx";
-import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
-import FacultyPage from "../components/Teacher/FacultyLeave/facultyLeave.jsx";
-import VirtualPage from "../components/Teacher/Virtualclass/virtual_class.jsx";
+import AssignmentT from "../components/Teacher/Assignment_t/Assignment_t.js";
 import AttendanceT from "../components/Teacher/Attendance/Attendance.jsx";
 import ExamHallAllocation from "../components/Teacher/ExamHallAllocation/ExamHallAllocation.jsx";
-import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
+import FacultyPage from "../components/Teacher/FacultyLeave/facultyLeave.jsx";
 import Schedule from "../components/Teacher/Schedule/Schedule.jsx";
-import AssignmentT from "../components/Teacher/Assignment_t/Assignment_t.js";
+import StudentReport from "../components/Teacher/StudentReport/StudentReport.jsx";
+import TeacherProfile from "../components/Teacher/teacher_profile/TeacherProfile.jsx";
+import VirtualPage from "../components/Teacher/Virtualclass/virtual_class.jsx";
+import Teacher from "../pages/Teacher/teacher.jsx";
 
-import Student from "../pages/Student/student.jsx";
-import StudentProfile from "../components/Students/Student_profile/StudentProfile.jsx";
 import Attendance from "../components/Students/Attendance/Attendance.jsx";
-import TimeTable from "../components/Students/Timetable_students/Timetable.js";
-import GradeAndReport from "../components/Students/GradeAndReport/GradeAndReport.jsx";
 import DigitalLibraryMainPage from "../components/Students/DigitalLibrary/digital_library_main_page.jsx";
-import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx"
+import ExamAlerts from "../components/Students/ExamAlerts/ExamAlerts.jsx";
+import GradeAndReport from "../components/Students/GradeAndReport/GradeAndReport.jsx";
+import StudentProfile from "../components/Students/Student_profile/StudentProfile.jsx";
+import TimeTable from "../components/Students/Timetable_students/Timetable.js";
+import Student from "../pages/Student/student.jsx";
 
-import Doubt from "../components/Students/DoubtClearance/Doubt.js";
 import Assignment from "../components/Students/Assignment/Assignment.js";
-import Payment from "../components/Students/PaymentManagement/payment/payment.js";
+import Doubt from "../components/Students/DoubtClearance/Doubt.js";
 import FacultyFeedback from "../components/Students/FacultyFeedback/FacultyFeedback.jsx";
-
-
+import Payment from "../components/Students/PaymentManagement/payment/payment.js";
+import sub_payment from "../components/Students/PaymentManagement/sub_payment/sub_payment.js";
 
 //sub-components
-import SportsInventory from '../components/Admin/Inventorymanagement/sports/SportsEquipment.js';
-import PlumbingInventory from '../components/Admin/Inventorymanagement/plumber/Plumbing.js';
-import Maintenance from '../components/Admin/Inventorymanagement/maintenance/Maintenance.js';
-import LabEquipment from '../components/Admin/Inventorymanagement/labs/LabEquipment.js';
 import ElectricalsInventory from '../components/Admin/Inventorymanagement/electricals/Electricals.js';
 import FurnitureInventory from '../components/Admin/Inventorymanagement/furniture/Furniture.js';
+import LabEquipment from '../components/Admin/Inventorymanagement/labs/LabEquipment.js';
+import Maintenance from '../components/Admin/Inventorymanagement/maintenance/Maintenance.js';
+import PlumbingInventory from '../components/Admin/Inventorymanagement/plumber/Plumbing.js';
+import SportsInventory from '../components/Admin/Inventorymanagement/sports/SportsEquipment.js';
 
 import FormPage from '../pages/AdmissionForm/AdmissionForm.jsx'
 import AdminDashboardPage from "../pages/AdminDashboard/Dashboard/AdminDashboardPage.jsx";
@@ -114,6 +113,7 @@ const PagesRoutes = () => {
         <Route path="assignments" element={<Assignment />} />
         <Route path="payment-management" element={<Payment />} />
         <Route path="faculty-feedback" element={<FacultyFeedback />} />
+        <Route path="sub_payment" element={<sub_payment />} />
       </Route>
 
       {/*
