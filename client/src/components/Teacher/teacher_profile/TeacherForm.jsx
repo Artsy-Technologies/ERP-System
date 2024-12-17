@@ -1,6 +1,5 @@
 import {
-  faCircleQuestion,
-  faCircleUser,
+ 
   faQuestionCircle,
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
@@ -9,7 +8,7 @@ import {
   faBell,
   faGear,
   faPencilAlt,
-  faSearch,
+
 } from "@fortawesome/free-solid-svg-icons";
 import "../../Students/DigitalLibrary/libraryApp.css";
 import React, { useEffect, useState } from "react";
@@ -23,7 +22,7 @@ const TeacherForm = ({ teacher, onSubmit }) => {
     const fetchTeacherData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/teachers/:id`
+          `http://localhost:8000/api/teachers/${teacher._id}`
         );
         setFormValues(response.data);
       } catch (error) {
@@ -118,16 +117,16 @@ const TeacherForm = ({ teacher, onSubmit }) => {
       return; // Stop submission if validation fails
     }
 
-    const teacherData = { ...formValues };
+    // const teacherData = { ...formValues };
 
     try {
       if (teacher && teacher._id) {
         await axios.put(
           `http://localhost:8000/api/teachers/${teacher._id}`,
-          teacherData
+         
         );
       } else {
-        await axios.post("http://localhost:8000/api/teachers", teacherData);
+        await axios.post(`http://localhost:8000/api/teachers/${teacher._id}`);
       }
 
       alert("Teacher Profile Updated Successfully");
