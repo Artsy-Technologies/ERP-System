@@ -2,9 +2,8 @@ import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./ProfileCard.css";
 import { Link, Navigate } from "react-router-dom";
-import TeacherForm from "../../../Teacher/teacher_profile/TeacherForm";
 
-const ProfileCard = ({ teacher }) => {
+const ProfileCard = ({ teacher, id }) => {
   if (!teacher) {
     return <div>No teacher data available.</div>;
   }
@@ -47,7 +46,7 @@ const ProfileCard = ({ teacher }) => {
             <p className="teacher-role">{teacher.subject || "N/A"}</p>
           </div>
 
-          <Link to={`/teacher-dashboard/faculty-profile`} className="mt-2" state = {teacher}>
+          <Link to={`/teacher-dashboard/faculty-profile/${id}`} className="mt-2" >
           <button>Edit Profile</button>
           </Link>
         </div>

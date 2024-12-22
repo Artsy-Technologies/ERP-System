@@ -1,5 +1,4 @@
 import {
- 
   faQuestionCircle,
   faUserCircle,
 } from "@fortawesome/free-regular-svg-icons";
@@ -8,157 +7,89 @@ import {
   faBell,
   faGear,
   faPencilAlt,
-
 } from "@fortawesome/free-solid-svg-icons";
 import "../../Students/DigitalLibrary/libraryApp.css";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { Navigate, useParams } from "react-router-dom";
+import Password from "antd/es/input/Password";
 
-const TeacherForm = ({ teacher, onSubmit }) => {
-  useEffect(() => {
-    // Fetch teacher data
-    const fetchTeacherData = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8000/api/teachers/${teacher._id}`
-        );
-        setFormValues(response.data);
-      } catch (error) {
-        console.error("Error fetching teacher data:", error);
-      }
-    };
-
-    fetchTeacherData();
-  }, [teacher]);
-
-  const [formValues, setFormValues] = useState({
-    first_name: teacher?.first_name || "",
-    middle_name: teacher?.middle_name || "",
-    last_name: teacher?.last_name || "",
-    email: teacher?.email || "",
-    dob: teacher?.dob || "",
-    subject_expertise: teacher?.subject_expertise || "",
-    address: teacher?.address || "",
-    pincode: teacher?.pincode || "",
-    contact_no: teacher?.contact_no || "",
-    managed_classes: teacher?.managed_classes || "",
-    city: teacher?.city || "",
-    state: teacher?.state || "",
-    newpassword: "",
-    confirmpassword: "",
+const TeacherForm = () => {
+  const [teacherData, setTeacherData] = useState({
+    _id: "6702302b4af893c145f00b29",
+    full_name: "Archana",
+    middle_name: "Archana",
+    last_name: "Archana",
+    dob: "1991-08-06",
+    gender: "female",
+    pincode: "",
+    nationality: "Indian",
+    classAllotted: "10",
+    subject: "Science",
+    email: "teacher1@gmail.com",
+    phoneNumber: "09606392113",
+    address: "bangalore",
+    photo: "1728196651107.png",
+    ugCourse: "BTech",
+    ugMajor: "NO",
+    ugScore: "82",
+    ugYear: 2000,
+    ugUniversity: "MIT",
+    pgCourse: "MTech",
+    pgMajor: "phd",
+    pgScore: "8",
+    pgYear: 2003,
+    pgUniversity: "MIT",
   });
 
-  const [errors, setErrors] = useState({});
+  const { id } = useParams();
+  console.log(id);
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [id]: value,
-    }));
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    const requiredFields = [
-      "first_name",
-      "last_name",
-      "email",
-      "dob",
-      "subject_expertise",
-      "address",
-      "pincode",
-      "contact_no",
-      "managed_classes",
-      "city",
-      "state",
-    ];
-
-    requiredFields.forEach((field) => {
-      if (!formValues[field].trim()) {
-        newErrors[field] = "This field is required";
-      }
-    });
-
-    // Email format validation
-    if (formValues.email && !/\S+@\S+\.\S+/.test(formValues.email)) {
-      newErrors.email = "Invalid email format";
-    }
-
-    // Password length validation
-    if (formValues.newpassword && formValues.newpassword.length < 6) {
-      newErrors.newpassword = "Password must be at least 6 characters long";
-    }
-
-    // Password matching validation
-    if (
-      formValues.newpassword &&
-      formValues.newpassword !== formValues.confirmpassword
-    ) {
-      newErrors.confirmpassword = "Passwords do not match";
-    }
-
-    // Phone number validation (exactly 9 digits)
-    if (formValues.contact_no && !/^\d{10}$/.test(formValues.contact_no)) {
-      newErrors.contact_no = "Phone number must be exactly 10 digits";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0; // Return true if no errors
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return; // Stop submission if validation fails
-    }
-
-    // const teacherData = { ...formValues };
-
+  const fetchTeacherData = async () => {
     try {
-      if (teacher && teacher._id) {
-        await axios.put(
-          `http://localhost:8000/api/teachers/${teacher._id}`,
-         
-        );
-      } else {
-        await axios.post(`http://localhost:8000/api/teachers/${teacher._id}`);
-      }
-
-      alert("Teacher Profile Updated Successfully");
-
-      setFormValues({
-        first_name: "",
-        middle_name: "",
-        last_name: "",
-        email: "",
-        dob: "",
-        subject_expertise: "",
-        address: "",
-        pincode: "",
-        contact_no: "",
-        managed_classes: "",
-        city: "",
-        state: "",
-        newpassword: "",
-        confirmpassword: "",
-      });
-      setErrors({});
+      const response = await axios.get(`/api/teachers/${id}`);
+      setTeacherData(response?.data);
+      console.log(response?.data);
     } catch (error) {
-      console.error(
-        "Error updating teacher:",
-        error.response?.data || error.message
-      );
-      alert(
-        `Error updating teacher: ${
-          error.response?.data?.message || error.message
-        }`
-      );
+      console.error("Error fetching teacher data:", error);
     }
+  };
+
+  useEffect(() => {
+    fetchTeacherData();
+  }, [id]);
+
+  // console.log(teacherData , "teacherDEtails");
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
+
+  // Prefill form fields with profile data
+  useEffect(() => {
+    Object.keys(teacherData).forEach((key) => {
+      setValue(key, teacherData[key]);
+    });
+  }, [teacherData, setValue]);
+
+  const onSubmit = (data) => {
+    updateTeacherDetails(data);
+  };
+
+  const updateTeacherDetails = async (data) => {
+    
+    try {
+      const response = await axios.put(`/api/teachers/${id}`, data);
+      console.log(response);
+      alert("Profile Updated Successfully!")
+    } catch (error) {
+      console.log(error);
+    }
+    // Navigate(`/admin-dashboard/teacher/${id}`)
   };
 
   return (
@@ -207,7 +138,7 @@ const TeacherForm = ({ teacher, onSubmit }) => {
             style={{ width: "100vh" }}
           >
             <div className="form-container">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3 form-heading-container d-flex justify-content-between">
                   <h2 className="form-heading">Edit Profile</h2>
                   <button
@@ -221,79 +152,48 @@ const TeacherForm = ({ teacher, onSubmit }) => {
 
                 {/* Form fields */}
                 <div className="row mb-1">
-                  <div className="col-md-4">
-                    <label
-                      htmlFor="first_name"
-                      className="form-label text-start"
-                    >
-                      First Name
+                  <div className="col-md-6">
+                    <label htmlFor="fullName" className="form-label text-start">
+                      Full Name
                     </label>
                     <input
                       type="text"
                       className="form-control"
-                      id="first_name"
-                      value={formValues.first_name}
-                      placeholder="First Name"
-                      onChange={handleInputChange}
+                      {...register("fullName", {
+                        required: "First name is required",
+                      })}
+                      placeholder="Full Name"
                     />
                     {errors.first_name && (
-                      <div className="text-danger">{errors.first_name}</div>
+                      <span className="text-danger">
+                        {errors.first_name.message}
+                      </span>
                     )}
                   </div>
-                  <div className="col-md-4">
-                    <label
-                      htmlFor="middle_name"
-                      className="form-label text-start"
-                    >
-                      Middle Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="middle_name"
-                      placeholder="Middle Name"
-                      value={formValues.middle_name}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className="col-md-4">
-                    <label
-                      htmlFor="last_name"
-                      className="form-label text-start"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="last_name"
-                      placeholder="Last Name"
-                      value={formValues.last_name}
-                      onChange={handleInputChange}
-                    />
-                    {errors.last_name && (
-                      <div className="text-danger">{errors.last_name}</div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="row mb-1">
-                  <div className="col-md-4">
+                  
+                  <div className="col-md-8">
                     <label htmlFor="email" className="form-label text-start">
                       Email
                     </label>
                     <input
                       type="email"
                       className="form-control"
-                      id="email"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: /^\S+@\S+\.\S+$/,
+                          message: "Invalid email format",
+                        },
+                      })}
                       placeholder="Email"
-                      value={formValues.email}
-                      onChange={handleInputChange}
                     />
                     {errors.email && (
-                      <div className="text-danger">{errors.email}</div>
+                      <span className="text-danger">
+                        {errors.email.message}
+                      </span>
                     )}
                   </div>
+
                   <div className="col-md-4">
                     <label htmlFor="dob" className="form-label text-start">
                       DOB
@@ -301,38 +201,36 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                     <input
                       type="date"
                       className="form-control"
-                      id="dob"
-                      value={formValues.dob}
-                      onChange={handleInputChange}
+                      {...register("dob", {
+                        required: "Date of birth is required",
+                      })}
                     />
                     {errors.dob && (
-                      <div className="text-danger">{errors.dob}</div>
-                    )}
-                  </div>
-                  <div className="col-md-4">
-                    <label
-                      htmlFor="subject_expertise"
-                      className="form-label text-start"
-                    >
-                      Subject of Expertise
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Subject Name"
-                      id="subject_expertise"
-                      value={formValues.subject_expertise}
-                      onChange={handleInputChange}
-                    />
-                    {errors.subject_expertise && (
-                      <div className="text-danger">
-                        {errors.subject_expertise}
-                      </div>
+                      <span className="text-danger">{errors.dob.message}</span>
                     )}
                   </div>
                 </div>
 
                 <div className="row mb-1">
+                  <div className="col-md-4">
+                    <label htmlFor="subject" className="form-label text-start">
+                      Subject of Expertise
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("subject", {
+                        required: "Subject is required",
+                      })}
+                      placeholder="Subject"
+                    />
+                    {errors.subject && (
+                      <span className="text-danger">
+                        {errors.subject.message}
+                      </span>
+                    )}
+                  </div>
+
                   <div className="col-md-8">
                     <label htmlFor="address" className="form-label text-start">
                       Address
@@ -340,15 +238,19 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                     <input
                       type="text"
                       className="form-control"
+                      {...register("address", {
+                        required: "Address is required",
+                      })}
                       placeholder="Address"
-                      id="address"
-                      value={formValues.address}
-                      onChange={handleInputChange}
                     />
                     {errors.address && (
-                      <div className="text-danger">{errors.address}</div>
+                      <span className="text-danger">
+                        {errors.address.message}
+                      </span>
                     )}
                   </div>
+                </div>
+                <div className="row mb-1">
                   <div className="col-md-4">
                     <label htmlFor="pincode" className="form-label text-start">
                       PIN Code
@@ -358,146 +260,59 @@ const TeacherForm = ({ teacher, onSubmit }) => {
                       className="form-control"
                       placeholder="PIN Code"
                       id="pincode"
-                      value={formValues.pincode}
-                      onChange={handleInputChange}
+                      // {...register("pincode", {
+                      //   required: "PIN Code is required",
+                      // })}
                     />
-                    {errors.pincode && (
-                      <div className="text-danger">{errors.pincode}</div>
-                    )}
                   </div>
-                </div>
-
-                <div className="row mb-1">
+                  
                   <div className="col-md-4">
-                    <label
-                      htmlFor="contact_no"
-                      className="form-label text-start"
-                    >
+                    <label htmlFor="phoneNumber" className="form-label text-start">
                       Contact No
                     </label>
                     <input
                       type="text"
-                      placeholder="Phone Number"
                       className="form-control"
-                      id="contact_no"
-                      value={formValues.contact_no}
-                      onChange={handleInputChange}
+                      {...register("phoneNumber", {
+                        required: "Phone number is required",
+                        pattern: {
+                          value: /^[0-9]{10}$/,
+                          message: "Invalid phone number",
+                        },
+                      })}
+                      placeholder="Phone Number"
                     />
-                    {errors.contact_no && (
-                      <div className="text-danger">{errors.contact_no}</div>
+                    {errors.phoneNumber && (
+                      <span className="text-danger">
+                        {errors.phoneNumber.message}
+                      </span>
                     )}
                   </div>
+
                   <div className="col-md-4">
-                    <label
-                      htmlFor="managed_classes"
-                      className="form-label text-start"
-                    >
+                    <label htmlFor="classAllotted" className="form-label text-start">
                       Managed Classes
                     </label>
                     <input
                       type="text"
                       className="form-control"
-                      id="managed_classes"
-                      placeholder="Managed Classes"
-                      value={formValues.managed_classes}
-                      onChange={handleInputChange}
+                      {...register("classAllotted")}
+                      placeholder="Class"
                     />
-                    {errors.managed_classes && (
-                      <div className="text-danger">
-                        {errors.managed_classes}
-                      </div>
-                    )}
-                  </div>
-                  <div className="col-md-4">
-                    <label htmlFor="city" className="form-label text-start">
-                      City
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="city"
-                      placeholder="City"
-                      value={formValues.city}
-                      onChange={handleInputChange}
-                    />
-                    {errors.city && (
-                      <div className="text-danger">{errors.city}</div>
+                     {errors.manageClasses && (
+                      <span className="text-danger">
+                        {errors.manageClasses.message}
+                      </span>
                     )}
                   </div>
                 </div>
-
-                <div className="row mb-1">
-                  <div className="col-md-6">
-                    <label htmlFor="state" className="form-label text-start">
-                      State
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="State"
-                      id="state"
-                      value={formValues.state}
-                      onChange={handleInputChange}
-                    />
-                    {errors.state && (
-                      <div className="text-danger">{errors.state}</div>
-                    )}
-                  </div>
-                  <div className="col-md-6">
-                    <label
-                      htmlFor="newpassword"
-                      className="form-label text-start"
-                    >
-                      New Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="New Password"
-                      id="newpassword"
-                      value={formValues.newpassword}
-                      onChange={handleInputChange}
-                    />
-                    {errors.newpassword && (
-                      <div className="text-danger">{errors.newpassword}</div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="row mb-1">
-                  <div className="col-md-6">
-                    <label
-                      htmlFor="confirmpassword"
-                      className="form-label text-start"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="Confirm Password"
-                      id="confirmpassword"
-                      value={formValues.confirmpassword}
-                      onChange={handleInputChange}
-                    />
-                    {errors.confirmpassword && (
-                      <div className="text-danger">
-                        {errors.confirmpassword}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Submit button */}
-                {/* <Link to={`/admin-dashboard/teacher/${teacher._id}`} className="p_btn"> */}
                 <button
                   type="submit"
-                  className="btn btn-dark me-3"
-                  style={{ width: "150px" }}
+                  className="btn btn-dark mt-3"
+                  style={{ width: "150px", float: "right" }}
                 >
                   Update
                 </button>
-                {/* </Link> */}
               </form>
             </div>
           </div>

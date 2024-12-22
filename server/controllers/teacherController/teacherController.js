@@ -78,9 +78,43 @@ const getTeacherById = async (req, res) => {
   }
 };
 
+const teacherUpdateDetail = async (req, res) => {
+  try {
+    const teacher = await Teacher.findByIdAndUpdate(req.params.id, {$set: req.body }, {new: true});
+    if (!teacher) {
+      return res.status(400).json({ message: "Teacher not found" });
+    }
+
+    teacher.first_name = req.body.first_name || teacher.first_name;
+    teacher.middle_name = req.body.middle_name || teacher.middle_name;
+    teacher.last_name = req.body.last_name || teacher.last_name;
+    teacher.email = req.body.email || teacher.email;
+    teacher.dob = req.body.dob || teacher.dob;
+    teacher.subject_expertise = req.body.subject_expertise || teacher.subject_expertise;
+    teacher.address = req.body.address || teacher.address;
+    teacher.pincode = req.body.pincode || teacher.pincode;
+    teacher.contact_no = req.body.contact_no || teacher.contact_no;
+    teacher.managed_classes = req.body.managed_classes || teacher.managed_classes;
+    teacher.city = req.body.city || teacher.city;
+    teacher.state = req.body.state || teacher.state;
+    teacher.newpassword = req.body.newpassword || teacher.newpassword;
+    teacher.confirmpassword = req.body.confirmpassword || teacher.confirmpassword;
+
+    const updatedTeacher = await teacher.save();
+    res.json({
+      message: "Successfully Updated",
+      status: 200,
+      updatedTeacher
+    });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
 export {
   createTeacher,
   getTeachers,
-  getTeacherById, // Export the new controller function
+  getTeacherById,
+  teacherUpdateDetail, // Export the new controller function
   upload, // Export the multer middleware
 };
