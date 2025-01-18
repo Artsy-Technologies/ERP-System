@@ -50,7 +50,7 @@
 /* Main Section */
 .main-content {
     position: absolute;
-    left: 0px;
+    left: 20px;
     display: flex;
     gap: 5px; /* Reduced gap */
     padding: 0; /* Remove padding */

@@ -91,7 +91,7 @@ const PagesRoutes = () => {
         <Route index element={<Teacher />} />
         <Route path="faculty-profile" element={<TeacherProfile />} />
         <Route path="faculty-leave-application" element={<FacultyPage />} />
-        <Route path="virtual-class" element={<VirtualPage />} />
+        <Route path="virtual-class" element={<VirtualPage/>} />
         <Route path="attendance-management" element={<AttendanceT />} />
         <Route path="exam-room-allocation" element={<ExamHallAllocation />} />
         <Route path="student-report-card" element={<StudentReport />} />
@@ -108,7 +108,7 @@ const PagesRoutes = () => {
         <Route path="grades" element={<GradeAndReport />} />
         <Route path="digital-library" element={<DigitalLibraryMainPage />} />
         <Route path="exam-alerts" element={<ExamAlerts />} />
-        <Route path="virtual-classes" element={<VirtualPage />} />
+        <Route path="virtual-classes" element={<VirtualClassS />} />
         <Route path="doubt-clearance" element={<Doubt />} />
         <Route path="assignments" element={<Assignment />} />
         <Route path="payment-management" element={<Payment />} />
