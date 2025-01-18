@@ -1,71 +1,78 @@
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.content {
-    margin-top: 20px;
-    background-color: #fff; /* Removed background color */
-    margin-left: 270px;
-    min-height: 100vh;
-    position: relative;
-    
+
+h3 {
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #030303;
+  margin-bottom: 20px;
+}
+
+.heading-container {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 75%;
+}
+
+label {
+  color: #000;
+}
+
+input, .form-select, .form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.form-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.doubt-image {
+  max-width: 50%;
+  height: auto;
+  background-color: #ffffff; 
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-content {
+    flex-direction: column;
+    align-items: center;
   }
 
-h3{
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-  
-  .form-select, .form-control {
-    border-radius: 5px;
-    
-    border: 1px solid #ccc; /* Minimal border */
-    padding: 10px; /* Consistent padding */
-    font-size: 1rem; /* Font size adjustment */
-    
+  .form-container {
+    width: 100%;
   }
-  
-  
-  
-  button {
-    background-color: transparent;
-    border: 1px solid #000; /* Button styling */
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #000;
-  }
-  
-  button:hover {
-    background-color: #000;
-    color: #fff; /* Invert on hover */
-  }
-  
+
   .doubt-image {
- 
-    position: absolute;
-    right: 33%;
-    top: 38%;
-    transform: translate(50%, -50%);
-    max-width: 50%;
-    max-height: 50%;
-    z-index:0;
+    margin-top: 20px;
   }
-  
- 
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .content {
-      padding: 10px;
-    }
-  
-    .doubt-image {
-      max-width: 100%;
-      margin-top: 20px;
-    }
-  
-    button {
-      width: 100%; /* Full width button on smaller screens */
-    }
-  }
-  
+}
