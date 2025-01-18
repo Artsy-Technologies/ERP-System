@@ -1,6 +1,7 @@
 
 .main-content {
-    margin-left: 275px;
+    margin-left: 100px;
+    margin-top: 200px;
     padding: 20px;
     flex-grow: 1;
     width: 100%;
@@ -9,7 +10,7 @@
 
 .main-content h3 {
     display: flex;
-    align-items: center;
+    align-items: left;
     font-size: 24px;
     color: #34495e;
     margin-bottom: 20px;
@@ -17,13 +18,14 @@
 
 .main-content h3 i {
     margin-right: 10px;
+    margin-left: 50px;
 }
 
 .t {
     background-color: #eef4f2;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 1500px;
 }
 
 .top-section {

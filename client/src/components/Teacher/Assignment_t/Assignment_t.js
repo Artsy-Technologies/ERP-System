@@ -3,15 +3,14 @@ import "./Assignment_t.css";
 
 const AssignmentT = () => {
   return (
-    <>
-      <div></div>
-      <section className="content">
-        <div className="row">
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card">
-              <div className="card-header">Submitted</div>
-              <div className="card-body p-0">
-                <table className="table mb-0">
+    <div className="assignment_t-container">
+      <section className="assignment_t-content">
+        <div className="assignment_t-row">
+          <div className="assignment_t-col assignment_t-mb">
+            <div className="assignment_t-card">
+              <div className="assignment_t-card-header">Submitted</div>
+              <div className="assignment_t-card-body">
+                <table className="assignment_t-table">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -60,11 +59,11 @@ const AssignmentT = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card">
-              <div className="card-header">In Progress</div>
-              <div className="card-body p-0">
-                <table className="table mb-0">
+          <div className="assignment_t-col assignment_t-mb">
+            <div className="assignment_t-card">
+              <div className="assignment_t-card-header">In Progress</div>
+              <div className="assignment_t-card-body">
+                <table className="assignment_t-table">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -72,7 +71,7 @@ const AssignmentT = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                  <tr>
                       <td>Alia</td>
                       <td>704.555.0127</td>
                     </tr>
@@ -105,11 +104,13 @@ const AssignmentT = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-12 mb-4">
-            <div className="card">
-              <div className="card-header">Due</div>
-              <div className="card-body p-0">
-                <table className="table mb-0">
+          <div className="assignment_t-col assignment_t-mb">
+            {" "}
+            {/* Added a column for Due card */}
+            <div className="assignment_t-card">
+              <div className="assignment_t-card-header">Due</div>
+              <div className="assignment_t-card-body">
+                <table className="assignment_t-table">
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -118,7 +119,7 @@ const AssignmentT = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                  <tr>
                       <td>Alia</td>
                       <td>704.555.0127</td>
                       <td>5 Days</td>
@@ -155,20 +156,23 @@ const AssignmentT = () => {
           </div>
         </div>
 
-        <div className="card history">
-          <div className="card-header">History</div>
-          <div className="card-body p-0">
-            <table className="table mb-0">
-              <thead>
-                <tr>
-                  <th>Document</th>
-                  <th>Subject</th>
-                  <th>Date</th>
-                  <th>Due Date</th>
-                  <th>Remove</th>
-                </tr>
-              </thead>
-              <tbody>
+        <div className="assignment_t-history-card">
+          {" "}
+          {/* History card container */}
+          <div className="assignment_t-card">
+            <div className="assignment_t-card-header">History</div>
+            <div className="assignment_t-card-body">
+              <table className="assignment_t-table">
+                <thead>
+                  <tr>
+                    <th>Document</th>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Due Date</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
                 <tr>
                   <td>MCQ Questions for boards</td>
                   <td>Chemistry</td>
@@ -187,14 +191,15 @@ const AssignmentT = () => {
                     <i class="fa-solid fa-trash"></i>
                   </td>
                 </tr>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
-        <button class="upload-btn">Upload</button>
+        <button className="assignment_t-upload-btn">Upload</button>
       </section>
-    </>
+    </div>
   );
 };
+
 export default AssignmentT;
