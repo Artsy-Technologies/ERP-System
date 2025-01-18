@@ -36,13 +36,10 @@ const Doubt = () => {
         </h3>
       </div>
 
-      <div className="form-content d-flex">
+      <div className="form-content">
         <form
           onSubmit={onSubmit}
           className="form-container"
-          action="mailto:@gmail.com"
-          method="POST"
-          encType="text/plain"
         >
           <div className="form-section">
             <label htmlFor="subject" className="form-label">
@@ -52,7 +49,6 @@ const Doubt = () => {
               className="form-select mb-3"
               id="subject"
               name="subject"
-              style={{ width: '600px' }}
             >
               <option>Please Select</option>
               <option>Maths</option>
@@ -70,7 +66,6 @@ const Doubt = () => {
               className="form-select mb-3"
               id="faculty"
               name="faculty"
-              style={{ width: '600px' }}
             >
               <option>Please Select</option>
               <option>Andrew</option>
@@ -84,20 +79,17 @@ const Doubt = () => {
               placeholder="Post the doubt here ..."
               rows="10"
               name="doubt"
-              style={{ width: '600px' }}
             ></textarea>
             <button type="submit" className="btn btn-outline-dark">
               Post Doubt
             </button>
           </div>
         </form>
-        
-          <img
-            src={require('../../../assets/Images/doubt_img.png')}
-            className="doubt-image"
-            alt="Doubt Image"
-          />
-        
+        <img
+          src={require('../../../assets/Images/doubt_img.png')}
+          className="doubt-image"
+          alt="Doubt Image"
+        />
       </div>
     </div>
   );

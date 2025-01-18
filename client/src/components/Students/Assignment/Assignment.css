@@ -1,4 +1,32 @@
-._container-fluid{
+.assignment-container {
+    padding: 20px;
     margin-top: 70px;
-    margin-left:-50px;
+}
+
+.assignment-content {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.search-filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.assignment-table {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .search-filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .input-group{
+        width: 100%;
+    }
 }
