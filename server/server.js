@@ -94,6 +94,8 @@ import bookRoutes from "./routes/digitalLibrary/bookRoutes.js"
 import studentRouter from "./routes/studentProfile/StudentRouter.js"
 import teacherRouter from "./routes/teacherProfile/TeacherRouter.js"
 
+import feedbackRouter from "./routes/feedbackRoutes/feedbackRouter.js"
+
 import path from "path";
 
 import { fileURLToPath } from 'url';
@@ -128,6 +130,7 @@ app.use("/api/assignment", assignmentRoutes);
 app.use("/api/library", bookRoutes);
 app.use("/api/studentDetails", studentRouter);
 app.use("/api/teacherDetails", teacherRouter);
+app.use("/api/feedback", feedbackRouter)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
