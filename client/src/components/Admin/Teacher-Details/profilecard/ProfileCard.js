@@ -1,8 +1,9 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./ProfileCard.css";
+import { Link, Navigate } from "react-router-dom";
 
-const ProfileCard = ({ teacher }) => {
+const ProfileCard = ({ teacher, id }) => {
   if (!teacher) {
     return <div>No teacher data available.</div>;
   }
@@ -25,7 +26,11 @@ const ProfileCard = ({ teacher }) => {
     ? `http://localhost:8000/uploads/${teacher.photo}`
     : "http://via.placeholder.com/150";
 
+
+  
+
   return (
+    //link
     <div className="teacher-profile-card">
       <div className="teacher-card-header bg-primary text-white">
         <div className="row align-items-center">
@@ -40,6 +45,10 @@ const ProfileCard = ({ teacher }) => {
             <h2 className="teacher-name">{teacher.fullName || "N/A"}</h2>
             <p className="teacher-role">{teacher.subject || "N/A"}</p>
           </div>
+
+          <Link to={`/teacher-dashboard/faculty-profile/${id}`} className="mt-2" >
+          <button>Edit Profile</button>
+          </Link>
         </div>
       </div>
 

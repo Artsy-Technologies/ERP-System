@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./libraryApp.css";
 
-const DueBookCard = ({ book, onClose }) => {
+const DueBookCard = ({ book, onClose, daysOverdue }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
-  const [borrowDuration, setBorrowDuration] = useState(7);
+  // const [borrowDuration, setBorrowDuration] = useState();
 
   const handleBorrowClick = () => {
     setIsPopupOpen(true);
@@ -14,8 +14,16 @@ const DueBookCard = ({ book, onClose }) => {
     setIsPopupOpen(false);
   };
 
+// console.log(borrowDuration);
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+  };
+  const calculateOverdueDays = (dueDate) => {
+    const today = new Date();
+    const due = new Date(dueDate);
+    const difference = Math.ceil((today - due) / (1000 * 60 * 60 * 24));
+    return difference > 0 ? difference : 0; // Return only positive overdue days
   };
 
   return (
@@ -28,7 +36,7 @@ const DueBookCard = ({ book, onClose }) => {
             {book.author}, <p style={{ fontSize: "10px" }}> {book.year}</p>
           </p>
         </div>
-        <p  className= "text-center" style={{ fontSize: "20px" }}>{borrowDuration*1000} days</p>
+        <p  className= "text-center" style={{ fontSize: "20px" }}>{daysOverdue} days</p>
 
         {book.format ? (
           <p className= "text-center" style={{width: "140px", fontSize: "20px", }}>
@@ -96,7 +104,7 @@ const DueBookCard = ({ book, onClose }) => {
                 </div>
               </div>
 
-              <div className="total-amount text-start">TOTAL: {5* book.penality_fee}</div>
+              <div className="total-amount text-start">TOTAL:  {(daysOverdue)* (book.penalty_fee)}</div>
 
               <div className="dl-save-card mt-3">
                 <input

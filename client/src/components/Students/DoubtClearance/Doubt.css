@@ -67,11 +67,9 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
-
   .form-container {
     width: 100%;
   }
-
   .doubt-image {
     margin-top: 20px;
   }
