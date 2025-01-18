@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
         console.log(allFeedback);
         res.status(201).json(allFeedback); // Return the saved document
     } catch (error) {
-        res.status(500).send("Error saving feedback: " + error.message);
+        res.status(500).send("Error geting all feedback: " + error.message);
     }
 });
 
