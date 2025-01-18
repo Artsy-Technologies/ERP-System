@@ -11,12 +11,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HistoryBookList from "./Historybooklist";
 
-const DueBookList = ({ books, dueBooks, view, setView }) => {
+const DueBookList = ({  books,dueBooks, view, setView,  }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  if (!books || books.length === 0) {
-    return <p>No Due books yet!</p>;
-  }
+ 
 
   const filteredBooks = books.filter(
     (book) =>
@@ -25,6 +23,7 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
         book.author.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  
   const renderContent = () => {
     if (view === "history") {
       return <HistoryBookList books={dueBooks} />;
@@ -50,7 +49,7 @@ const DueBookList = ({ books, dueBooks, view, setView }) => {
 
           {filteredBooks.length > 0 ? (
             filteredBooks.map((book, index) => (
-              <DueBookCard key={index} book={book} />
+              <DueBookCard key={index} book={book} daysOverdue={book.daysOverdue}/>
             ))
           ) : (
             <p>No Due books found</p>

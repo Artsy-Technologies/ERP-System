@@ -91,7 +91,7 @@ const PagesRoutes = () => {
       {/* Teacher Routes */}
       <Route path="/teacher-dashboard" element={<TeacherLayout />}>
         <Route index element={<Teacher />} />
-        <Route path="faculty-profile" element={<TeacherProfile />} />
+        <Route path="faculty-profile/:id" element={<TeacherProfile />} />
         <Route path="faculty-leave-application" element={<FacultyPage />} />
         <Route path="virtual-class" element={<VirtualPage/>} />
         <Route path="attendance-management" element={<AttendanceT />} />

@@ -13,6 +13,7 @@ const TeacherDetails = () => {
     const fetchTeacher = async () => {
       try {
         const response = await axios.get(`/api/teachers/${id}`);
+        console.log(response);
         setTeacher(response.data);
         setLoading(false);
       } catch (error) {
@@ -33,7 +34,7 @@ const TeacherDetails = () => {
     return <div className="teacher-loading">{error}</div>;
   }
 
-  return <ProfileCard teacher={teacher} />;
+  return <ProfileCard teacher={teacher} id = {id}/>;
 };
 
 export default TeacherDetails;
