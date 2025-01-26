@@ -1,0 +1,174 @@
+/* Main Content */
+.main-content {
+    padding: 2px;
+    top: -160px;
+    left: -60px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; 
+    align-items:center; /* Center-align all content */
+  }
+  
+  .main-header {
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly; 
+    gap: 200px;
+    align-items:baseline;
+    margin-bottom: 2rem;
+  }
+
+
+    button .request {
+        padding: 1px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    button .request:hover {
+        -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+        box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+        color: #d6d6d6;
+        -webkit-transition: 500ms;
+        transition: 500ms;
+    }
+    
+    button .request:active {
+        -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+        box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+        color: #d6d6d6;
+        -webkit-transition: 100ms;
+        transition: 100ms;
+    }
+    
+
+/* Leave Cards Grid */
+.leave-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .leave-card {
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(229 231 235);
+  }
+  
+  .leave-card-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(75 85 99);
+  }
+  
+  .leave-card-content {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .leave-indicator {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .leave-stats {
+    font-size: 0.875rem;
+  }
+  .casual-leave {
+    background-color: rgb(237 233 254);
+    color: rgb(124 58 237);
+  }
+  
+  .sick-leave {
+    background-color: rgb(219 234 254);
+    color: rgb(37 99 235);
+  }
+  
+  .unpaid-leave {
+    background-color: rgb(224 231 255);
+    color: rgb(67 56 202);
+  }
+  
+  .half-leave {
+    background-color: rgb(237 233 254);
+    color: rgb(109 40 217);
+  }
+
+
+.table-calender{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+/* Leave Request Table */
+.table-container {
+    width: 100%;
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(229 231 235);
+  }
+  
+  .table-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgb(229 231 235);
+  }
+  
+  .table-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+  }
+  
+  .status-pending {
+    background-color: rgb(219 234 254);
+    color: rgb(37 99 235);
+  }
+  
+  .status-approved {
+    background-color: rgb(220 252 231);
+    color: rgb(22 163 74);
+  }
+
+
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .leave-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .leave-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+
